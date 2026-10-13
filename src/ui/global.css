@@ -20,6 +20,8 @@
   --big-tile: clamp(90px, 12vw, 120px);
   --hand-tile: min(66px, calc((100vw - 48px) / 14.6));
   --group-tile: clamp(32px, 4.2vw, 46px);
+  --picker-tile: min(58px, calc((100vw - 80px) / 10));
+  --solo-river-tile: clamp(32px, 4vw, 44px);
   color-scheme: dark;
 }
 
@@ -827,6 +829,69 @@ button {
   display: flex;
   align-items: flex-end;
   gap: 8px;
+}
+
+/* ---------- 段階 3・4 ---------- */
+.solo-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.solo-info {
+  display: flex;
+  gap: 20px;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.solo-river {
+  min-height: calc(var(--solo-river-tile) * 1.43 * 3);
+  display: flex;
+  flex-direction: column;
+}
+
+.solo-hand {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding-top: 16px;
+}
+
+.solo-hand-main {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.solo-board .tile:disabled {
+  opacity: 0.55;
+}
+
+.action-tsumo {
+  background: #a8322a;
+  border-color: #a8322a;
+  min-width: 140px;
+}
+
+.won-hand,
+.quiz-hand {
+  display: flex;
+  gap: 2px;
+  margin: 12px 0 20px;
+}
+
+.wait-picker {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 14px 12px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.18);
 }
 
 @media (max-width: 760px) {

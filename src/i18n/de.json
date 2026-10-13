@@ -14,7 +14,7 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "tileHints": "Hilfsanzeige auf den Steinen",
-    "tileHintsDesc": "Zeigt in der Ecke eine kleine Hilfe: bei Manzu die Zahl, bei den Winden O, S, W, N und bei den Drachen die Farbe. Pinzu und Souzu haben keine Hilfe, damit du die Kreise und Stäbe selbst zählen lernst.",
+    "tileHintsDesc": "Zeigt in der Ecke eine kleine Hilfe: bei Manzu die Zahl, bei den Winden O, S, W, N und bei den Drachen den Namen (Haku, Hatsu, Chun). Pinzu und Souzu haben keine Hilfe, damit du die Kreise und Stäbe selbst zählen lernst.",
     "on": "Ein",
     "off": "Aus",
     "progress": "Fortschritt",
@@ -22,7 +22,9 @@
     "resetConfirm": "Wirklich alle Stufen zurücksetzen? Das kann nicht rückgängig gemacht werden.",
     "resetYes": "Ja, zurücksetzen",
     "resetDone": "Der Fortschritt wurde zurückgesetzt.",
-    "storageUnavailable": "Einstellungen und Fortschritt können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird."
+    "storageUnavailable": "Einstellungen und Fortschritt können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird.",
+    "gameHints": "Hinweise im Spiel",
+    "gameHintsDesc": "Zeigt in Übungen und Partien kurze Hinweise, zum Beispiel wie viele Steine dir noch fehlen."
   },
   "language": {
     "de": "Deutsch",
@@ -60,9 +62,9 @@
     "z2": "S",
     "z3": "W",
     "z4": "N",
-    "z5": "weiß",
-    "z6": "grün",
-    "z7": "rot"
+    "z5": "Haku",
+    "z6": "Hatsu",
+    "z7": "Chun"
   },
   "stages": {
     "title": "Stufen",
@@ -267,6 +269,126 @@
       "task": "Aufgabe {n} von {total}",
       "nextTask": "Nächste Aufgabe",
       "passed": "Stufe 2 geschafft. Stufe 3 ist jetzt offen."
+    }
+  },
+  "stage3": {
+    "explain": {
+      "s1": {
+        "title": "Allein spielen",
+        "body": "In dieser Stufe spielst du allein, damit du den Ablauf kennenlernst. In einer echten Partie spielen vier Personen. Das kommt später.\nDu bekommst 13 Steine. Die übrigen Steine liegen verdeckt bereit. Sie heißen Mauer (Yama)."
+      },
+      "s2": {
+        "title": "Ziehen und Ablegen",
+        "body": "In jedem Zug ziehst du einen Stein aus der Mauer. Dann hast du 14 Steine und legst einen davon ab, sodass wieder 13 übrig bleiben.\nAbgelegte Steine liegen offen in Reihen vor dir. Diese Reihen heißen Kawa („Fluss“).\nSo legst du ab: Tippe einen Stein an, dann hebt er sich etwas. Tippe ihn noch einmal an, um ihn abzulegen."
+      },
+      "s3": {
+        "title": "Welchen Stein ablegen?",
+        "body": "Behalte Steine, die schon zu einer Gruppe passen oder fast passen, zum Beispiel 4-5 (es fehlt die 3 oder die 6) oder ein Paar.\nLege einzelne Steine ab, die zu nichts passen. Einzelne Ehrensteine sind oft die ersten Kandidaten, denn mit ihnen kann man keine Folge bilden."
+      },
+      "s4": {
+        "title": "Gewinnen mit Tsumo",
+        "body": "Wenn der gezogene Stein deine Hand fertig macht, erscheint der Knopf „Tsumo“. Tsumo bedeutet: Ich habe den Stein selbst gezogen und gewinne.\nIn dieser Stufe reicht eine fertige Hand zum Gewinnen. Die zusätzliche Bedingung kommt in Stufe 5."
+      }
+    },
+    "guided": {
+      "intro": "Folge den Anweisungen. Du kannst nur den Stein ablegen, der genannt wird. Der gezogene Stein liegt ganz rechts.",
+      "g1": {
+        "prompt": "Du hast die 8 Pinzu gezogen. Damit ist 6-7-8 Pinzu eine fertige Folge. Lege jetzt den Osten ab: Tippe ihn an und dann noch einmal.",
+        "after": "Der Osten passte zu keinem anderen Stein. Ein einzelner Ehrenstein wird nur dann nützlich, wenn du noch gleiche Steine ziehst."
+      },
+      "g2": {
+        "prompt": "Du hast die 8 Manzu gezogen. 8-9 Manzu ist fast eine Folge: Es fehlt nur die 7. Lege den weißen Drachen (Haku) ab.",
+        "after": "Jetzt fehlt dir nur noch ein einziger Stein: die 7 Manzu. Diesen Zustand lernst du in Stufe 4 genauer kennen."
+      },
+      "g3": {
+        "prompt": "Du hast die 2 Pinzu gezogen. Sie hilft dir nicht. Lege sie gleich wieder ab.",
+        "after": "Einen gezogenen Stein sofort wieder abzulegen ist ganz normal, wenn er nicht passt."
+      },
+      "g4": {
+        "prompt": "Du hast die 7 Manzu gezogen. Die Hand ist fertig: 2-3-4 und 7-8-9 Manzu, 6-7-8 Pinzu, 3-4-5 Souzu und das Paar Chun. Tippe auf „Tsumo“."
+      },
+      "finished": "Gewonnen mit Tsumo. Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "game": {
+      "intro": "Spiele allein, bis deine Hand fertig ist. Wenn du mit Tsumo gewinnst, ist die Stufe geschafft.",
+      "start": "Spiel starten",
+      "draws": "Zug {n}",
+      "wall": "Mauer: {n}",
+      "hintMany": "Dir fehlen noch mindestens {n} Steine bis zur fertigen Hand.",
+      "hintOne": "Dir fehlt nur noch ein Stein.",
+      "hintAgari": "Deine Hand ist fertig. Tippe auf „Tsumo“.",
+      "tip": "Tipp",
+      "tipShown": "Markiert sind die Steine, die du am besten ablegst.",
+      "won": "Gewonnen mit Tsumo nach {n} Zügen.",
+      "wonChiitoitsu": "Das ist Chiitoitsu (sieben Paare), eine der besonderen fertigen Hände.",
+      "wonKokushi": "Das ist Kokushi Musou, eine der besonderen fertigen Hände.",
+      "passed": "Stufe 3 geschafft. Stufe 4 ist jetzt offen.",
+      "wallEmpty": "Die Mauer ist leer, ohne dass die Hand fertig wurde. Versuche es noch einmal.",
+      "newGame": "Neues Spiel"
+    }
+  },
+  "stage4": {
+    "explain": {
+      "s1": {
+        "title": "Tenpai",
+        "body": "Wenn dir nur noch ein einziger Stein zur fertigen Hand fehlt, bist du Tenpai („bereit“).\nDiese Hand ist Tenpai: Es fehlt nur noch die 3 Souzu oder die 6 Souzu."
+      },
+      "s2": {
+        "title": "Wartesteine",
+        "body": "Die Steine, mit denen deine Hand fertig wird, heißen Wartesteine. Das Warten heißt auf Japanisch Machi.\nJe mehr verschiedene Wartesteine es gibt, desto leichter gewinnst du."
+      },
+      "s3": {
+        "title": "Ryanmen: zwei Seiten",
+        "body": "Zwei Zahlen direkt nebeneinander wie 4-5 warten auf beide Seiten: die 3 oder die 6. Diese Form heißt Ryanmen und ist die günstigste."
+      },
+      "s4": {
+        "title": "Kanchan und Penchan",
+        "body": "Mit einer Lücke wie 4-6 wartet man nur auf die Mitte, die 5. Das heißt Kanchan.\n1-2 wartet nur auf die 3, und 8-9 nur auf die 7. Das heißt Penchan."
+      },
+      "s5": {
+        "title": "Shanpon und Tanki",
+        "body": "Mit zwei Paaren wartet man darauf, dass eines davon zum Drilling wird. Das andere bleibt das Paar. Das heißt Shanpon.\nEin einzelner Stein wartet auf einen gleichen Stein, damit ein Paar entsteht. Das heißt Tanki."
+      },
+      "s6": {
+        "title": "Mehrere Möglichkeiten",
+        "body": "Manche Hände kann man auf verschiedene Arten aufteilen. 2-3-4-5 Manzu wartet zum Beispiel auf die 2 und die 5: 2-3-4 und eine einzelne 5, oder 3-4-5 und eine einzelne 2.\nPrüfe deshalb jede Möglichkeit."
+      }
+    },
+    "guided": {
+      "intro": "Jede dieser Hände ist Tenpai. Tippe unten auf alle Wartesteine.",
+      "g1": {
+        "prompt": "Die Hand wartet mit 4-5 Souzu auf beide Seiten. Tippe auf die 3 Souzu und die 6 Souzu.",
+        "after": "Richtig: Ryanmen, zwei verschiedene Wartesteine."
+      },
+      "g2": {
+        "prompt": "Hier fehlt die Mitte von 4-6 Manzu. Tippe auf die 5 Manzu.",
+        "after": "Richtig: Kanchan, nur ein Wartestein."
+      },
+      "g3": {
+        "prompt": "1-2 Pinzu kann nur mit der 3 zu einer Folge werden. Tippe auf die 3 Pinzu.",
+        "after": "Richtig: Penchan. Auf der anderen Seite gibt es keine Zahl mehr."
+      },
+      "g4": {
+        "prompt": "Zwei Paare: 5 Pinzu und 7 Souzu. Eines davon muss zum Drilling werden. Tippe auf die 5 Pinzu und die 7 Souzu.",
+        "after": "Richtig: Shanpon. Der Stein, der kommt, wird zum Drilling. Das andere Paar bleibt das Paar."
+      },
+      "g5": {
+        "prompt": "Vier Gruppen sind fertig, nur der Westen ist allein. Tippe auf den Westen.",
+        "after": "Richtig: Tanki. Ein zweiter Westen macht das Paar."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Hände. Tippe bei jeder Hand alle Wartesteine an und dann auf „Prüfen“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Hand {n} von {total}",
+      "prompt": "Diese Hand ist Tenpai. Welche Steine fehlen? Tippe alle Wartesteine an.",
+      "check": "Prüfen",
+      "correct": "Richtig.",
+      "wrong": "Leider nicht ganz. Richtig ist: {tiles}.",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 4 geschafft. Stufe 5 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
     }
   }
 }

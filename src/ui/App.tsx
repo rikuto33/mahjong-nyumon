@@ -22,6 +22,10 @@ import { Stage1Guided } from './stage1/Stage1Guided';
 import { Stage1Quiz } from './stage1/Stage1Quiz';
 import { Stage2Guided } from './stage2/Stage2Guided';
 import { Stage2Practice } from './stage2/Stage2Practice';
+import { Stage3Guided } from './stage3/Stage3Guided';
+import { Stage3Game } from './stage3/Stage3Game';
+import { Stage4Guided } from './stage4/Stage4Guided';
+import { Stage4Quiz } from './stage4/Stage4Quiz';
 import { TableScreen } from './table/TableScreen';
 
 export function App() {
@@ -88,10 +92,14 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
     case 'guided':
       if (route.stage === 1) return <Stage1Guided onDone={toStage(1)} />;
       if (route.stage === 2) return <Stage2Guided onDone={toStage(2)} />;
+      if (route.stage === 3) return <Stage3Guided onDone={toStage(3)} />;
+      if (route.stage === 4) return <Stage4Guided onDone={toStage(4)} />;
       return <ComingSoonScreen onBack={toStage(route.stage)} />;
     case 'practice':
       if (route.stage === 1) return <Stage1Quiz onDone={toStage(1)} />;
       if (route.stage === 2) return <Stage2Practice onDone={toStage(2)} />;
+      if (route.stage === 3) return <Stage3Game onDone={toStage(3)} />;
+      if (route.stage === 4) return <Stage4Quiz onDone={toStage(4)} />;
       return <ComingSoonScreen onBack={toStage(route.stage)} />;
     case 'table':
       return <TableScreen onBack={() => navigate({ name: 'stages' })} />;

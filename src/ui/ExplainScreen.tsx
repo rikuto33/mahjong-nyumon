@@ -3,11 +3,13 @@ import { useI18n } from '../i18n/I18nContext';
 import type { MessageKey } from '../i18n/translate';
 import { STAGE1_SLIDES } from '../tutorial/stage1';
 import { STAGE2_SLIDES } from '../tutorial/stage2';
+import { STAGE3_SLIDES } from '../tutorial/stage3';
+import { STAGE4_SLIDES } from '../tutorial/stage4';
 import type { ExplainSlide } from '../tutorial/types';
 import { ScreenHeader } from './ScreenHeader';
 import { TileRows } from './tile/TileRows';
 
-const SLIDES: Record<number, ExplainSlide[]> = { 1: STAGE1_SLIDES, 2: STAGE2_SLIDES };
+const SLIDES: Record<number, ExplainSlide[]> = { 1: STAGE1_SLIDES, 2: STAGE2_SLIDES, 3: STAGE3_SLIDES, 4: STAGE4_SLIDES };
 
 export function ExplainScreen({ stage, onDone }: { stage: number; onDone: () => void }) {
   const { t } = useI18n();

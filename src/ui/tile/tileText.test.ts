@@ -16,7 +16,7 @@ describe('tileHint', () => {
   it('字牌は言語ごと', () => {
     expect(['1z', '2z', '3z', '4z'].map((t) => tileHint(de, t as '1z'))).toEqual(['O', 'S', 'W', 'N']);
     expect(['1z', '2z', '3z', '4z'].map((t) => tileHint(ja, t as '1z'))).toEqual(['E', 'S', 'W', 'N']);
-    expect(['5z', '6z', '7z'].map((t) => tileHint(de, t as '5z'))).toEqual(['weiß', 'grün', 'rot']);
+    expect(['5z', '6z', '7z'].map((t) => tileHint(de, t as '5z'))).toEqual(['Haku', 'Hatsu', 'Chun']);
   });
 });
 

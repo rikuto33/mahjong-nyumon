@@ -74,6 +74,20 @@ export function SettingsScreen({ onBack }: { onBack: () => void }) {
       </section>
 
       <section className="settings-group">
+        <h2>{t('settings.gameHints')}</h2>
+        <p className="settings-desc">{t('settings.gameHintsDesc')}</p>
+        <Segmented
+          label={t('settings.gameHints')}
+          value={settings.gameHints}
+          options={[
+            { value: true, label: t('settings.on') },
+            { value: false, label: t('settings.off') },
+          ]}
+          onChange={(gameHints) => updateSettings({ gameHints })}
+        />
+      </section>
+
+      <section className="settings-group">
         <h2>{t('settings.progress')}</h2>
         {resetState === 'idle' && (
           <button className="btn" onClick={() => setResetState('confirm')}>
