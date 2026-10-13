@@ -13,7 +13,16 @@
   "settings": {
     "title": "Einstellungen",
     "language": "Sprache",
-    "storageUnavailable": "Einstellungen können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird."
+    "tileHints": "Hilfsanzeige auf den Steinen",
+    "tileHintsDesc": "Zeigt in der Ecke jedes Steins eine kleine Hilfe: die Zahl, den Wind (O, S, W, N) oder die Farbe des Drachen.",
+    "on": "Ein",
+    "off": "Aus",
+    "progress": "Fortschritt",
+    "resetProgress": "Fortschritt zurücksetzen",
+    "resetConfirm": "Wirklich alle Stufen zurücksetzen? Das kann nicht rückgängig gemacht werden.",
+    "resetYes": "Ja, zurücksetzen",
+    "resetDone": "Der Fortschritt wurde zurückgesetzt.",
+    "storageUnavailable": "Einstellungen und Fortschritt können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird."
   },
   "language": {
     "de": "Deutsch",
@@ -21,6 +30,243 @@
   },
   "common": {
     "back": "Zurück",
-    "comingSoon": "Dieser Teil ist noch in Arbeit."
+    "next": "Weiter",
+    "prev": "Zurück",
+    "done": "Fertig",
+    "cancel": "Abbrechen",
+    "retry": "Noch einmal",
+    "comingSoon": "Dieser Teil ist noch in Arbeit.",
+    "page": "{n} / {total}"
+  },
+  "tile": {
+    "suit": {
+      "m": "Manzu",
+      "p": "Pinzu",
+      "s": "Souzu"
+    },
+    "number": "{n} {suit}",
+    "red": "Rote 5 {suit}",
+    "z1": "Osten (Ton)",
+    "z2": "Süden (Nan)",
+    "z3": "Westen (Sha)",
+    "z4": "Norden (Pei)",
+    "z5": "Weißer Drache (Haku)",
+    "z6": "Grüner Drache (Hatsu)",
+    "z7": "Roter Drache (Chun)",
+    "faceDown": "verdeckter Stein"
+  },
+  "tileHint": {
+    "z1": "O",
+    "z2": "S",
+    "z3": "W",
+    "z4": "N",
+    "z5": "weiß",
+    "z6": "grün",
+    "z7": "rot"
+  },
+  "stages": {
+    "title": "Stufen",
+    "stageN": "Stufe {n}",
+    "locked": "Gesperrt",
+    "lockedHint": "Schließe zuerst die vorherige Stufe ab.",
+    "cleared": "Geschafft",
+    "open": "Offen",
+    "inProgress": "In Arbeit",
+    "tablePreview": "Spieltisch ansehen (Vorschau)",
+    "s1": "Die Steine kennenlernen",
+    "s2": "Die fertige Hand",
+    "s3": "Allein spielen",
+    "s4": "Tenpai und Wartesteine",
+    "s5": "Ohne Yaku kein Gewinn",
+    "s6": "Ron, Einwerfen und Furiten",
+    "s7": "Steine ansagen: Pon, Chi, Kan",
+    "s8": "Dora",
+    "s9": "Der Ablauf einer Partie",
+    "s10": "Die echte Partie"
+  },
+  "stageMenu": {
+    "explain": "Erklärung",
+    "explainDesc": "Die Regeln dieser Stufe in kurzen Schritten.",
+    "guided": "Geführtes Beispiel",
+    "guidedDesc": "Ein Beispiel Schritt für Schritt. Du tippst nur, was angezeigt wird.",
+    "practice": "Übung",
+    "practiceDesc": "Probiere es selbst. Wenn du die Übung schaffst, öffnet sich die nächste Stufe.",
+    "clearedNote": "Diese Stufe hast du geschafft. Du kannst sie jederzeit wiederholen."
+  },
+  "actions": {
+    "pon": "Pon",
+    "chi": "Chi",
+    "kan": "Kan",
+    "ron": "Ron",
+    "tsumo": "Tsumo",
+    "riichi": "Riichi",
+    "skip": "Weiter"
+  },
+  "table": {
+    "preview": "Spieltisch (Vorschau)",
+    "previewNote": "Nur zur Ansicht. Tippe einen eigenen Stein an, um ihn anzuheben, und tippe noch einmal, um ihn abzulegen.",
+    "doraIndicator": "Dora-Anzeiger",
+    "round": "{wind} {n}",
+    "honba": "{n} Honba",
+    "riichiSticks": "{n} Riichi",
+    "remaining": "Rest {n}",
+    "wind1": "Ost",
+    "wind2": "Süd",
+    "wind3": "West",
+    "wind4": "Nord"
+  },
+  "stage1": {
+    "explain": {
+      "s1": {
+        "title": "Die Spielsteine",
+        "body": "Mahjong spielt man mit Steinen, so wie man andere Spiele mit Karten spielt. Auf Japanisch heißen die Steine Hai.\nEs gibt 34 verschiedene Steine. Von jedem gibt es 4 gleiche Exemplare, zusammen also 136 Steine.\nDie Steine teilen sich in zwei Arten: Zahlensteine und Ehrensteine."
+      },
+      "s2": {
+        "title": "Zahlensteine: Manzu",
+        "body": "Es gibt drei Farben mit den Zahlen 1 bis 9. Die erste Farbe heißt Manzu.\nOben steht die Zahl als chinesisches Schriftzeichen, unten bei allen das Zeichen 萬.\nWenn die Hilfsanzeige eingeschaltet ist, steht in der Ecke zusätzlich die Zahl."
+      },
+      "s3": {
+        "title": "Zahlensteine: Pinzu",
+        "body": "Die zweite Farbe heißt Pinzu. Die Anzahl der Kreise ist die Zahl des Steins."
+      },
+      "s4": {
+        "title": "Zahlensteine: Souzu",
+        "body": "Die dritte Farbe heißt Souzu. Die Anzahl der Bambusstäbe ist die Zahl des Steins.\nDie 1 sieht anders aus: Sie zeigt einen einzelnen großen Bambus. In vielen anderen Mahjong-Spielen ist auf der 1 Souzu ein Vogel abgebildet."
+      },
+      "s5": {
+        "title": "Ehrensteine: die Winde",
+        "body": "Neben den Zahlensteinen gibt es Ehrensteine (Jihai). Sie haben keine Zahl.\nVier davon sind Winde (Kazehai): 東 Osten (Ton), 南 Süden (Nan), 西 Westen (Sha) und 北 Norden (Pei)."
+      },
+      "s6": {
+        "title": "Ehrensteine: die Drachen",
+        "body": "Die anderen drei Ehrensteine sind Drachen (Sangenpai): Weiß (Haku), 發 Grün (Hatsu) und 中 Rot (Chun).\nDer weiße Drache hat kein Schriftzeichen. Hier hat er nur einen blauen Rahmen."
+      },
+      "s7": {
+        "title": "Rote Fünfen",
+        "body": "In jeder der drei Farben ist eine der vier Fünfen rot. Eine rote 5 zählt wie eine normale 5.\nSie bringt aber zusätzliche Punkte. Solche Bonussteine heißen Dora, die roten Fünfen heißen Aka-Dora („rote Dora“). Mehr dazu in Stufe 8."
+      },
+      "s8": {
+        "title": "Zusammenfassung",
+        "body": "3 Farben mit je 9 Zahlen: 27 Zahlensteine.\n4 Winde und 3 Drachen: 7 Ehrensteine.\nZusammen 34 Steine, jeder viermal vorhanden: 136 Steine."
+      }
+    },
+    "guided": {
+      "intro": "Hier liegen alle 34 Steine und die drei roten Fünfen. Tippe auf den Stein, der gesucht wird.",
+      "g1": {
+        "prompt": "Tippe auf die 1 Manzu. Das Schriftzeichen 一 bedeutet 1.",
+        "after": "Richtig. Unten steht bei allen Manzu das Zeichen 萬."
+      },
+      "g2": {
+        "prompt": "Tippe auf die 7 Pinzu. Zähle die Kreise.",
+        "after": "Richtig: sieben Kreise."
+      },
+      "g3": {
+        "prompt": "Tippe auf die 1 Souzu. Sie sieht anders aus als die übrigen Souzu.",
+        "after": "Richtig. Die 1 Souzu zeigt einen einzelnen großen Bambus."
+      },
+      "g4": {
+        "prompt": "Tippe auf den Wind Osten (東, Ton).",
+        "after": "Richtig. Der Geber einer Runde sitzt immer auf Osten. Mehr dazu in Stufe 9."
+      },
+      "g5": {
+        "prompt": "Tippe auf den weißen Drachen (Haku).",
+        "after": "Richtig. Der weiße Drache ist der Stein ohne Schriftzeichen."
+      },
+      "g6": {
+        "prompt": "Tippe auf die rote 5 Manzu.",
+        "after": "Richtig. Sie zählt als 5 und bringt zusätzlich Punkte."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Fragen. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "findTile": "Tippe auf: {name}",
+      "nameTile": "Wie heißt dieser Stein?",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch. Richtig ist: {name}.",
+      "question": "Frage {n} von {total}",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 1 geschafft. Stufe 2 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "stage2": {
+    "explain": {
+      "s1": {
+        "title": "Das Ziel",
+        "body": "Jeder Spieler hat 13 Steine. Wer an der Reihe ist, nimmt einen Stein dazu und hat dann 14 Steine. Danach legt er einen Stein ab.\nZiel ist eine fertige Hand aus 14 Steinen: 4 Gruppen und 1 Paar.\nMit einer fertigen Hand kann man gewinnen. Das heißt Agari. (In Stufe 5 kommt dafür noch eine Bedingung dazu.)"
+      },
+      "s2": {
+        "title": "Gruppe 1: Shuntsu (Folge)",
+        "body": "Ein Shuntsu ist eine Folge: drei Zahlen direkt hintereinander in derselben Farbe, zum Beispiel 3-4-5.\nDie Zahlen laufen nicht im Kreis: 8-9-1 ist keine Folge. Mit Ehrensteinen kann man keine Folge bilden."
+      },
+      "s3": {
+        "title": "Gruppe 2: Koutsu (Drilling)",
+        "body": "Ein Koutsu ist ein Drilling: drei gleiche Steine. Das geht mit Zahlensteinen und mit Ehrensteinen."
+      },
+      "s4": {
+        "title": "Das Paar: Jantou",
+        "body": "Dazu kommt ein Paar aus zwei gleichen Steinen. Es heißt Jantou."
+      },
+      "s5": {
+        "title": "Eine fertige Hand",
+        "body": "So sieht eine fertige Hand aus: 4 Gruppen und 1 Paar, also 3 + 3 + 3 + 3 + 2 = 14 Steine.\nEine rote 5 zählt dabei wie eine normale 5."
+      },
+      "s6": {
+        "title": "Ausnahmen",
+        "body": "Es gibt zwei besondere fertige Hände, die nicht aus 4 Gruppen und 1 Paar bestehen: Chiitoitsu (sieben Paare) und Kokushi Musou (alle Einsen, Neunen und Ehrensteine). Diese lernst du später kennen.\nAußerdem kann man aus vier gleichen Steinen eine Gruppe bilden (Kan). Das kommt in Stufe 7."
+      }
+    },
+    "guided": {
+      "intro": "Diese 14 Steine bilden eine fertige Hand. Teile sie Schritt für Schritt in Gruppen auf.",
+      "g1": {
+        "prompt": "Tippe auf 2, 3 und 4 Manzu und dann auf „Gruppe bilden“.",
+        "after": "Das ist ein Shuntsu (Folge): 2-3-4 in derselben Farbe."
+      },
+      "g2": {
+        "prompt": "Tippe auf 6, 7 und 8 Pinzu und bilde eine Gruppe.",
+        "after": "Noch ein Shuntsu: 6-7-8 Pinzu."
+      },
+      "g3": {
+        "prompt": "Tippe auf die drei 3 Souzu und bilde eine Gruppe.",
+        "after": "Drei gleiche Steine: ein Koutsu (Drilling)."
+      },
+      "g4": {
+        "prompt": "Tippe auf die drei Osten-Steine und bilde eine Gruppe.",
+        "after": "Auch mit Ehrensteinen kann man ein Koutsu bilden."
+      },
+      "g5": {
+        "prompt": "Tippe auf die beiden 9 Manzu und bilde eine Gruppe.",
+        "after": "Das ist das Paar (Jantou). Die Hand ist fertig: 4 Gruppen und 1 Paar."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "puzzle": {
+      "intro": "Teile jede Hand in 4 Gruppen und 1 Paar auf. Löse {total} Aufgaben, um die Stufe abzuschließen.",
+      "start": "Übung starten",
+      "instruction": "Tippe Steine an und dann auf „Gruppe bilden“. Ziel: 4 Gruppen und 1 Paar.",
+      "makeGroup": "Gruppe bilden",
+      "resetGroups": "Alle Gruppen auflösen",
+      "tip": "Tipp",
+      "ungroupHint": "Tippe auf eine Gruppe, um sie wieder aufzulösen.",
+      "shuntsu": "Shuntsu (Folge)",
+      "koutsu": "Koutsu (Drilling)",
+      "pair": "Jantou (Paar)",
+      "err": {
+        "wrongSize": "Eine Gruppe besteht aus 3 Steinen, ein Paar aus 2.",
+        "pairNotSame": "Ein Paar besteht aus zwei gleichen Steinen.",
+        "mixedSuits": "Eine Folge muss aus einer einzigen Farbe sein.",
+        "honorSequence": "Mit Ehrensteinen (Winden und Drachen) kann man keine Folge bilden, nur Drillinge und Paare.",
+        "notConsecutive": "Die Zahlen einer Folge müssen direkt aufeinander folgen, zum Beispiel 4-5-6.",
+        "secondPair": "Eine fertige Hand hat nur ein Paar."
+      },
+      "tipStuck": "Mit den bisherigen Gruppen geht die Hand nicht auf. Löse eine Gruppe wieder auf.",
+      "tipShown": "Diese Steine bilden zusammen eine Gruppe.",
+      "solved": "Fertig: 4 Gruppen und 1 Paar. Das ist eine fertige Hand.",
+      "task": "Aufgabe {n} von {total}",
+      "nextTask": "Nächste Aufgabe",
+      "passed": "Stufe 2 geschafft. Stufe 3 ist jetzt offen."
+    }
   }
 }

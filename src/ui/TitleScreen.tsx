@@ -1,7 +1,7 @@
 import { useI18n } from '../i18n/I18nContext';
-import type { Screen } from './App';
+import type { Navigate } from './routes';
 
-export function TitleScreen({ onNavigate }: { onNavigate: (s: Screen) => void }) {
+export function TitleScreen({ navigate }: { navigate: Navigate }) {
   const { t } = useI18n();
   return (
     <main className="screen title-screen">
@@ -15,13 +15,13 @@ export function TitleScreen({ onNavigate }: { onNavigate: (s: Screen) => void })
       </section>
 
       <nav className="menu">
-        <button className="btn btn-primary" onClick={() => onNavigate('comingSoon')}>
+        <button className="btn btn-primary" onClick={() => navigate({ name: 'stage', stage: 1 })}>
           {t('title.start')}
         </button>
-        <button className="btn" onClick={() => onNavigate('comingSoon')}>
+        <button className="btn" onClick={() => navigate({ name: 'stages' })}>
           {t('title.continue')}
         </button>
-        <button className="btn" onClick={() => onNavigate('settings')}>
+        <button className="btn" onClick={() => navigate({ name: 'settings' })}>
           {t('title.settings')}
         </button>
       </nav>

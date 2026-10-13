@@ -1,14 +1,11 @@
 import { useI18n } from '../i18n/I18nContext';
+import { ScreenHeader } from './ScreenHeader';
 
 export function ComingSoonScreen({ onBack }: { onBack: () => void }) {
   const { t } = useI18n();
   return (
     <main className="screen">
-      <header className="screen-header">
-        <button className="btn btn-small" onClick={onBack}>
-          {t('common.back')}
-        </button>
-      </header>
+      <ScreenHeader onBack={onBack} />
       <p className="notice">{t('common.comingSoon')}</p>
     </main>
   );

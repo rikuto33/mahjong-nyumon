@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_SETTINGS, loadSettings, saveSettings } from './storage';
+import {
+  DEFAULT_SETTINGS,
+  isStageUnlocked,
+  loadProgress,
+  loadSettings,
+  saveProgress,
+  saveSettings,
+} from './storage';
 
 function memoryStore() {
   const m = new Map<string, string>();
@@ -45,5 +52,28 @@ describe('settings storage', () => {
     expect(loadSettings(store)).toEqual(DEFAULT_SETTINGS);
     store.setItem('mahjong-nyumon:settings:v1', JSON.stringify({ lang: 'fr', tileHints: 'yes' }));
     expect(loadSettings(store)).toEqual(DEFAULT_SETTINGS);
+  });
+});
+
+describe('progress storage', () => {
+  it('初期状態は何もクリアしていない', () => {
+    expect(loadProgress(memoryStore())).toEqual({ cleared: [] });
+    expect(loadProgress(throwingStore)).toEqual({ cleared: [] });
+  });
+
+  it('保存して読み戻せる・不正な値は捨てる', () => {
+    const store = memoryStore();
+    expect(saveProgress({ cleared: [2, 1] }, store)).toBe(true);
+    expect(loadProgress(store)).toEqual({ cleared: [1, 2] });
+    store.setItem('mahjong-nyumon:progress:v1', JSON.stringify({ cleared: [1, 1, 0, 11, 'x', 3] }));
+    expect(loadProgress(store)).toEqual({ cleared: [1, 3] });
+    expect(saveProgress({ cleared: [1] }, throwingStore)).toBe(false);
+  });
+
+  it('段階のロック', () => {
+    expect(isStageUnlocked({ cleared: [] }, 1)).toBe(true);
+    expect(isStageUnlocked({ cleared: [] }, 2)).toBe(false);
+    expect(isStageUnlocked({ cleared: [1] }, 2)).toBe(true);
+    expect(isStageUnlocked({ cleared: [1] }, 3)).toBe(false);
   });
 });
