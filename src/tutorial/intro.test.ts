@@ -5,7 +5,7 @@ import { simulateScript } from './script';
 
 describe('段階 1：まず 1 局やってみる', () => {
   it('台本どおりに進めると、指示の時点で必ずその操作ができ、最後に中・ドラ・赤ドラでロン和了する', () => {
-    const h = simulateScript(INTRO_SCRIPT);
+    const [h] = simulateScript(INTRO_SCRIPT);
     expect(h.result?.kind).toBe('win');
     if (h.result?.kind === 'win') {
       const r = h.result.wins[0].result;

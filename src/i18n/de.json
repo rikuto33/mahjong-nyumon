@@ -1138,10 +1138,11 @@
   },
   "scenario": {
     "good": "Richtig!",
-    "ok": "Auch nicht schlecht. Hier legen wir aber {tile} ab.",
-    "wrong": "Nicht ganz. Besser ist {tile}. Lege ihn ab.",
+    "ok": "Nicht schlecht. Noch etwas besser wäre hier: {tile}.",
+    "wrong": "Nicht ganz. Besser wäre hier: {tile}.",
     "legend": "Linien unter deiner Hand: grün = fertige Gruppe, gelb = fast fertig (Paar oder zwei passende Steine), grau = einzeln.",
-    "legendPairs": "Linien unter deiner Hand: gelb = Paar, grau = einzeln."
+    "legendPairs": "Linien unter deiner Hand: gelb = Paar, grau = einzeln.",
+    "or": " oder "
   },
   "strategy": {
     "explain": {
@@ -1162,7 +1163,7 @@
       },
       "s4": {
         "title": "Fünf oder mehr Paare: Chiitoitsu",
-        "body": "Hast du fünf oder sechs Paare, ziele auf sieben Paare. Sage dabei kein Pon: Chiitoitsu geht nur mit geschlossener Hand.",
+        "body": "Hast du fünf oder sechs Paare, ziele auf sieben Paare. Sage dabei kein Pon: Chiitoitsu geht nur mit geschlossener Hand. Am Ende wartest du auf einen einzelnen Stein. Gut sind Steine, die andere gern ablegen, zum Beispiel ein Wind, der für sie kein Yaku ist.",
         "summary": "Viele Paare und kein Pon: Chiitoitsu."
       },
       "s5": {
@@ -1184,82 +1185,91 @@
       "chiitoitsuDesc": "Sieben Paare sammeln, ohne Pon."
     },
     "tanyao": {
-      "start": "Ziel: Tanyao. Schau dir deine Hand an: Fast alles sind Steine von 2 bis 8. Nur die 9 Manzu, die 9 Souzu und der Osten passen nicht dazu.",
+      "start": "Ziel: Tanyao. Fast alles in deiner Hand sind Steine von 2 bis 8. Nur die 9 Manzu, die 9 Souzu und der Osten passen nicht dazu. Diese drei gibst du in den nächsten Zügen ab.",
       "h1": {
-        "prompt": "Du hast die 8 Pinzu gezogen. Welchen Stein legst du ab? Tipp: Was passt nicht zu Tanyao?",
-        "why": "Für Tanyao brauchst du nur Steine von 2 bis 8. Der Osten passt zu keinem Stein und kann nie Teil einer Folge werden. Darum zuerst der Osten."
+        "prompt": "Du hast die 8 Pinzu gezogen. Welchen Stein legst du ab?",
+        "why": "Die 9 Manzu, die 9 Souzu und der Osten passen nicht zu Tanyao und haben in deiner Hand keine Nachbarn. Alle drei sind gleich gut zum Ablegen. Die übrigen Steine hängen schon mit Nachbarn zusammen, zum Beispiel 3-4 und 6 Manzu. Die behältst du."
       },
       "wait": "Die anderen sind dran.",
       "h2": {
         "prompt": "Du hast die 5 Manzu gezogen: 3-4-5-6 Manzu hängen jetzt zusammen. Welchen Stein legst du ab?",
-        "why": "Die 9 Manzu passt weder zu Tanyao noch zu deinen anderen Manzu. Weg damit."
+        "why": "Wieder einer der Steine, die nicht zu Tanyao passen. Steine, die schon zusammenhängen, behältst du."
       },
       "h3": {
-        "prompt": "Die 4 Souzu verbindet deine Souzu zu 3-4-5-6. Was legst du ab?",
-        "why": "Die 9 Souzu ist der letzte Stein, der nicht zu Tanyao passt. Jetzt besteht deine Hand nur noch aus Steinen von 2 bis 8."
+        "prompt": "Die 4 Souzu verbindet deine Souzu zu 3-4-5-6. Welchen Stein legst du ab?",
+        "why": "Der letzte Stein, der nicht zu Tanyao passt. Jetzt besteht deine Hand nur noch aus Steinen von 2 bis 8, und dir fehlt nur noch ein Stein bis Tenpai."
       },
-      "chi": "Der Spieler links legt die 3 Pinzu ab. Mit deiner 2 und 4 Pinzu wird daraus 2-3-4. Bei Tanyao darfst du ansagen, das Yaku bleibt erhalten. Tippe auf „Chi“.",
+      "chi": "Der Spieler links legt die 3 Pinzu ab, genau die Lücke zwischen deiner 2 und 4 Pinzu. Du könntest auch geschlossen bleiben und später Riichi ansagen, dann wird die Hand teurer. Mit Chi bist du aber sofort Tenpai, und Tanyao bleibt erhalten. Für den Anfang ist schnelles Tenpai ein guter Weg. Tippe auf „Chi“.",
       "afterChi": {
-        "prompt": "Jetzt legst du einen Stein ab. Mit welchem wirst du Tenpai?",
-        "why": "Bei 3-4-5-6 Manzu ist ein Stein zu viel. Legst du die 3 Manzu ab, bleibt 4-5-6 Manzu, und mit 3-4-5-6 Souzu wartest du auf die 3 oder 6 Souzu."
+        "prompt": "Jetzt legst du einen Stein ab. Welcher macht dich Tenpai?",
+        "why": "Sowohl 3-4-5-6 Manzu als auch 3-4-5-6 Souzu haben einen Stein zu viel. Legst du in einer Farbe die 3 oder die 6 ab, bleibt dort eine fertige Folge, und mit der anderen Farbe wartest du auf die 3 oder die 6. Alle vier Möglichkeiten sind gleich gut."
       },
       "tenpai": "Du bist Tenpai und hast Tanyao. Jetzt wartest du.",
-      "ron": "Die 6 Souzu! Tippe auf „Ron“.",
-      "end": "Gewonnen mit Tanyao. Merke: Bei vielen Steinen von 2 bis 8 die Randsteine früh ablegen. Chi und Pon sind dabei erlaubt."
+      "ron": "Da ist dein Wartestein! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Tanyao. Merke: Bei vielen Steinen von 2 bis 8 legst du die Randsteine früh ab. Chi und Pon sind erlaubt und machen dich schneller Tenpai."
     },
     "riichi": {
-      "start": "Ziel: Riichi. Deine Hand hat Einsen, Neunen und Ehrensteine, also kein Tanyao, und kein Drachen-Paar. Darum bleibst du geschlossen und sagst Riichi an, sobald du Tenpai bist.",
+      "start": "Ziel: Riichi. In deiner Hand sind Einsen und Neunen, Tanyao klappt also kaum, und du hast kein Paar aus Drachen. Darum bleibst du geschlossen und sagst Riichi an, sobald du Tenpai bist.",
       "h1": {
         "prompt": "Du hast die 9 Pinzu gezogen: 7-8-9 Pinzu ist fertig. Welchen Stein legst du ab?",
-        "why": "Einzelne Ehrensteine sind am wenigsten nützlich, denn mit ihnen kann man keine Folge bauen. Zahlensteine wie die 1 Pinzu oder die 6 Manzu können noch Nachbarn bekommen."
+        "why": "Westen und Norden sind für dich (du sitzt auf Süden) keine Yaku-Steine und haben keine Nachbarn. Beide sind gleich gut zum Ablegen. Die einzelne 1 Pinzu kann noch mit 2 und 3 Pinzu eine Folge werden, die 6 Manzu sogar mit vielen Steinen. Die behältst du vorerst."
       },
       "wait": "Die anderen sind dran.",
       "h2": {
-        "prompt": "Die 3 Souzu macht 3-4-5 Souzu fertig. Was legst du ab?",
-        "why": "Wieder der einzelne Ehrenstein. Zahlensteine behältst du, solange sie noch helfen können."
+        "prompt": "Die 3 Souzu macht 3-4-5 Souzu fertig. Welchen Stein legst du ab?",
+        "why": "Der zweite Wind ist wieder der Stein, der am wenigsten nützt."
       },
       "passPon": "Der Spieler rechts legt die 9 Souzu ab. Du könntest Pon sagen. Aber dann wäre deine Hand offen: Riichi ginge nicht mehr, und Tanyao hast du auch nicht. Ohne Yaku könntest du nicht gewinnen. Tippe auf „Passen“.",
-      "riichi": "Du hast die 8 Manzu gezogen. Legst du die 1 Pinzu ab, wartest du mit 6 und 8 Manzu auf die 7 Manzu: Tenpai! Deine Hand ist geschlossen, also tippe auf „Riichi“ und lege die 1 Pinzu ab.",
+      "riichi": {
+        "prompt": "Du hast die 8 Manzu gezogen. Mit welchem Stein wirst du Tenpai? Tippe zuerst auf „Riichi“ und dann auf den Stein.",
+        "why": "Legst du die 1 Pinzu ab, wartest du mit 6 und 8 Manzu auf die 7 Manzu: Tenpai! Deine Hand ist geschlossen, also sagst du Riichi an. Das ist dein Yaku."
+      },
       "afterRiichi": "Riichi ist angesagt. Jetzt heißt es warten.",
-      "tsumogiri": "Die 1 Souzu ist es nicht. Nach Riichi legst du sie einfach wieder ab.",
-      "ron": "Die 7 Manzu! Tippe auf „Ron“.",
+      "tsumogiri": "Der gezogene Stein ist nicht dein Wartestein. Nach Riichi legst du ihn einfach wieder ab.",
+      "ron": "Da ist dein Wartestein! Tippe auf „Ron“.",
       "end": "Gewonnen mit Riichi. Merke: Ohne anderes Yaku bleibst du geschlossen, lässt Pon und Chi aus und sagst Riichi, sobald du Tenpai bist."
     },
     "toitoi": {
-      "start": "Ziel: Yakuhai und Toitoi. Du hast viele Paare: 2 Manzu, 7 Pinzu, 3 Souzu und Haku. Paare können zu Drillingen werden. Und Haku ist ein Drache: Ein Drilling daraus ist sicher ein Yaku.",
+      "start": "Ziel: Yakuhai und Toitoi. Du hast viele Paare: 2 Manzu, 7 Pinzu, 3 Souzu und Haku. Haku ist ein Drache: Wird daraus ein Drilling, hast du sicher ein Yaku.",
       "h1": {
         "prompt": "Du hast die 8 Souzu gezogen: noch ein Paar! Welchen Stein legst du ab?",
-        "why": "Bei so vielen Paaren sammelst du Drillinge. Einzelne Steine wie der Norden helfen dabei nicht."
+        "why": "Deine Einzelsteine (9 Manzu, 1 Pinzu, Westen, Norden) können nur noch zum Paar werden. Schau in die abgelegten Steine: Ein Westen liegt schon im Kawa des Gebers. Vom Westen gibt es also nur noch zwei, er wird am schwersten zum Paar. Darum zuerst der Westen."
       },
       "pon": "Der Spieler rechts legt Haku ab. Mit deinem Paar wird daraus ein Drilling, und dein Yaku (Yakuhai) ist sicher. Tippe auf „Pon“.",
       "afterPon": {
         "prompt": "Lege jetzt einen Stein ab. Welcher ist am wenigsten nützlich?",
-        "why": "Die einzelne 1 Manzu passt zu nichts mehr. Deine Paare behältst du, denn sie können noch Drillinge werden."
+        "why": "Mit Haku ist dein Yaku sicher. Die drei Einzelsteine (9 Manzu, 1 Pinzu, Norden) können nur noch zum Paar werden, und von jedem gibt es noch drei. Sie sind also gleich gut zum Ablegen. Deine Paare behältst du, denn sie können noch Drillinge werden."
       },
       "wait": "Die anderen sind dran.",
       "h2": {
-        "prompt": "Du hast die 2 Manzu gezogen: ein Drilling! Was legst du ab?",
-        "why": "Die 9 Pinzu ist ein einzelner Randstein. Alles andere sind jetzt Drillinge oder Paare: Toitoi rückt näher."
+        "prompt": "Du hast die 2 Manzu gezogen: ein Drilling! Welchen Stein legst du ab?",
+        "why": "Wieder einer der Einzelsteine. Alles andere sind jetzt Drillinge oder Paare: Toitoi rückt näher."
       },
       "pon2": "Der Spieler rechts legt die 7 Pinzu ab. Pon! Dann hast du schon drei Drillinge. Tippe auf „Pon“.",
-      "afterPon2": "Lege die 6 Pinzu ab. Jetzt wartest du darauf, dass eines deiner Paare (3 Souzu oder 8 Souzu) zum Drilling wird.",
+      "afterPon2": {
+        "prompt": "Lege einen Stein ab. Danach bist du Tenpai.",
+        "why": "Der letzte Einzelstein muss weg. Jetzt wartest du darauf, dass eines deiner Paare (3 Souzu oder 8 Souzu) zum Drilling wird."
+      },
       "tenpai": "Tenpai mit Yakuhai und Toitoi. Warte auf die 3 oder 8 Souzu.",
-      "ron": "Die 8 Souzu! Tippe auf „Ron“.",
-      "end": "Gewonnen mit Yakuhai (Haku) und Toitoi. Merke: Viele Paare bedeuten Drillinge sammeln. Ein Drachen-Paar machst du mit Pon zum Drilling."
+      "ron": "Da ist dein Wartestein! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Yakuhai (Haku) und Toitoi. Merke: Bei vielen Paaren sammelst du Drillinge. Ein Drachen-Paar machst du mit Pon zum Drilling. Und Steine, die schon abgelegt wurden, werden schwerer zum Paar."
     },
     "chiitoitsu": {
       "start": "Ziel: Chiitoitsu. Du hast schon vier Paare. Kommt noch eins dazu, sind sieben Paare (Chiitoitsu) ein gutes Ziel.",
       "h1": {
         "prompt": "Du hast die 7 Manzu gezogen: das fünfte Paar! Welchen Stein legst du ab?",
-        "why": "Für Chiitoitsu brauchst du Paare. Einzelne Steine kommen weg, und der Osten ist dafür ein guter Kandidat."
+        "why": "Bei Chiitoitsu wird jeder Einzelstein gleich leicht zum Paar. Wichtig ist das Ende: Dann wartest du auf einen einzigen Stein. Der Süden ist dafür gut: Für die anderen drei ist er kein Yaku-Stein, darum legen sie ihn gern ab. Behalte ihn und lege einen Zahlenstein ab."
       },
       "passPon": "Der Spieler rechts legt die 9 Souzu ab. Pon würde aus deinem Paar einen Drilling machen. Aber Chiitoitsu braucht Paare und geht nur geschlossen. Tippe auf „Passen“.",
       "wait": "Die anderen sind dran.",
-      "riichi": "Du hast die 3 Pinzu gezogen: sechs Paare! Legst du die 5 Souzu ab, wartest du auf die zweite 8 Pinzu. Tippe auf „Riichi“ und lege die 5 Souzu ab.",
+      "riichi": {
+        "prompt": "Du hast ein sechstes Paar! Welchen Stein legst du ab, um auf den letzten Stein zu warten? Tippe zuerst auf „Riichi“ und dann auf den Stein.",
+        "why": "Lege den Zahlenstein ab und warte auf den Süden. Ihn legen die anderen eher ab als einen Zahlenstein aus der Mitte."
+      },
       "afterRiichi": "Riichi ist angesagt. Jetzt heißt es warten.",
-      "tsumogiri": "Die 1 Souzu ist es nicht. Lege sie wieder ab.",
-      "ron": "Die 8 Pinzu! Tippe auf „Ron“.",
-      "end": "Gewonnen mit Chiitoitsu und Riichi. Merke: Ab fünf Paaren lohnt sich Chiitoitsu. Dabei sagst du kein Pon und kein Chi."
+      "tsumogiri": "Der gezogene Stein ist nicht dein Wartestein. Lege ihn wieder ab.",
+      "ron": "Da ist dein Wartestein! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Chiitoitsu und Riichi. Merke: Ab fünf Paaren lohnt sich Chiitoitsu. Sag kein Pon, und warte am Ende möglichst auf einen Stein, den andere gern ablegen."
     }
   }
 }

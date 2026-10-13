@@ -5,12 +5,12 @@ import { apply, handOf, responseOptions, type HandState } from '../../game/hand'
 import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
 import {
-  aiTsumogiri,
+  acceptedTiles,
   passAll,
   respondHuman,
+  runAiStep,
   scriptHand,
   tileOf,
-  waitsForHuman,
   type Script,
 } from '../../tutorial/script';
 import { GameTable, type HandTarget } from '../game/GameTable';
@@ -40,6 +40,8 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
   const [showResult, setShowResult] = useState(false);
   const [ackIndex, setAckIndex] = useState(-1);
   const [feedback, setFeedback] = useState<Feedback>(null);
+  // 「こちらが良い」と示した牌（打牌後も説明に残すため、答えた時点で覚えておく）
+  const [betterTiles, setBetterTiles] = useState<string[]>([]);
   const [chosenDone, setChosenDone] = useState(false);
   const [riichiArmed, setRiichiArmed] = useState(false);
   const step = steps[index];
@@ -61,9 +63,7 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
   useEffect(() => {
     if (!step || step.kind !== 'ai' || waitingForAck) return;
     const id = setTimeout(() => {
-      let h = aiTsumogiri(hand);
-      if (!waitsForHuman(next)) h = passAll(h);
-      setHand(h);
+      setHand(runAiStep(hand, step, next));
       advance();
     }, AI_DELAY_MS);
     return () => clearTimeout(id);
@@ -79,20 +79,32 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
     }
   }
 
-  const target =
-    step?.kind === 'discard' || step?.kind === 'riichi' || step?.kind === 'choose' ? tileOf(step.tile) : null;
-  const tileAt = (x: HandTarget) => (x === 'drawn' ? hand.players[0].drawn : hand.players[0].hand[x]);
   const myTurn = hand.phase === 'turn' && hand.turn === 0;
+  // 正解の牌（同じくらい良い牌はすべて正解）
+  const accepted = useMemo(
+    () =>
+      myTurn && (step?.kind === 'choose' || step?.kind === 'riichi')
+        ? acceptedTiles(hand, step.accept)
+        : step?.kind === 'discard'
+          ? [tileOf(step.tile)]
+          : step?.kind === 'tsumogiri' && hand.players[0].drawn
+            ? [hand.players[0].drawn]
+            : [],
+    [hand, step, myTurn],
+  );
+  const tileAt = (x: HandTarget) => (x === 'drawn' ? hand.players[0].drawn : hand.players[0].hand[x]);
 
   const canTap = (x: HandTarget) => {
     if (!myTurn || !step) return false;
-    const tile = tileAt(x);
-    if (step.kind === 'choose') return !chosenDone && (feedback === null || tile === target);
-    if (step.kind === 'riichi') return riichiArmed && tile === target;
-    return step.kind === 'discard' && tile === target;
+    const tile = tileAt(x)!;
+    if (step.kind === 'choose') return !chosenDone && (feedback === null || accepted.includes(tile));
+    if (step.kind === 'riichi') return riichiArmed && !chosenDone && (feedback === null || accepted.includes(tile));
+    if (step.kind === 'tsumogiri') return x === 'drawn';
+    return step.kind === 'discard' && accepted.includes(tile);
   };
 
-  const discard = (tile: NonNullable<typeof target>, riichi = false) => setHand(passAll(apply(hand, { type: 'discard', tile, riichi })));
+  const discard = (tile: NonNullable<ReturnType<typeof tileAt>>, riichi = false) =>
+    setHand(passAll(apply(hand, { type: 'discard', tile, riichi })));
 
   const onTap = (x: HandTarget) => {
     if (lifted !== x) {
@@ -101,17 +113,18 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
     }
     setLifted(null);
     const tile = tileAt(x)!;
-    if (step.kind === 'choose') {
-      if (feedback === null && tile !== target) {
-        setFeedback(step.alsoOk?.some((s) => tileOf(s) === tile) ? 'ok' : 'wrong');
+    if (step.kind === 'choose' || step.kind === 'riichi') {
+      if (feedback === null && !accepted.includes(tile)) {
+        setFeedback(step.ok?.some((s) => tileOf(s) === tile) ? 'ok' : 'wrong');
+        setBetterTiles([...new Set(accepted.map((x) => tileName(t, x)))]);
         return;
       }
       if (feedback === null) setFeedback('good');
-      discard(tile);
+      discard(tile, step.kind === 'riichi');
       setChosenDone(true);
       return;
     }
-    discard(tile, step.kind === 'riichi');
+    discard(tile);
     advance();
   };
 
@@ -163,7 +176,7 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
         {t('actions.tsumo')}
       </button>,
     );
-  if (step?.kind === 'riichi' && !riichiArmed)
+  if (step?.kind === 'riichi' && !riichiArmed && myTurn)
     buttons.push(
       <button key="riichi" className="btn action-btn action-riichi" onClick={() => setRiichiArmed(true)}>
         {t('actions.riichi')}
@@ -172,25 +185,25 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
 
   const isLast = index === steps.length - 1;
   let body: string;
-  if (step?.kind === 'choose') body = feedback ? t(k(`${step.id}.why`)) : t(k(`${step.id}.prompt`));
+  if (step?.kind === 'choose' || step?.kind === 'riichi') body = feedback ? t(k(`${step.id}.why`)) : t(k(`${step.id}.prompt`));
   else body = textStep && 'id' in textStep && textStep.id ? t(k(textStep.id)) : '';
 
   const overlay = (
     <div className="tour-box intro-box" aria-live="polite">
-      {step?.kind === 'choose' && feedback && (
+      {(step?.kind === 'choose' || step?.kind === 'riichi') && feedback && (
         <p className={feedback === 'wrong' ? 'ng strong' : 'ok strong'}>
           {feedback === 'good'
             ? t('scenario.good')
-            : feedback === 'ok'
-              ? t('scenario.ok', { tile: tileName(t, target!) })
-              : t('scenario.wrong', { tile: tileName(t, target!) })}
+            : t(feedback === 'ok' ? 'scenario.ok' : 'scenario.wrong', {
+                tile: betterTiles.join(t('scenario.or')),
+              })}
         </p>
       )}
       {body.split('\n').map((p, i) => (
         <p key={i}>{p}</p>
       ))}
       {analysis && <p className="legend">{t(analysis === 'pairs' ? 'scenario.legendPairs' : 'scenario.legend')}</p>}
-      {(waitingForAck || step?.kind === 'info' || (step?.kind === 'choose' && chosenDone)) && (
+      {(waitingForAck || step?.kind === 'info' || ((step?.kind === 'choose' || step?.kind === 'riichi') && chosenDone)) && (
         <div className="button-row">
           <button
             className="btn btn-primary"
