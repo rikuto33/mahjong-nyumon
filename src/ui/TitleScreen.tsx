@@ -10,8 +10,8 @@ export function TitleScreen({ navigate }: { navigate: Navigate }) {
 
       <section className="message-card" aria-label={t('title.messageHeading')}>
         <h2>{t('title.messageHeading')}</h2>
-        {/* Rikuto の一言。文面は未定（SPEC §10） */}
-        <p className="message-placeholder">{t('title.messagePlaceholder')}</p>
+        {/* Rikuto の一言（SPEC §2） */}
+        <p className="message-text">{t('title.message')}</p>
       </section>
 
       <nav className="menu">

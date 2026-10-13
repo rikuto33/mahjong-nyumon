@@ -133,9 +133,8 @@ button {
   margin: 0;
 }
 
-.message-placeholder {
-  color: var(--ink-muted);
-  font-style: italic;
+.message-text {
+  line-height: 1.6;
 }
 
 .menu {
