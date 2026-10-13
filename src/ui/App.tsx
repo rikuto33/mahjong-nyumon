@@ -19,7 +19,7 @@ import { StageSelectScreen } from './StageSelectScreen';
 import { StageMenuScreen } from './StageMenuScreen';
 import { ExplainScreen } from './ExplainScreen';
 import { ComingSoonScreen } from './ComingSoonScreen';
-import { CLEAR_ON_EXPLAIN, STAGE_ORDER } from '../tutorial/stages';
+import { CLEAR_ON_EXPLAIN, nextPart, STAGE_ORDER } from '../tutorial/stages';
 import { STAGE_SCREENS } from './stageScreens';
 import { YakuDexScreen } from './yaku/YakuDexScreen';
 import { TableScreen } from './table/TableScreen';
@@ -86,11 +86,25 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
       return <StageMenuScreen stage={route.stage} navigate={navigate} />;
     case 'part': {
       const back = () => navigate({ name: 'stage', stage: route.stage });
+      const forward = () => {
+        const n = nextPart(route.stage, route.part);
+        navigate(n ? { name: 'part', ...n } : { name: 'stages' });
+      };
+      // key を付けて、同じ種類の画面に続けて進んだときも状態を作り直す
+      const key = `${route.stage}-${route.part}`;
       if (route.part === 'explain') {
-        return <ExplainScreen stage={route.stage} onDone={back} clearOnFinish={CLEAR_ON_EXPLAIN.includes(route.stage)} />;
+        return (
+          <ExplainScreen
+            key={key}
+            stage={route.stage}
+            onDone={back}
+            onNext={forward}
+            clearOnFinish={CLEAR_ON_EXPLAIN.includes(route.stage)}
+          />
+        );
       }
       const Screen = STAGE_SCREENS[route.stage][route.part];
-      return Screen ? <Screen onDone={back} /> : <ComingSoonScreen onBack={back} />;
+      return Screen ? <Screen key={key} onDone={back} onNext={forward} /> : <ComingSoonScreen onBack={back} />;
     }
     case 'table':
       return <TableScreen onBack={() => navigate({ name: 'stages' })} />;

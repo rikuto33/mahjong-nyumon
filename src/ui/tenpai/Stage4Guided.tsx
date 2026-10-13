@@ -8,7 +8,7 @@ import { useAnswerSound } from '../useSounds';
 import { Tile } from '../tile/Tile';
 import { WaitPicker } from './WaitPicker';
 
-export function Stage4Guided({ onDone }: { onDone: () => void }) {
+export function Stage4Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [selected, setSelected] = useState<number[]>([]);
@@ -48,8 +48,8 @@ export function Stage4Guided({ onDone }: { onDone: () => void }) {
       )}
       <div className="bottom-actions">
         {finished ? (
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         ) : (
           done && (

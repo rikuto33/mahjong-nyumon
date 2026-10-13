@@ -5,7 +5,7 @@ import { STAGE10_TOUR } from '../../tutorial/finale';
 import { TableScreen } from '../table/TableScreen';
 
 /** 段階 10 の台本：卓の見方を順に案内する（静的な卓の上で該当箇所を強調） */
-export function Stage10Tour({ onDone }: { onDone: () => void }) {
+export function Stage10Tour({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const finished = step >= STAGE10_TOUR.length;
@@ -18,8 +18,8 @@ export function Stage10Tour({ onDone }: { onDone: () => void }) {
         <p>{finished ? t('finale.tour.finished') : t(`finale.tour.${cur.id}` as MessageKey)}</p>
         <div className="button-row">
           {finished ? (
-            <button className="btn btn-primary" onClick={onDone}>
-              {t('common.done')}
+            <button className="btn btn-primary" onClick={onNext}>
+              {t('common.next')}
             </button>
           ) : (
             <button className="btn btn-primary" onClick={() => setStep(step + 1)}>

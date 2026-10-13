@@ -11,7 +11,7 @@ import { HandResultView } from '../game/HandResultView';
 const AI_DELAY_MS = 1100;
 
 /** 段階 1：本物の卓で 1 局を台本どおりに体験する */
-export function IntroPlay({ onDone }: { onDone: () => void }) {
+export function IntroPlay({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const { markCleared } = useApp();
   const [hand, setHand] = useState<HandState>(() => introHand());
@@ -77,7 +77,7 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
 
   const finish = () => {
     markCleared('intro');
-    onDone();
+    onNext();
   };
 
   const buttons = [];
@@ -122,7 +122,7 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
       {step?.kind === 'info' && (
         <div className="button-row">
           <button className="btn btn-primary" onClick={isLast ? finish : () => setIndex(index + 1)}>
-            {isLast ? t('common.done') : t('intro.next')}
+            {t('intro.next')}
           </button>
         </div>
       )}

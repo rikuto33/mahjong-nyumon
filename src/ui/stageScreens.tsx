@@ -21,7 +21,8 @@ import { Stage9Guided } from './flow/Stage9Guided';
 import { Stage10Tour } from './finale/Stage10Tour';
 import { Stage10Game } from './finale/Stage10Game';
 
-type Screen = ComponentType<{ onDone: () => void }>;
+/** onDone：ステージ画面に戻る、onNext：次にやるべき画面へ進む */
+type Screen = ComponentType<{ onDone: () => void; onNext: () => void }>;
 
 /** 段階の各部分の画面（説明 explain は共通の ExplainScreen） */
 export const STAGE_SCREENS: Record<StageId, Partial<Record<StagePart, Screen>>> = {

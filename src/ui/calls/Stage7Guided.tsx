@@ -10,7 +10,7 @@ import { Tile } from '../tile/Tile';
 
 type Phase = 'prompt' | 'discard' | 'after';
 
-export function Stage7Guided({ onDone }: { onDone: () => void }) {
+export function Stage7Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [phase, setPhase] = useState<Phase>('prompt');
@@ -34,8 +34,8 @@ export function Stage7Guided({ onDone }: { onDone: () => void }) {
       <main className="screen">
         <ScreenHeader title={t('stageMenu.guided')} onBack={onDone} />
         <p className="prompt">{t('calls.guided.finished')}</p>
-        <button className="btn btn-primary" onClick={onDone}>
-          {t('common.done')}
+        <button className="btn btn-primary" onClick={onNext}>
+          {t('common.next')}
         </button>
       </main>
     );

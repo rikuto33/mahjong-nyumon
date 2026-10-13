@@ -6,7 +6,17 @@ import { useApp } from './AppContext';
 import { ScreenHeader } from './ScreenHeader';
 import { TileRows } from './tile/TileRows';
 
-export function ExplainScreen({ stage, onDone, clearOnFinish }: { stage: StageId; onDone: () => void; clearOnFinish?: boolean }) {
+export function ExplainScreen({
+  stage,
+  onDone,
+  onNext,
+  clearOnFinish,
+}: {
+  stage: StageId;
+  onDone: () => void;
+  onNext: () => void;
+  clearOnFinish?: boolean;
+}) {
   const { t, has } = useI18n();
   const { markCleared } = useApp();
   const slides = STAGE_SLIDES[stage];
@@ -18,7 +28,7 @@ export function ExplainScreen({ stage, onDone, clearOnFinish }: { stage: StageId
   const summary = has(key('summary')) ? t(key('summary')) : null;
   const finish = () => {
     if (clearOnFinish) markCleared(stage);
-    onDone();
+    onNext();
   };
 
   return (
@@ -44,7 +54,7 @@ export function ExplainScreen({ stage, onDone, clearOnFinish }: { stage: StageId
         </button>
         <span className="page-indicator">{t('common.page', { n: index + 1, total: slides.length })}</span>
         <button className="btn btn-primary" onClick={() => (isLast ? finish() : setIndex(index + 1))}>
-          {isLast ? t('common.done') : t('common.next')}
+          {t('common.next')}
         </button>
       </nav>
     </main>

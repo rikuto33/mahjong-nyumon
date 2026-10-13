@@ -6,7 +6,7 @@ import { GameScreen } from '../game/GameScreen';
 import { ScreenHeader } from '../ScreenHeader';
 
 /** 段階 10 の練習：AI との東風戦。終局まで打つとクリア */
-export function Stage10Game({ onDone }: { onDone: () => void }) {
+export function Stage10Game({ onDone }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const { settings, updateSettings, markCleared } = useApp();
   const [playing, setPlaying] = useState(false);

@@ -11,7 +11,7 @@ import { SoloBoard, type DiscardTarget } from '../solo/SoloBoard';
 
 const WALL = parseTiles(STAGE5_GUIDED_HAND + STAGE5_GUIDED.map((g) => g.draw).join(''));
 
-export function Stage5Guided({ onDone }: { onDone: () => void }) {
+export function Stage5Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [state, setState] = useState<SoloState>(() => startSolo(WALL));
   const [step, setStep] = useState(0);
@@ -43,8 +43,8 @@ export function Stage5Guided({ onDone }: { onDone: () => void }) {
         <p className="prompt">{t('yakuLesson.guided.finished')}</p>
         <WinResultView result={result} tsumo hand={state.hand} winTile={state.drawn!} />
         <div className="bottom-actions">
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         </div>
       </main>

@@ -21,7 +21,7 @@ function pickPuzzles(): string[] {
 
 const boardOf = (p: string) => newBoard(sortTiles(parseTiles(p)));
 
-export function Stage2Practice({ onDone }: { onDone: () => void }) {
+export function Stage2Practice({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const { markCleared } = useApp();
   const [started, setStarted] = useState(false);
@@ -123,8 +123,8 @@ export function Stage2Practice({ onDone }: { onDone: () => void }) {
       <div className="bottom-actions">
         {solved ? (
           allDone ? (
-            <button className="btn btn-primary" onClick={onDone}>
-              {t('common.done')}
+            <button className="btn btn-primary" onClick={onNext}>
+              {t('common.next')}
             </button>
           ) : (
             <button className="btn btn-primary" onClick={() => load(puzzles, index + 1)}>

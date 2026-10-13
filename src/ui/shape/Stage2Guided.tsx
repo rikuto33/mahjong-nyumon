@@ -7,7 +7,7 @@ import { STAGE2_GUIDED, STAGE2_GUIDED_HAND } from '../../tutorial/shape';
 import { ScreenHeader } from '../ScreenHeader';
 import { GroupBoardView } from './GroupBoardView';
 
-export function Stage2Guided({ onDone }: { onDone: () => void }) {
+export function Stage2Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [board, setBoard] = useState<Board>(() => newBoard(parseTiles(STAGE2_GUIDED_HAND)));
   const [selected, setSelected] = useState<number[]>([]);
@@ -57,8 +57,8 @@ export function Stage2Guided({ onDone }: { onDone: () => void }) {
       <GroupBoardView board={board} selected={selected} canTap={canTap} onTapTile={toggle} />
       <div className="bottom-actions">
         {finished ? (
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         ) : formed ? (
           <button

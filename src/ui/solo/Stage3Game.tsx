@@ -9,7 +9,7 @@ import { Tile } from '../tile/Tile';
 import { SoloBoard } from './SoloBoard';
 import { play } from '../sound';
 
-export function Stage3Game({ onDone }: { onDone: () => void }) {
+export function Stage3Game({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const { settings, markCleared } = useApp();
   const [state, setState] = useState<SoloState | null>(null);
@@ -58,8 +58,8 @@ export function Stage3Game({ onDone }: { onDone: () => void }) {
           <button className="btn" onClick={start}>
             {t('solo.game.newGame')}
           </button>
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         </div>
       </main>

@@ -9,7 +9,7 @@ import { useAnswerSound } from '../useSounds';
 import { WaitPicker } from '../tenpai/WaitPicker';
 import { Tile } from '../tile/Tile';
 
-export function Stage8Guided({ onDone }: { onDone: () => void }) {
+export function Stage8Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [done, setDone] = useState(false);
@@ -47,8 +47,8 @@ export function Stage8Guided({ onDone }: { onDone: () => void }) {
       )}
       <div className="bottom-actions">
         {finished ? (
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         ) : (
           done && (

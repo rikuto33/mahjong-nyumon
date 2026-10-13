@@ -77,3 +77,16 @@ export const STAGE_I18N: Record<StageId, string> = {
 
 export const stageNumber = (id: StageId) => STAGE_ORDER.indexOf(id) + 1;
 export const isStageId = (x: unknown): x is StageId => STAGE_ORDER.includes(x as StageId);
+
+/** 部分を終えたあとに進む先（同じ段階の次の部分、なければ次の段階の最初の部分、最後なら null） */
+export function nextPart(stage: StageId, part: StagePart): { stage: StageId; part: StagePart } | null {
+  const parts = STAGE_PARTS[stage];
+  const i = parts.indexOf(part);
+  if (i >= 0 && i + 1 < parts.length) return { stage, part: parts[i + 1] };
+  const s = STAGE_ORDER.indexOf(stage);
+  if (s + 1 < STAGE_ORDER.length) {
+    const next = STAGE_ORDER[s + 1];
+    return { stage: next, part: STAGE_PARTS[next][0] };
+  }
+  return null;
+}

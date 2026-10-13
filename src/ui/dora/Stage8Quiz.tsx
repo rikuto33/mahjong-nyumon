@@ -35,7 +35,7 @@ function countOf(item: DoraCountItem) {
   return { ...c, total: c.dora + c.aka + c.ura };
 }
 
-export function Stage8Quiz({ onDone }: { onDone: () => void }) {
+export function Stage8Quiz({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const { markCleared } = useApp();
   const [phase, setPhase] = useState<'intro' | 'question' | 'result'>('intro');
@@ -74,8 +74,8 @@ export function Stage8Quiz({ onDone }: { onDone: () => void }) {
               <button className={`btn ${passed ? '' : 'btn-primary'}`} onClick={start}>
                 {t('common.retry')}
               </button>
-              <button className={`btn ${passed ? 'btn-primary' : ''}`} onClick={onDone}>
-                {t('common.done')}
+              <button className={`btn ${passed ? 'btn-primary' : ''}`} onClick={passed ? onNext : onDone}>
+                {passed ? t('common.next') : t('common.done')}
               </button>
             </div>
           </>

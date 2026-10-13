@@ -6,7 +6,7 @@ import { eventResult, STAGE9_GUIDED } from '../../tutorial/flow';
 import { ScreenHeader } from '../ScreenHeader';
 import { MiniBoard } from './MiniBoard';
 
-export function Stage9Guided({ onDone }: { onDone: () => void }) {
+export function Stage9Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [match, setMatch] = useState<MatchState>(() => newMatch(0));
@@ -29,8 +29,8 @@ export function Stage9Guided({ onDone }: { onDone: () => void }) {
       <p className="prompt">{finished ? t('flow.guided.finished') : t(`flow.guided.${g.id}` as MessageKey)}</p>
       <MiniBoard match={match} scores={g.scores} youSeat={0} />
       <div className="bottom-actions">
-        <button className="btn btn-primary" onClick={finished ? onDone : next}>
-          {finished ? t('common.done') : t('common.next')}
+        <button className="btn btn-primary" onClick={finished ? onNext : next}>
+          {t('common.next')}
         </button>
       </div>
     </main>

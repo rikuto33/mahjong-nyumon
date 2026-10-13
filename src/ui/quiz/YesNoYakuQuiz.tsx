@@ -17,10 +17,11 @@ type Props = {
   length: number;
   pass: number;
   onDone: () => void;
+  onNext: () => void;
 };
 
 /** 「ロンしたら、この手に役はある？」をはい／いいえで答えるクイズ */
-export function YesNoYakuQuiz({ stage, prefix, pool, length, pass, onDone }: Props) {
+export function YesNoYakuQuiz({ stage, prefix, pool, length, pass, onDone, onNext }: Props) {
   const { t } = useI18n();
   const { markCleared } = useApp();
   const k = (s: string) => `${prefix}.${s}` as MessageKey;
@@ -59,8 +60,8 @@ export function YesNoYakuQuiz({ stage, prefix, pool, length, pass, onDone }: Pro
               <button className={`btn ${passed ? '' : 'btn-primary'}`} onClick={start}>
                 {t('common.retry')}
               </button>
-              <button className={`btn ${passed ? 'btn-primary' : ''}`} onClick={onDone}>
-                {t('common.done')}
+              <button className={`btn ${passed ? 'btn-primary' : ''}`} onClick={passed ? onNext : onDone}>
+                {passed ? t('common.next') : t('common.done')}
               </button>
             </div>
           </>

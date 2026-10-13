@@ -8,7 +8,7 @@ import { ScreenHeader } from '../ScreenHeader';
 import { RonSceneView } from './RonSceneView';
 import { ronOf } from './ronOf';
 
-export function Stage6Guided({ onDone }: { onDone: () => void }) {
+export function Stage6Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [answered, setAnswered] = useState(false);
@@ -42,8 +42,8 @@ export function Stage6Guided({ onDone }: { onDone: () => void }) {
         ))}
       <div className="bottom-actions">
         {finished ? (
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         ) : answered ? (
           <button

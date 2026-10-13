@@ -9,7 +9,7 @@ import { SoloBoard, type DiscardTarget } from './SoloBoard';
 
 const WALL = parseTiles(STAGE3_GUIDED_HAND + STAGE3_GUIDED.map((g) => g.draw).join(''));
 
-export function Stage3Guided({ onDone }: { onDone: () => void }) {
+export function Stage3Guided({ onDone, onNext }: { onDone: () => void; onNext: () => void }) {
   const { t } = useI18n();
   const [state, setState] = useState<SoloState>(() => startSolo(WALL));
   const [step, setStep] = useState(0);
@@ -60,8 +60,8 @@ export function Stage3Guided({ onDone }: { onDone: () => void }) {
           </button>
         )}
         {phase === 'won' && (
-          <button className="btn btn-primary" onClick={onDone}>
-            {t('common.done')}
+          <button className="btn btn-primary" onClick={onNext}>
+            {t('common.next')}
           </button>
         )}
       </div>
