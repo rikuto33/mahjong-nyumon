@@ -5,7 +5,7 @@ import { translate, type MessageKey } from '../i18n/translate';
 import { aiTsumogiri, INTRO_STEPS, introHand, passAll } from './intro';
 
 describe('段階 1：まず 1 局やってみる', () => {
-  it('台本どおりに進めると、指示の時点で必ずその操作ができ、最後に中・ドラでロン和了する', () => {
+  it('台本どおりに進めると、指示の時点で必ずその操作ができ、最後に中・ドラ・赤ドラでロン和了する', () => {
     let h: HandState = introHand();
     for (const [i, step] of INTRO_STEPS.entries()) {
       const next = INTRO_STEPS[i + 1];
@@ -20,8 +20,9 @@ describe('段階 1：まず 1 局やってみる', () => {
           h = passAll(h);
         }
       } else if (step.kind === 'discard') {
-        expect(h.turn).toBe(0);
+        expect(h.turn, step.id).toBe(0);
         h = apply(h, { type: 'discard', tile: parseTiles(step.tile)[0] as Tile });
+        // 自分の捨て牌で他家がロンできない
         expect(responseOptions(h, 1).ron ?? responseOptions(h, 2).ron ?? responseOptions(h, 3).ron).toBeNull();
         h = passAll(h);
       } else if (step.kind === 'call') {
@@ -40,6 +41,7 @@ describe('段階 1：まず 1 局やってみる', () => {
         expect(r).not.toBeNull();
         expect(r!.yaku.map((y) => y.id)).toEqual(['chun']);
         expect(r!.dora).toBe(1);
+        expect(r!.aka).toBe(1);
         h = apply(h, {
           type: 'respond',
           responses: [1, 3, 0].map((seat) => (seat === 0 ? { seat: 0 as const, action: 'ron' as const } : { seat: seat as 1 | 3, action: 'pass' as const })),

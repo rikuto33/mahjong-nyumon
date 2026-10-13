@@ -4,6 +4,7 @@ import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
 import { STAGE1_GUIDED } from '../../tutorial/tiles';
 import { ScreenHeader } from '../ScreenHeader';
+import { useAnswerSound } from '../useSounds';
 import { Tile } from '../tile/Tile';
 
 /** 萬子・筒子・索子（各行の最後に赤五）、字牌の 4 行 */
@@ -18,6 +19,7 @@ export function Stage1Guided({ onDone }: { onDone: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [answered, setAnswered] = useState(false);
+  useAnswerSound(answered ? true : null);
   const finished = step >= STAGE1_GUIDED.length;
   const current = STAGE1_GUIDED[step];
   const key = (part: 'prompt' | 'after') => `tiles.guided.${current.id}.${part}` as MessageKey;

@@ -5,6 +5,7 @@ import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
 import { STAGE8_GUIDED } from '../../tutorial/dora';
 import { ScreenHeader } from '../ScreenHeader';
+import { useAnswerSound } from '../useSounds';
 import { WaitPicker } from '../tenpai/WaitPicker';
 import { Tile } from '../tile/Tile';
 
@@ -12,6 +13,7 @@ export function Stage8Guided({ onDone }: { onDone: () => void }) {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
   const [done, setDone] = useState(false);
+  useAnswerSound(done ? true : null);
   const finished = step >= STAGE8_GUIDED.length;
   const g = STAGE8_GUIDED[step];
   const target = g ? doraFromIndicator(parseTiles(g.indicator)[0]) : -1;

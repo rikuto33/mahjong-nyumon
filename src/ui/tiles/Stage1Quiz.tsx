@@ -4,6 +4,7 @@ import { useI18n } from '../../i18n/I18nContext';
 import { makeQuiz, QUIZ_LENGTH, QUIZ_PASS, type QuizQuestion } from '../../tutorial/tiles';
 import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
+import { useAnswerSound } from '../useSounds';
 import { Tile } from '../tile/Tile';
 import { tileName } from '../tile/tileText';
 
@@ -17,6 +18,7 @@ export function Stage1Quiz({ onDone }: { onDone: () => void }) {
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<TileCode | null>(null);
   const [score, setScore] = useState(0);
+  useAnswerSound(phase === 'question' && picked ? picked === quiz[index]?.answer : null);
 
   const start = () => {
     setQuiz(makeQuiz());

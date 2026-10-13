@@ -7,6 +7,7 @@ import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
 import { Tile } from '../tile/Tile';
 import { SoloBoard } from './SoloBoard';
+import { play } from '../sound';
 
 export function Stage3Game({ onDone }: { onDone: () => void }) {
   const { t } = useI18n();
@@ -86,6 +87,7 @@ export function Stage3Game({ onDone }: { onDone: () => void }) {
           setShowTip(false);
         }}
         onTsumo={() => {
+          play('win');
           setWon(true);
           markCleared('solo');
         }}

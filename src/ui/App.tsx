@@ -11,6 +11,7 @@ import {
   type Settings,
 } from '../storage';
 import { AppContext, type AppState } from './AppContext';
+import { setSoundEnabled } from './sound';
 import type { Route } from './routes';
 import { TitleScreen } from './TitleScreen';
 import { SettingsScreen } from './SettingsScreen';
@@ -37,6 +38,8 @@ export function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [route]);
+
+  useEffect(() => setSoundEnabled(settings.sound), [settings.sound]);
 
   const app = useMemo<AppState>(
     () => ({

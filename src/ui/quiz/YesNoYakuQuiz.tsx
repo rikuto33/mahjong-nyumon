@@ -6,6 +6,7 @@ import type { StageId } from '../../tutorial/stages';
 import { scoreItem, type YakuItem } from '../../tutorial/yakuItems';
 import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
+import { useAnswerSound } from '../useSounds';
 import { YakuItemView } from './YakuItemView';
 
 type Props = {
@@ -28,6 +29,7 @@ export function YesNoYakuQuiz({ stage, prefix, pool, length, pass, onDone }: Pro
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<boolean | null>(null);
   const [score, setScore] = useState(0);
+  useAnswerSound(picked === null || !quiz[index] ? null : picked === (scoreItem(quiz[index]) !== null));
 
   const start = () => {
     setQuiz(shuffled(pool).slice(0, length));

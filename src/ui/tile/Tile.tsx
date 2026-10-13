@@ -3,6 +3,7 @@ import type { Tile as TileCode } from '../../engine/tile';
 import { useI18n } from '../../i18n/I18nContext';
 import { useApp } from '../AppContext';
 import { TileSvg } from './TileSvg';
+import { play } from '../sound';
 import { tileHint, tileName } from './tileText';
 
 type Props = {
@@ -39,7 +40,17 @@ export function Tile({ tile, width, sideways, selected, disabled, mark, onTap, n
   const svg = <TileSvg tile={tile} sideways={sideways} hint={hint} />;
   if (onTap) {
     return (
-      <button type="button" className={className} style={style} onClick={onTap} disabled={disabled} aria-label={label}>
+      <button
+        type="button"
+        className={className}
+        style={style}
+        onClick={() => {
+          play('select');
+          onTap();
+        }}
+        disabled={disabled}
+        aria-label={label}
+      >
         {svg}
       </button>
     );

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { play } from '../sound';
 import type { Tile as TileCode } from '../../engine/tile';
 import type { SoloState } from '../../game/solo';
 import { useI18n } from '../../i18n/I18nContext';
@@ -40,6 +41,11 @@ export function SoloBoard({
   const { t } = useI18n();
   const [lifted, setLifted] = useState<DiscardTarget | null>(null);
   useEffect(() => setLifted(null), [state]);
+  const riverLen = useRef(state.river.length);
+  useEffect(() => {
+    if (state.river.length > riverLen.current) play(state.river.length - 1 === riichiAt ? 'riichi' : 'discard');
+    riverLen.current = state.river.length;
+  }, [state, riichiAt]);
 
   // 雀魂と同じ：1 回目のタップで浮かせ、同じ牌をもう一度タップで打牌
   const tap = (target: DiscardTarget) => {

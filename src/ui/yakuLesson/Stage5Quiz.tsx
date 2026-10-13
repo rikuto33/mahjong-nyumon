@@ -7,6 +7,7 @@ import { BASIC_YAKU, basicYakuOf, YAKU_QUIZ, type BasicYaku, type YakuItem } fro
 import { useApp } from '../AppContext';
 import { YakuItemView } from '../quiz/YakuItemView';
 import { ScreenHeader } from '../ScreenHeader';
+import { play } from '../sound';
 
 type Choice = BasicYaku | 'none';
 
@@ -76,6 +77,7 @@ export function Stage5Quiz({ onDone }: { onDone: () => void }) {
   };
   const check = () => {
     setChecked(true);
+    play(isCorrect(selected) ? 'correct' : 'wrong');
     if (isCorrect(selected)) setScore(score + 1);
   };
   const next = () => {

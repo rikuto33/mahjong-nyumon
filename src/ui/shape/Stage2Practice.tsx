@@ -5,6 +5,7 @@ import { dissolveGroup, findTip, isSolved, makeGroup, newBoard, type Board } fro
 import { PUZZLES_TO_CLEAR, STAGE2_PUZZLES } from '../../tutorial/shape';
 import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
+import { play } from '../sound';
 import { GroupBoardView } from './GroupBoardView';
 
 type Message = { kind: 'error' | 'info' | 'success'; text: string } | null;
@@ -54,6 +55,7 @@ export function Stage2Practice({ onDone }: { onDone: () => void }) {
     setTipIds([]);
     setMessage(msg);
     if (isSolved(b)) {
+      play('correct');
       setMessage({ kind: 'success', text: t('shape.puzzle.solved') });
       if (index === puzzles.length - 1) markCleared('shape');
     }
@@ -67,8 +69,13 @@ export function Stage2Practice({ onDone }: { onDone: () => void }) {
 
   const form = () => {
     const r = makeGroup(board, selected);
-    if (r.ok) change(r.board, null);
-    else setMessage({ kind: 'error', text: t(`shape.puzzle.err.${r.reason}`) });
+    if (r.ok) {
+      play('tick');
+      change(r.board, null);
+    } else {
+      play('wrong');
+      setMessage({ kind: 'error', text: t(`shape.puzzle.err.${r.reason}`) });
+    }
   };
 
   const tip = () => {

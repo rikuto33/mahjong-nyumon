@@ -12,6 +12,7 @@ import {
 } from '../../tutorial/tenpai';
 import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
+import { play } from '../sound';
 import { Tile } from '../tile/Tile';
 import { tileName } from '../tile/tileText';
 import { WaitPicker } from './WaitPicker';
@@ -86,7 +87,9 @@ export function Stage4Quiz({ onDone }: { onDone: () => void }) {
 
   const check = () => {
     setChecked(true);
-    if (answer.length === selected.length && answer.every((k) => selected.includes(k))) setScore(score + 1);
+    const ok = answer.length === selected.length && answer.every((k) => selected.includes(k));
+    play(ok ? 'correct' : 'wrong');
+    if (ok) setScore(score + 1);
   };
 
   const next = () => {

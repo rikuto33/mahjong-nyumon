@@ -29,7 +29,8 @@
     "aiLevel": "Stärke der Gegner",
     "aiLevelDesc": "Gilt für die Partie in Stufe 11.",
     "easy": "Leicht",
-    "normal": "Normal"
+    "normal": "Normal",
+    "sound": "Töne"
   },
   "language": {
     "de": "Deutsch",
@@ -117,7 +118,7 @@
     "ron": "Ron",
     "tsumo": "Tsumo",
     "riichi": "Riichi",
-    "skip": "Weiter"
+    "skip": "Passen"
   },
   "table": {
     "preview": "Spieltisch (Vorschau)",
@@ -399,8 +400,8 @@
       "reason": {
         "tobi": "Ein Spieler ist unter 0 Punkte gefallen.",
         "target": "Jemand hat 30.000 Punkte erreicht.",
-        "agariYame": "Der Geber hat im letzten Spiel als Erster mit mindestens 30.000 Punkten gewonnen.",
-        "tenpaiYame": "Der Geber war im letzten Spiel Erster mit mindestens 30.000 Punkten und Tenpai.",
+        "agariYame": "Der Geber lag im letzten Spiel mit mindestens 30.000 Punkten auf Platz 1 und hat gewonnen.",
+        "tenpaiYame": "Der Geber lag im letzten Spiel mit mindestens 30.000 Punkten auf Platz 1 und war Tenpai.",
         "maxRound": "Süd 4 ist vorbei."
       }
     },
@@ -422,7 +423,7 @@
       },
       "s4": {
         "title": "Bedienung",
-        "body": "Tippe einen Stein an, um ihn anzuheben, und noch einmal, um ihn abzulegen. Knöpfe wie Pon, Chi, Kan, Ron, Tsumo oder Riichi erscheinen nur, wenn sie möglich sind. Mit „Weiter“ lässt du eine Möglichkeit aus."
+        "body": "Tippe einen Stein an, um ihn anzuheben, und noch einmal, um ihn abzulegen. Knöpfe wie Pon, Chi, Kan, Ron, Tsumo oder Riichi erscheinen nur, wenn sie möglich sind. Mit „Passen“ lässt du eine Möglichkeit aus."
       }
     },
     "tour": {
@@ -697,7 +698,7 @@
       "s6": {
         "title": "Mehrere Möglichkeiten",
         "body": "Manche Hände kann man auf verschiedene Arten aufteilen. 2-3-4-5 Manzu wartet zum Beispiel auf die 2 und die 5: 2-3-4 und eine einzelne 5, oder 3-4-5 und eine einzelne 2.\nPrüfe deshalb jede Möglichkeit.",
-        "summary": "Probiere jede Aufteilung aus. In Mahjong Soul siehst du deine Wartesteine auch angezeigt."
+        "summary": "Probiere jede Aufteilung aus."
       }
     },
     "guided": {
@@ -767,11 +768,11 @@
         "after": "Gewonnen mit Ron. Der Mitspieler, der die 7 Souzu abgelegt hat, zahlt alles."
       },
       "g2": {
-        "prompt": "Dieselbe Hand, aber in deinem Kawa liegt die 5 Pinzu, einer deiner Wartesteine. Ein Mitspieler legt die 7 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
+        "prompt": "Dieselbe Hand, aber in deinem Kawa liegt die 5 Pinzu, einer deiner Wartesteine. Ein Mitspieler legt die 7 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Passen“.",
         "after": "Du bist Furiten: Ein eigener Wartestein liegt in deinem Kawa. Darum gibt es keinen Ron-Knopf. Mit Tsumo ginge es noch."
       },
       "g3": {
-        "prompt": "Diese Hand ist geschlossen und Tenpai, hat aber kein Yaku. Ein Mitspieler legt die 9 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
+        "prompt": "Diese Hand ist geschlossen und Tenpai, hat aber kein Yaku. Ein Mitspieler legt die 9 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Passen“.",
         "after": "Ohne Yaku kein Ron. Mit Riichi hätte die Hand ein Yaku, mit Tsumo auch (Menzen Tsumo)."
       },
       "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
@@ -786,7 +787,7 @@
     "explain": {
       "s1": {
         "title": "Steine ansagen",
-        "body": "Du kannst einen Stein nehmen, den ein Mitspieler gerade abgelegt hat, um damit eine Gruppe fertig zu machen. Das heißt Ansagen (Naki).\nDie fertige Gruppe legst du offen rechts neben deine Hand. Danach legst du einen Stein ab, und der Spieler rechts von dir ist an der Reihe.",
+        "body": "Du kannst einen Stein nehmen, den ein Mitspieler gerade abgelegt hat, um damit eine Gruppe fertig zu machen. Das heißt Ansagen (Naki). Du hast es in Stufe 1 schon gemacht.\nDanach legst du einen Stein ab, und das Spiel geht beim Spieler rechts von dir weiter.",
         "summary": "Ansagen = einen abgelegten Stein nehmen, um eine Gruppe fertig zu machen."
       },
       "s2": {
@@ -806,7 +807,7 @@
       },
       "s6": {
         "title": "Offene Hand",
-        "body": "Nach Pon, Chi oder einem offenen Kan ist deine Hand offen. Dann gelten manche Yaku nicht mehr: Riichi, Menzen Tsumo, Pinfu, Iipeikou und Chiitoitsu.\nEin verdecktes Kan (Ankan) lässt die Hand geschlossen.",
+        "body": "Nach Pon oder Chi ist deine Hand offen. Dann gelten manche Yaku nicht mehr, zum Beispiel Riichi, Menzen Tsumo und Chiitoitsu.",
         "summary": "Nach Pon oder Chi gehen Riichi, Menzen Tsumo und Chiitoitsu nicht mehr."
       },
       "s7": {
@@ -836,11 +837,11 @@
         "after": "Die Hand besteht nur aus Steinen von 2 bis 8: Tanyao gilt auch offen. Sie wartet auf die 6 Souzu oder die 8 Pinzu."
       },
       "g3": {
-        "prompt": "Dieselbe Hand, aber diesmal legt der Spieler gegenüber die 5 Pinzu ab. Es gibt keinen Chi-Knopf. Tippe auf „Weiter“.",
+        "prompt": "Dieselbe Hand, aber diesmal legt der Spieler gegenüber die 5 Pinzu ab. Es gibt keinen Chi-Knopf. Tippe auf „Passen“.",
         "after": "Chi geht nur mit dem Stein des Spielers links von dir. Pon geht dagegen mit dem Stein jedes Mitspielers."
       },
       "g4": {
-        "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: kein Riichi, kein Pinfu und kein Tanyao (wegen der 1 Manzu und des Chun-Paars). Tippe auf „Weiter“.",
+        "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: Riichi ginge nicht mehr, und Tanyao auch nicht (wegen der 1 Manzu und der Chun). Tippe auf „Passen“.",
         "after": "Gut. Solange die Hand geschlossen bleibt, kannst du später noch Riichi ansagen."
       },
       "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
@@ -989,7 +990,7 @@
       "g3": "Der Spieler rechts gewinnt. Die Honba fallen weg, und er wird Geber: Ost 2.",
       "g4": "Ryuukyoku. Der Geber (rechts) ist Tenpai und bleibt Geber. Es gibt 1 Honba. Wer Noten war, hat gezahlt.",
       "g5": "Wieder Ryuukyoku, aber diesmal ist der Geber Noten. Der nächste Spieler wird Geber: Ost 3. Die Honba steigen trotzdem auf 2.",
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "finished": "Das Beispiel ist zu Ende.",
       "dealer": "Geber",
       "you": "Du"
     }
@@ -1088,17 +1089,23 @@
     "welcome": "Willkommen am Mahjong-Tisch! Vier Spieler sitzen um den Tisch, du sitzt unten.\nJeder Platz hat einen Wind: Osten, Süden, Westen oder Norden. Du siehst ihn in der Mitte neben den Punkten.\nWer auf Osten sitzt, ist der Geber. Hier ist das der Spieler links von dir. Du sitzt auf Süden.",
     "goal": "Jeder hat 13 Steine. Wer an der Reihe ist, zieht einen Stein und legt einen ab.\nZiel ist eine fertige Hand. Was das genau heißt, lernst du später. Jetzt geht es nur darum, den Ablauf einmal zu sehen.",
     "leftFirst": "Der Geber fängt an: Er zieht einen Stein und legt einen ab. Abgelegte Steine liegen offen vor jedem Spieler.",
-    "yourTurn": "Jetzt bist du dran. Du hast automatisch einen Stein gezogen (ganz rechts). Lege den Norden ab: Tippe ihn an und dann noch einmal.",
+    "yourTurn": "Jetzt bist du dran. Du hast automatisch einen Stein gezogen (ganz rechts). Lege den Osten ab, er passt zu keinem deiner Steine: Tippe ihn an und dann noch einmal.",
     "order": "Danach ist der Spieler rechts von dir dran, dann der gegenüber, dann der links. So geht es reihum.",
     "pon": "Der Spieler rechts hat Chun (den roten Drachen) abgelegt. Du hast zwei davon.\nMit zwei gleichen Steinen darfst du dir den dritten von jedem Spieler nehmen. Das heißt Pon. Tippe auf „Pon“.",
-    "afterPon": "Die drei Chun liegen jetzt offen rechts neben deiner Hand. Weil du einen Stein genommen hast, bist du sofort dran: Die Spieler dazwischen werden übersprungen. Lege den Osten ab.",
-    "chi": "Der Spieler links hat die 5 Pinzu abgelegt. Mit deiner 4 und 6 Pinzu wird daraus eine Folge 4-5-6.\nFür eine Folge darfst du nur den Stein des Spielers links von dir nehmen. Das heißt Chi. Tippe auf „Chi“.",
-    "afterChi": "Lege jetzt die 1 Manzu ab.",
-    "waiting": "Dir fehlt nur noch ein Stein: eine zweite 9 Manzu. Warte, bis jemand sie ablegt.",
-    "ron": "Der Spieler gegenüber hat die 9 Manzu abgelegt. Damit ist deine Hand fertig! Tippe auf „Ron“.",
-    "end": "Gewonnen! Mit dem abgelegten Stein eines anderen Spielers zu gewinnen heißt Ron. Dieser Spieler zahlt dir die Punkte.\nZiehst du den letzten Stein selbst, heißt das Tsumo. Das ist ein Glücksfall, dann zahlen alle anderen.\nZum Gewinnen braucht die Hand außerdem eine Bedingung, ein Yaku. Hier war es der Drilling aus Chun. Das alles lernst du Schritt für Schritt in den nächsten Stufen.",
+    "afterPon": "Die drei Chun liegen jetzt offen rechts neben deiner Hand. Weil du einen Stein genommen hast, bist du sofort dran: Die Spieler dazwischen werden übersprungen. Lege den Westen ab.",
+    "chi": "Der Spieler links hat eine rote 5 Pinzu abgelegt. Sie glitzert: Auch rote Fünfen sind Dora. Mit deiner 4 und 6 Pinzu wird daraus eine Folge 4-5-6.\nFür eine Folge darfst du nur den Stein des Spielers links von dir nehmen. Das heißt Chi. Tippe auf „Chi“.",
+    "afterChi": "Lege die 9 Pinzu ab. Jetzt fehlt dir nur noch ein Stein: die 5 oder die 8 Souzu.",
+    "waiting": "Warte, bis jemand die 5 oder 8 Souzu ablegt, oder bis du sie selbst ziehst.",
+    "ron": "Der Spieler gegenüber hat die 8 Souzu abgelegt. Damit ist deine Hand fertig! Tippe auf „Ron“.",
+    "end": "Gewonnen! Mit dem abgelegten Stein eines anderen Spielers zu gewinnen heißt Ron. Dieser Spieler zahlt dir die Punkte.\nZiehst du den letzten Stein selbst, heißt das Tsumo. Das ist ein Glücksfall, dann zahlen alle anderen.\nZum Gewinnen braucht die Hand außerdem eine Bedingung, ein Yaku. Hier war es der Drilling aus Chun. Die glitzernden Dora haben die Punkte erhöht. Das alles lernst du Schritt für Schritt in den nächsten Stufen.",
     "next": "Weiter",
-    "cleared": "Stufe 1 geschafft. Stufe 2 ist jetzt offen."
+    "cleared": "Stufe 1 geschafft. Stufe 2 ist jetzt offen.",
+    "turn2": "Du hast eine zweite 9 Manzu gezogen. Zwei gleiche Steine sind ein Paar, das kannst du brauchen. Lege dafür den Norden ab.",
+    "dora": "Siehst du die glitzernde 2 Manzu in deiner Hand? Glitzernde Steine sind Dora: Mit ihnen bekommst du mehr Punkte, wenn du gewinnst. Behalte sie also gern.",
+    "keepGoing": "So geht es Runde für Runde weiter: ziehen, ablegen. Mit der Zeit passen deine Steine immer besser zusammen.",
+    "turn3": "Mit der 7 Souzu hast du jetzt 6 und 7 Souzu nebeneinander. Die einzelne 1 Manzu brauchst du nicht mehr. Lege sie ab.",
+    "turn4": "Der Süden hilft dir nicht. Lege ihn gleich wieder ab. Das ist ganz normal.",
+    "turn5": "Die 1 Souzu ist es nicht. Lege sie wieder ab und warte weiter."
   },
   "quizHelp": {
     "closed": "Geschlossen: kein Pon, kein Chi",

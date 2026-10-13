@@ -14,6 +14,7 @@ import {
 } from '../../tutorial/dora';
 import { useApp } from '../AppContext';
 import { ScreenHeader } from '../ScreenHeader';
+import { play } from '../sound';
 import { WaitPicker } from '../tenpai/WaitPicker';
 import { MeldTiles } from '../tile/MeldTiles';
 import { Tile } from '../tile/Tile';
@@ -90,6 +91,7 @@ export function Stage8Quiz({ onDone }: { onDone: () => void }) {
   const choose = (n: number) => {
     if (answer !== null) return;
     setAnswer(n);
+    play(n === expected ? 'correct' : 'wrong');
     if (n === expected) setScore(score + 1);
   };
 

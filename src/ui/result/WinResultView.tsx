@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import type { WinResult } from '../../engine/score';
+import { play } from '../sound';
 import type { Tile as TileCode } from '../../engine/tile';
 import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
@@ -15,6 +17,13 @@ type Props = {
 /** 和了画面。役が 1 つずつ現れる（雀魂の演出を参考に、CSS のアニメーションで） */
 export function WinResultView({ result, tsumo, hand, winTile }: Props) {
   const { t } = useI18n();
+  // 和了の音と、役が 1 つずつ出るたびの音
+  useEffect(() => {
+    play('win');
+    const n = result.yaku.length + (result.dora ? 1 : 0) + (result.aka ? 1 : 0) + (result.ura ? 1 : 0);
+    const ids = Array.from({ length: n }, (_, i) => setTimeout(() => play('tick'), 900 + 350 * i));
+    return () => ids.forEach(clearTimeout);
+  }, [result]);
   const rows: { label: string; value: string }[] = result.yaku.map((y) => ({
     label: t(`yaku.${y.id}.name` as MessageKey),
     value: result.yakuman > 0 ? '' : t('result.han', { n: y.han }),

@@ -74,6 +74,19 @@ export function SettingsScreen({ onBack }: { onBack: () => void }) {
       </section>
 
       <section className="settings-group">
+        <h2>{t('settings.sound')}</h2>
+        <Segmented
+          label={t('settings.sound')}
+          value={settings.sound}
+          options={[
+            { value: true, label: t('settings.on') },
+            { value: false, label: t('settings.off') },
+          ]}
+          onChange={(sound) => updateSettings({ sound })}
+        />
+      </section>
+
+      <section className="settings-group">
         <h2>{t('settings.gameHints')}</h2>
         <p className="settings-desc">{t('settings.gameHintsDesc')}</p>
         <Segmented

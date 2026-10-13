@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
+import { play } from '../sound';
 import { isRed, kindOf, type Tile as TileCode } from '../../engine/tile';
 import { doraFromIndicator } from '../../engine/score';
 import { doraIndicators, seatWindOf, type HandState, type OpenMeld, type Seat } from '../../game/hand';
@@ -71,9 +72,27 @@ function River({ hand, seat, shine }: { hand: HandState; seat: Seat; shine: (t: 
   );
 }
 
+/** 打牌・鳴き・立直の音（AI の操作も含めて、状態の変化から鳴らす） */
+function useTableSounds(hand: HandState) {
+  const prev = useRef<{ river: number; melds: number } | null>(null);
+  useEffect(() => {
+    const river = hand.players.reduce((n, p) => n + p.river.length, 0);
+    const melds = hand.players.reduce((n, p) => n + p.melds.length, 0);
+    const before = prev.current;
+    prev.current = { river, melds };
+    if (!before) return;
+    if (melds > before.melds) play('call');
+    else if (river > before.river) {
+      const last = hand.lastDiscard ? hand.players[hand.lastDiscard.from].river.at(-1) : null;
+      play(last?.riichi ? 'riichi' : 'discard');
+    }
+  }, [hand]);
+}
+
 export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft, overlay }: Props) {
   const { t } = useI18n();
   const me = hand.players[0];
+  useTableSounds(hand);
   const dora = doraIndicators(hand);
   // 雀魂と同じく、ドラと赤ドラを光らせる
   const doraKinds = dora.map(doraFromIndicator);

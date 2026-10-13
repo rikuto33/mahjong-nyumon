@@ -4,6 +4,7 @@ import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
 import { STAGE4_GUIDED } from '../../tutorial/tenpai';
 import { ScreenHeader } from '../ScreenHeader';
+import { useAnswerSound } from '../useSounds';
 import { Tile } from '../tile/Tile';
 import { WaitPicker } from './WaitPicker';
 
@@ -15,6 +16,7 @@ export function Stage4Guided({ onDone }: { onDone: () => void }) {
   const current = STAGE4_GUIDED[step];
   const answer = current ? parseTiles(current.waits).map(kindOf) : [];
   const done = !finished && answer.every((k) => selected.includes(k));
+  useAnswerSound(done ? true : null);
 
   return (
     <main className="screen screen-wide">

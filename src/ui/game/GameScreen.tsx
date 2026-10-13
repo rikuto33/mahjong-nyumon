@@ -72,6 +72,14 @@ export function GameScreen({ level, onFinished, onExit }: { level: AiLevel; onFi
     }
   }, [hand, view, responding, humanMustRespond, level]);
 
+  // 立直後は、和了も暗槓もできなければ自動でツモ切りする（雀魂の自動ツモ切りと同じ）
+  useEffect(() => {
+    if (view !== 'play' || !myTurn || !turnOpts || !hand.players[0].riichi) return;
+    if (turnOpts.tsumo || turnOpts.ankan.length > 0) return;
+    const id = setTimeout(() => setHand(apply(hand, { type: 'discard', tile: hand.players[0].drawn! })), AI_TURN_MS);
+    return () => clearTimeout(id);
+  }, [view, myTurn, turnOpts, hand]);
+
   useEffect(() => {
     setLifted(null);
     setShowTip(false);

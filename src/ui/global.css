@@ -48,6 +48,9 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
+  /* ダブルタップでの拡大を防ぐ（iPad Safari） */
+  touch-action: manipulation;
 }
 
 button {
@@ -643,6 +646,7 @@ button {
 
 /* ---------- 卓 ---------- */
 .table-screen {
+  overscroll-behavior: none;
   position: relative;
   height: 100dvh;
   display: flex;

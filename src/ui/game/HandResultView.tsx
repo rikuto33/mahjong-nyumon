@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { sortTiles } from '../../engine/tile';
+import { play } from '../sound';
 import { seatWindOf, type HandState, type Seat } from '../../game/hand';
 import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
@@ -12,6 +14,9 @@ export function HandResultView({ hand, onNext }: { hand: HandState; onNext: () =
   const r = hand.result!;
   const name = (s: Seat) => t(`game.names.${s}` as MessageKey);
   const before = hand.scores.map((x, i) => x - r.deltas[i]);
+  useEffect(() => {
+    if (r.kind === 'draw') play('draw');
+  }, [r]);
 
   return (
     <div className="overlay" role="dialog" aria-modal="true">

@@ -8,6 +8,7 @@ export type Settings = {
   tileHints: boolean;
   aiLevel: AiLevel;
   gameHints: boolean;
+  sound: boolean;
 };
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -15,6 +16,7 @@ export const DEFAULT_SETTINGS: Settings = {
   tileHints: true,
   aiLevel: 'easy',
   gameHints: true,
+  sound: true,
 };
 
 const SETTINGS_KEY = 'mahjong-nyumon:settings:v1';
@@ -40,6 +42,7 @@ function sanitize(raw: unknown): Settings {
   if (typeof r.tileHints === 'boolean') s.tileHints = r.tileHints;
   if (r.aiLevel === 'easy' || r.aiLevel === 'normal') s.aiLevel = r.aiLevel;
   if (typeof r.gameHints === 'boolean') s.gameHints = r.gameHints;
+  if (typeof r.sound === 'boolean') s.sound = r.sound;
   return s;
 }
 
