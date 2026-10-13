@@ -4,3 +4,6 @@ export * from './decompose';
 export * from './shanten';
 export * from './agari';
 export * from './waits';
+export * from './yaku';
+export * from './score';
+export * from './furiten';
