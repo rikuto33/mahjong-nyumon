@@ -34,6 +34,10 @@ import { Stage7Guided } from './stage7/Stage7Guided';
 import { Stage7Quiz } from './stage7/Stage7Quiz';
 import { Stage8Guided } from './stage8/Stage8Guided';
 import { Stage8Quiz } from './stage8/Stage8Quiz';
+import { Stage9Guided } from './stage9/Stage9Guided';
+import { Stage9Quiz } from './stage9/Stage9Quiz';
+import { Stage10Tour } from './stage10/Stage10Tour';
+import { Stage10Game } from './stage10/Stage10Game';
 import { YakuDexScreen } from './yaku/YakuDexScreen';
 import { TableScreen } from './table/TableScreen';
 
@@ -107,6 +111,8 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
       if (route.stage === 6) return <Stage6Guided onDone={toStage(6)} />;
       if (route.stage === 7) return <Stage7Guided onDone={toStage(7)} />;
       if (route.stage === 8) return <Stage8Guided onDone={toStage(8)} />;
+      if (route.stage === 9) return <Stage9Guided onDone={toStage(9)} />;
+      if (route.stage === 10) return <Stage10Tour onDone={toStage(10)} />;
       return <ComingSoonScreen onBack={toStage(route.stage)} />;
     case 'practice':
       if (route.stage === 1) return <Stage1Quiz onDone={toStage(1)} />;
@@ -117,6 +123,8 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
       if (route.stage === 6) return <Stage6Quiz onDone={toStage(6)} />;
       if (route.stage === 7) return <Stage7Quiz onDone={toStage(7)} />;
       if (route.stage === 8) return <Stage8Quiz onDone={toStage(8)} />;
+      if (route.stage === 9) return <Stage9Quiz onDone={toStage(9)} />;
+      if (route.stage === 10) return <Stage10Game onDone={toStage(10)} />;
       return <ComingSoonScreen onBack={toStage(route.stage)} />;
     case 'table':
       return <TableScreen onBack={() => navigate({ name: 'stages' })} />;

@@ -12,4 +12,4 @@ export type Route =
 export type Navigate = (route: Route) => void;
 
 /** 実装済みの段階 */
-export const IMPLEMENTED_STAGES = [1, 2, 3, 4, 5, 6, 7, 8];
+export const IMPLEMENTED_STAGES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

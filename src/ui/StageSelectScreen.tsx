@@ -42,9 +42,6 @@ export function StageSelectScreen({ navigate }: { navigate: Navigate }) {
         <button className="btn" onClick={() => navigate({ name: 'yakuDex', back: { name: 'stages' } })}>
           {t('stages.yakuDex')}
         </button>
-        <button className="btn btn-small" onClick={() => navigate({ name: 'table' })}>
-          {t('stages.tablePreview')}
-        </button>
       </div>
     </main>
   );

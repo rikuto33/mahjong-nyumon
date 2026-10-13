@@ -25,7 +25,11 @@
     "resetDone": "Der Fortschritt wurde zurückgesetzt.",
     "storageUnavailable": "Einstellungen und Fortschritt können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird.",
     "gameHints": "Hinweise im Spiel",
-    "gameHintsDesc": "Zeigt in Übungen und Partien kurze Hinweise, zum Beispiel wie viele Steine dir noch fehlen."
+    "gameHintsDesc": "Zeigt in Übungen und Partien kurze Hinweise, zum Beispiel wie viele Steine dir noch fehlen.",
+    "aiLevel": "Stärke der Gegner",
+    "aiLevelDesc": "Gilt für die Partie in Stufe 10.",
+    "easy": "Leicht",
+    "normal": "Normal"
   },
   "language": {
     "de": "Deutsch",
@@ -75,7 +79,6 @@
     "cleared": "Geschafft",
     "open": "Offen",
     "inProgress": "In Arbeit",
-    "tablePreview": "Spieltisch ansehen (Vorschau)",
     "s1": "Die Steine kennenlernen",
     "s2": "Die fertige Hand",
     "s3": "Allein spielen",
@@ -913,5 +916,170 @@
       "passed": "Stufe 8 geschafft. Stufe 9 ist jetzt offen.",
       "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
     }
+  },
+  "stage9": {
+    "explain": {
+      "s1": {
+        "title": "Geber und Sitzwind",
+        "body": "In jedem Spiel ist ein Spieler der Geber (Oya), die anderen sind Nicht-Geber (Ko).\nDer Geber hat den Sitzwind Osten. Der Spieler rechts von ihm hat Süden, dann folgen Westen und Norden."
+      },
+      "s2": {
+        "title": "Mehr Punkte für den Geber",
+        "body": "Gewinnt der Geber, bekommt er 1,5-mal so viele Punkte wie ein Nicht-Geber.\nGewinnt ein Nicht-Geber mit Tsumo, zahlt der Geber doppelt so viel wie die beiden anderen."
+      },
+      "s3": {
+        "title": "Spiel und Runde",
+        "body": "Ein Spiel endet, wenn jemand gewinnt oder die Mauer leer ist. Danach wird meistens der nächste Spieler (rechts) Geber.\nVier Spiele bilden eine Runde: Ost 1 bis Ost 4."
+      },
+      "s4": {
+        "title": "Renchan und Honba",
+        "body": "Gewinnt der Geber, bleibt er Geber, und das Spiel wird wiederholt. Das heißt Renchan.\nDabei kommt ein Honba dazu. Jeder Honba bringt dem nächsten Gewinner 300 Punkte mehr. Gewinnt ein Nicht-Geber, fallen die Honba wieder weg."
+      },
+      "s5": {
+        "title": "Ryuukyoku",
+        "body": "Ist die Mauer leer und niemand hat gewonnen, endet das Spiel ohne Gewinner (Ryuukyoku).\nWer nicht Tenpai ist (Noten), zahlt an die Tenpai-Spieler zusammen 3.000 Punkte.\nIst der Geber Tenpai, bleibt er Geber. Nach einem Ryuukyoku kommt immer ein Honba dazu."
+      },
+      "s6": {
+        "title": "Riichi-Einsätze",
+        "body": "Die 1.000 Punkte für Riichi bleiben auf dem Tisch, auch nach einem Ryuukyoku. Wer als Nächstes gewinnt, bekommt sie alle."
+      },
+      "s7": {
+        "title": "Abbruch",
+        "body": "In seltenen Fällen wird ein Spiel abgebrochen und mit demselben Geber wiederholt.\nEinen Fall darfst du selbst ansagen: Hast du bei deinem ersten Zug neun verschiedene Einsen, Neunen und Ehrensteine, kannst du abbrechen (Kyuushu Kyuuhai). Andere Fälle passieren automatisch, zum Beispiel wenn alle vier Riichi ansagen."
+      },
+      "s8": {
+        "title": "Tonpuusen",
+        "body": "Hier spielst du Tonpuusen: eine kurze Partie mit der Ostrunde (Ost 1 bis Ost 4). Jeder beginnt mit 25.000 Punkten."
+      },
+      "s9": {
+        "title": "Wann endet die Partie?",
+        "body": "Nach Ost 4 endet die Partie, wenn jemand mindestens 30.000 Punkte hat. Sonst geht es in die Südrunde. Dort endet die Partie, sobald jemand 30.000 Punkte erreicht, spätestens nach Süd 4.\nIst der Geber in Ost 4 vorne und hat mindestens 30.000 Punkte, endet die Partie auch bei Renchan.\nRutscht jemand unter 0 Punkte, endet die Partie sofort."
+      },
+      "s10": {
+        "title": "Das Ergebnis",
+        "body": "Am Ende zählt die Platzierung nach Punkten. Bei Gleichstand liegt vorne, wer näher am ersten Geber sitzt.\nRiichi-Einsätze, die am Ende noch auf dem Tisch liegen, bekommt der Erste."
+      }
+    },
+    "guided": {
+      "intro": "Verfolge, wie eine Partie weitergeht. Du sitzt unten und bist im ersten Spiel der Geber.",
+      "g1": "Ost 1: Du bist Geber (Osten). Alle haben 25.000 Punkte.",
+      "g2": "Du gewinnst als Geber. Renchan: Du bleibst Geber, und es gibt 1 Honba. Das nächste Spiel heißt weiterhin Ost 1.",
+      "g3": "Der Spieler rechts gewinnt. Die Honba fallen weg, und er wird Geber: Ost 2.",
+      "g4": "Ryuukyoku. Der Geber (rechts) ist Tenpai und bleibt Geber. Es gibt 1 Honba. Wer Noten war, hat gezahlt.",
+      "g5": "Wieder Ryuukyoku, aber diesmal ist der Geber Noten. Der nächste Spieler wird Geber: Ost 3. Die Honba steigen trotzdem auf 2.",
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "dealer": "Geber",
+      "you": "Du"
+    },
+    "quiz": {
+      "intro": "{total} Fragen zum Ablauf einer Partie. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Frage {n} von {total}",
+      "flowPrompt": "Was passiert als Nächstes?",
+      "situation": "{round}, {honba} Honba.",
+      "event": {
+        "dealerWin": "Der Geber gewinnt.",
+        "childWin": "Ein Nicht-Geber gewinnt.",
+        "drawDealerTenpai": "Ryuukyoku. Der Geber ist Tenpai.",
+        "drawDealerNoten": "Ryuukyoku. Der Geber ist Noten."
+      },
+      "scoresAfter": "Punkte danach:",
+      "end": "Die Partie endet.",
+      "next": "Nächstes Spiel: {round}, {honba} Honba",
+      "notenPrompt": "Ryuukyoku. Anzahl der Spieler, die Tenpai sind: {n}. Die anderen sind Noten. Wie viel zahlt jeder Noten-Spieler?",
+      "points": "{n} Punkte",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch. Richtig ist: {answer}",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 9 geschafft. Stufe 10 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "stage10": {
+    "explain": {
+      "s1": {
+        "title": "Die echte Partie",
+        "body": "Jetzt spielst du eine ganze Partie Tonpuusen gegen drei Computer-Gegner. Es gelten alle Regeln, die du gelernt hast."
+      },
+      "s2": {
+        "title": "Die Gegner",
+        "body": "Du kannst leichte oder normale Gegner wählen. Leichte Gegner machen öfter Fehler, sagen fast nie an und achten nicht auf Gefahr. Normale Gegner spielen schneller auf Tenpai, sagen Riichi an und weichen bei Riichi aus."
+      },
+      "s3": {
+        "title": "Hinweise",
+        "body": "Wenn „Hinweise im Spiel“ in den Einstellungen eingeschaltet ist, siehst du, wie viele Steine dir fehlen, ob du Tenpai bist und auf welche Steine du wartest. Mit „Tipp“ werden gute Steine zum Ablegen markiert."
+      },
+      "s4": {
+        "title": "Bedienung",
+        "body": "Tippe einen Stein an, um ihn anzuheben, und noch einmal, um ihn abzulegen. Knöpfe wie Pon, Chi, Kan, Ron, Tsumo oder Riichi erscheinen nur, wenn sie möglich sind. Mit „Weiter“ lässt du eine Möglichkeit aus."
+      }
+    },
+    "tour": {
+      "intro": "Ein kurzer Rundgang über den Spieltisch.",
+      "t1": "In der Mitte siehst du das Spiel (zum Beispiel Ost 2), die Honba, die Riichi-Einsätze auf dem Tisch und wie viele Steine noch in der Mauer sind.",
+      "t2": "An jeder Seite der Mitte stehen Sitzwind und Punkte des Spielers. Der Geber ist golden markiert. Ein weißer Stab zeigt eine Riichi-Ansage.",
+      "t3": "Oben links liegen die Dora-Anzeiger. Nach einem Kan wird ein weiterer aufgedeckt.",
+      "t4": "Vor jedem Spieler liegen seine abgelegten Steine (Kawa), sechs pro Reihe. Ein quer liegender Stein ist eine Riichi-Ansage.",
+      "t5": "Die Hände der Gegner siehst du nur von hinten. Ihre angesagten Gruppen liegen offen daneben.",
+      "t6": "Unten ist deine Hand. Tippe einen Stein an und noch einmal, um ihn abzulegen.",
+      "t7": "Deine angesagten Gruppen liegen rechts neben deiner Hand.",
+      "t8": "Über deiner Hand erscheinen die Knöpfe für Pon, Chi, Kan, Ron, Tsumo und Riichi, wenn sie möglich sind.",
+      "finished": "Der Rundgang ist zu Ende. Jetzt kannst du die Partie spielen."
+    },
+    "start": "Partie starten",
+    "chooseLevel": "Wähle die Stärke der Gegner.",
+    "passed": "Stufe 10 geschafft. Du hast alle Stufen abgeschlossen."
+  },
+  "game": {
+    "names": {
+      "0": "Du",
+      "1": "Rechts",
+      "2": "Gegenüber",
+      "3": "Links"
+    },
+    "kyuushu": "Abbrechen (Kyuushu)",
+    "tip": "Tipp",
+    "riichiMode": "Wähle den Stein, den du nach der Riichi-Ansage ablegst.",
+    "cancel": "Abbrechen",
+    "chooseChi": "Welche Folge möchtest du bilden?",
+    "chooseKan": "Welches Kan?",
+    "hint": {
+      "shanten": "Dir fehlen noch mindestens {n} Steine bis Tenpai.",
+      "tenpai": "Tenpai. Wartesteine: {list}",
+      "furiten": "Furiten: Mit Ron kannst du gerade nicht gewinnen.",
+      "oneAway": "Dir fehlt noch 1 Stein bis Tenpai.",
+      "ron": "Mit diesem Stein kannst du Ron sagen.",
+      "tsumo": "Deine Hand ist fertig. Tippe auf „Tsumo“.",
+      "tipShown": "Markiert sind gute Steine zum Ablegen."
+    },
+    "result": {
+      "winTsumo": "Tsumo. Gewinner: {name}",
+      "winRon": "Ron. Gewinner: {name}. Eingeworfen von: {from}",
+      "pao": "Pao (Verantwortung für das Yakuman): {name}",
+      "exhaustive": "Ryuukyoku: Die Mauer ist leer.",
+      "kyuushu": "Abbruch: Kyuushu Kyuuhai.",
+      "suufon": "Abbruch: Alle legen zuerst denselben Wind ab.",
+      "suucha": "Abbruch: Alle vier haben Riichi angesagt.",
+      "suukaikan": "Abbruch: Vier Kan von verschiedenen Spielern.",
+      "nagashi": "Nagashi Mangan: {name}",
+      "tenpai": "Tenpai",
+      "noten": "Noten",
+      "scores": "Punkte",
+      "next": "Weiter",
+      "ura": "Ura-Dora-Anzeiger"
+    },
+    "final": {
+      "title": "Endergebnis",
+      "place": "{n}. Platz",
+      "newGame": "Neue Partie",
+      "reason": {
+        "tobi": "Ein Spieler ist unter 0 Punkte gefallen.",
+        "target": "Jemand hat 30.000 Punkte erreicht.",
+        "agariYame": "Der Geber hat im letzten Spiel als Erster mit mindestens 30.000 Punkten gewonnen.",
+        "tenpaiYame": "Der Geber war im letzten Spiel Erster mit mindestens 30.000 Punkten und Tenpai.",
+        "maxRound": "Süd 4 ist vorbei."
+      }
+    },
+    "south": "Niemand hat 30.000 Punkte: Es geht in die Südrunde."
   }
 }

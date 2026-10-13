@@ -88,6 +88,20 @@ export function SettingsScreen({ onBack }: { onBack: () => void }) {
       </section>
 
       <section className="settings-group">
+        <h2>{t('settings.aiLevel')}</h2>
+        <p className="settings-desc">{t('settings.aiLevelDesc')}</p>
+        <Segmented
+          label={t('settings.aiLevel')}
+          value={settings.aiLevel}
+          options={[
+            { value: 'easy', label: t('settings.easy') },
+            { value: 'normal', label: t('settings.normal') },
+          ]}
+          onChange={(aiLevel) => updateSettings({ aiLevel })}
+        />
+      </section>
+
+      <section className="settings-group">
         <h2>{t('settings.progress')}</h2>
         {resetState === 'idle' && (
           <button className="btn" onClick={() => setResetState('confirm')}>

@@ -635,6 +635,10 @@ button {
   margin: 0;
 }
 
+.table-top > .btn {
+  align-self: flex-start;
+}
+
 .dora-box {
   display: inline-flex;
   flex-direction: column;
@@ -1150,6 +1154,221 @@ button {
 .count-btn.mark-missed {
   border: 2px dashed var(--gold);
   opacity: 1;
+}
+
+/* ---------- 段階 9・10、対局画面 ---------- */
+.mini-board {
+  display: inline-block;
+  min-width: min(420px, 100%);
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(10, 30, 20, 0.75);
+  border: 1px solid rgba(201, 162, 74, 0.6);
+  margin: 8px 0 16px;
+}
+
+.mini-round {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mini-board ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mini-board li {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.mini-board li.dealer {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 520px;
+}
+
+.choice-list .choice:disabled {
+  opacity: 1;
+}
+
+.start-row {
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.game-screen .my-area {
+  position: relative;
+}
+
+.game-hint {
+  min-height: 1.6em;
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-align: center;
+  padding: 0 8px;
+}
+
+.drawn-gap {
+  margin-left: 12px;
+  display: inline-flex;
+}
+
+.seat.active .seat-score {
+  text-shadow: 0 0 6px rgba(201, 162, 74, 0.9);
+}
+
+.choice-label {
+  align-self: center;
+  color: var(--ink-muted);
+}
+
+.chi-choice {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+  padding: 6px 10px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.overlay-card {
+  width: min(820px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--felt-dark);
+  border: 1px solid rgba(201, 162, 74, 0.6);
+}
+
+.result-win + .result-win {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.result-melds {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.score-table {
+  width: 100%;
+  margin-top: 14px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(246, 241, 227, 0.12);
+}
+
+.score-table .num {
+  text-align: right;
+}
+
+.score-table .strong {
+  font-weight: 700;
+}
+
+.score-table .ok {
+  color: var(--ok);
+}
+
+.score-table .ng {
+  color: var(--ng);
+}
+
+.final-ranking {
+  list-style: none;
+  padding: 0;
+  max-width: 520px;
+}
+
+.final-ranking li {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: var(--card);
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.final-ranking li.me {
+  border: 1px solid var(--gold);
+}
+
+.final-ranking .place {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* 段階 10 の案内 */
+.tour-box {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  top: max(16px, env(safe-area-inset-top));
+  z-index: 5;
+  width: min(340px, calc(100vw - 32px));
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--felt-dark);
+  border: 1px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.tour-box p {
+  margin: 0 0 10px;
+}
+
+.tour .table-note {
+  display: none;
+}
+
+.tour-center-panel .center-panel,
+.tour-seat-score .seat-score,
+.tour-dora-box .dora-box,
+.tour-river .river,
+.tour-opponent-hand .opponent-hand,
+.tour-my-hand .my-hand,
+.tour-my-melds .my-melds,
+.tour-action-bar .action-bar {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+@media (orientation: portrait) {
+  .tour-box {
+    top: auto;
+    bottom: 200px;
+  }
 }
 
 @media (max-width: 760px) {
