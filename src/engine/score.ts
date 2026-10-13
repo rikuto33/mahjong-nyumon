@@ -107,6 +107,17 @@ export function doraFromIndicator(indicator: Tile): number {
   return 31 + ((k - 31 + 1) % 3);
 }
 
+/** ドラ・赤ドラ・裏ドラの枚数を数える（役の有無は見ない。段階 8 の練習用） */
+export function countDora(
+  tiles: readonly Tile[],
+  doraIndicators: readonly Tile[],
+  uraIndicators: readonly Tile[] = [],
+): { dora: number; aka: number; ura: number } {
+  const counts = toCounts(tiles);
+  const sum = (inds: readonly Tile[]) => inds.reduce((s, ind) => s + counts[doraFromIndicator(ind)], 0);
+  return { dora: sum(doraIndicators), aka: tiles.filter(isRed).length, ura: sum(uraIndicators) };
+}
+
 function calledToGroup(m: CalledMeld): Group {
   const kinds = m.tiles.map(kindOf).sort((a, b) => a - b);
   if (m.type === 'chi') return { type: 'shuntsu', kind: kinds[0], open: true, called: true };

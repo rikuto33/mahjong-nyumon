@@ -7,3 +7,4 @@ export * from './waits';
 export * from './yaku';
 export * from './score';
 export * from './furiten';
+export * from './calls';

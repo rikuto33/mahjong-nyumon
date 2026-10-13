@@ -758,5 +758,160 @@
       "passed": "Stufe 6 geschafft. Stufe 7 ist jetzt offen.",
       "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
     }
+  },
+  "stage7": {
+    "explain": {
+      "s1": {
+        "title": "Steine ansagen",
+        "body": "Du kannst einen Stein nehmen, den ein Mitspieler gerade abgelegt hat, um damit eine Gruppe fertig zu machen. Das heißt Ansagen (Naki).\nDie fertige Gruppe legst du offen rechts neben deine Hand. Danach legst du einen Stein ab, und der Spieler rechts von dir ist an der Reihe."
+      },
+      "s2": {
+        "title": "Pon",
+        "body": "Hast du zwei gleiche Steine, kannst du den dritten gleichen Stein von jedem Mitspieler nehmen. Das ergibt einen Drilling. Das heißt Pon."
+      },
+      "s3": {
+        "title": "Chi",
+        "body": "Eine Folge kannst du nur mit dem Stein des Spielers links von dir bilden, also des Spielers, der direkt vor dir an der Reihe ist. Das heißt Chi."
+      },
+      "s4": {
+        "title": "Kan",
+        "body": "Vier gleiche Steine bilden ein Kan. Es gibt drei Arten:\n1. Mit drei gleichen Steinen nimmst du den vierten von einem Mitspieler (offenes Kan).\n2. Du hast alle vier selbst gezogen (verdecktes Kan, Ankan).\n3. Du legst den vierten Stein zu einem Pon dazu.\nNach einem Kan ziehst du einen Ersatzstein, und ein weiterer Dora-Anzeiger wird aufgedeckt (Stufe 8)."
+      },
+      "s5": {
+        "title": "Von wem kam der Stein?",
+        "body": "In einer angesagten Gruppe liegt ein Stein quer. Er zeigt, von wem er kam: liegt er links, vom Spieler links; in der Mitte, vom Spieler gegenüber; rechts, vom Spieler rechts."
+      },
+      "s6": {
+        "title": "Offene Hand",
+        "body": "Nach Pon, Chi oder einem offenen Kan ist deine Hand offen. Dann gelten manche Yaku nicht mehr: Riichi, Menzen Tsumo, Pinfu, Iipeikou und Chiitoitsu.\nEin verdecktes Kan (Ankan) lässt die Hand geschlossen."
+      },
+      "s7": {
+        "title": "Weniger Han",
+        "body": "Manche Yaku zählen mit offener Hand 1 Han weniger, zum Beispiel Honitsu, Chinitsu, Ittsu und Sanshoku Doujun.\nTanyao und Yakuhai zählen auch mit offener Hand voll."
+      },
+      "s8": {
+        "title": "Achtung: das Yaku",
+        "body": "Wer ansagt, verliert oft sein einziges mögliches Yaku. Sage nur an, wenn die Hand danach noch ein Yaku hat, zum Beispiel einen Drilling aus Drachen (Yakuhai) oder Tanyao."
+      },
+      "s9": {
+        "title": "Kuikae",
+        "body": "Direkt nach Pon oder Chi darfst du nicht denselben Stein ablegen, den du gerade genommen hast. Nach Chi ist auch der Stein auf der anderen Seite der Folge verboten: Wer mit 4-5 die 3 nimmt, darf weder die 3 noch die 6 ablegen.\nDieses Tauschen heißt Kuikae und ist bei Mahjong Soul verboten."
+      }
+    },
+    "guided": {
+      "intro": "Ein Mitspieler legt einen Stein ab. Entscheide, ob du ihn nimmst.",
+      "g1": {
+        "prompt": "Der Spieler gegenüber legt den roten Drachen (Chun) ab. Du hast zwei davon. Tippe auf „Pon“ und lege danach die 1 Manzu ab.",
+        "after": "Du hast einen Drilling aus Chun: Yakuhai. Damit hat deine offene Hand ein Yaku. Sie wartet auf die 2 oder 5 Souzu."
+      },
+      "g2": {
+        "prompt": "Der Spieler links legt die 5 Pinzu ab. Mit 6-7 Pinzu kannst du eine Folge bilden. Tippe auf „Chi“ und lege danach die 1 Manzu ab. Die 5 und die 8 Pinzu darfst du jetzt nicht ablegen (Kuikae). Sie sind rot markiert.",
+        "after": "Die Hand besteht nur aus Steinen von 2 bis 8: Tanyao gilt auch offen. Sie wartet auf die 6 Souzu oder die 8 Pinzu."
+      },
+      "g3": {
+        "prompt": "Dieselbe Hand, aber diesmal legt der Spieler gegenüber die 5 Pinzu ab. Es gibt keinen Chi-Knopf. Tippe auf „Weiter“.",
+        "after": "Chi geht nur mit dem Stein des Spielers links von dir. Pon geht dagegen mit dem Stein jedes Mitspielers."
+      },
+      "g4": {
+        "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: kein Riichi, kein Pinfu und kein Tanyao (wegen der 1 Manzu und des Chun-Paars). Tippe auf „Weiter“.",
+        "after": "Gut. Solange die Hand geschlossen bleibt, kannst du später noch Riichi ansagen."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Aufgaben. Du entscheidest, welche Ansagen möglich sind und ob eine offene Hand gewinnen kann. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Aufgabe {n} von {total}",
+      "callPrompt": "Welche Ansagen sind möglich? Wähle alle aus.",
+      "none": "Keine",
+      "from": {
+        "left": "Der Spieler links legt diesen Stein ab.",
+        "opposite": "Der Spieler gegenüber legt diesen Stein ab.",
+        "right": "Der Spieler rechts legt diesen Stein ab."
+      },
+      "openPrompt": "Ein Mitspieler legt deinen Gewinnstein ab. Kann diese offene Hand mit Ron gewinnen?",
+      "winds": "Dein Wind: Süd. Rundenwind: Ost.",
+      "yes": "Ja",
+      "no": "Nein",
+      "check": "Prüfen",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch.",
+      "answerCalls": "Möglich: {list}.",
+      "answerYaku": "Yaku: {list}.",
+      "answerNoYaku": "Die Hand hat kein Yaku und kann nicht gewinnen.",
+      "melds": "Angesagt",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 7 geschafft. Stufe 8 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "stage8": {
+    "explain": {
+      "s1": {
+        "title": "Dora",
+        "body": "Zu Beginn jedes Spiels wird ein Stein der Mauer aufgedeckt: der Dora-Anzeiger. Der Stein, der in der Reihenfolge danach kommt, ist Dora.\nJede Dora in deiner Hand ist 1 Han wert. Hier zeigt die 3 Manzu an: Dora ist die 4 Manzu."
+      },
+      "s2": {
+        "title": "Die Reihenfolge",
+        "body": "Zahlensteine: der nächsthöhere Stein. Nach der 9 kommt wieder die 1.\nWinde: Osten, Süden, Westen, Norden, dann wieder Osten.\nDrachen: Haku, Hatsu, Chun, dann wieder Haku."
+      },
+      "s3": {
+        "title": "Dora sind kein Yaku",
+        "body": "Dora machen eine Hand nur wertvoller. Eine Hand ohne Yaku kann auch mit vielen Dora nicht gewinnen."
+      },
+      "s4": {
+        "title": "Aka-Dora",
+        "body": "Jede der drei roten Fünfen zählt 1 Han zusätzlich. Ist die Fünf gleichzeitig Dora, zählt sie für beides."
+      },
+      "s5": {
+        "title": "Ura-Dora",
+        "body": "Wer mit Riichi gewinnt, deckt zusätzlich den Stein unter dem Dora-Anzeiger auf. Er zeigt weitere Dora an: die Ura-Dora.\nOhne Riichi gibt es keine Ura-Dora."
+      },
+      "s6": {
+        "title": "Kan-Dora",
+        "body": "Nach jedem Kan wird ein weiterer Dora-Anzeiger aufgedeckt: die Kan-Dora. Bei einem verdeckten Kan sofort, bei einem offenen Kan erst nach dem nächsten Abwurf.\nWer mit Riichi gewinnt, bekommt auch für jede Kan-Dora eine Ura-Dora dazu."
+      }
+    },
+    "guided": {
+      "intro": "Oben siehst du einen Dora-Anzeiger. Tippe unten auf den Stein, der Dora ist.",
+      "g1": {
+        "prompt": "Der Dora-Anzeiger ist die 3 Manzu. Welcher Stein ist Dora?",
+        "after": "Richtig: die 4 Manzu, der nächsthöhere Stein."
+      },
+      "g2": {
+        "prompt": "Der Dora-Anzeiger ist die 9 Pinzu. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach der 9 kommt wieder die 1. Dora ist die 1 Pinzu."
+      },
+      "g3": {
+        "prompt": "Der Dora-Anzeiger ist Norden. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Norden kommt wieder Osten."
+      },
+      "g4": {
+        "prompt": "Der Dora-Anzeiger ist Chun. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Chun kommt wieder Haku."
+      },
+      "g5": {
+        "prompt": "Der Dora-Anzeiger ist Haku. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Haku kommt Hatsu."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "indicator": "Dora-Anzeiger",
+      "ura": "Ura-Dora-Anzeiger"
+    },
+    "quiz": {
+      "intro": "{total} Aufgaben. Finde die Dora und zähle die Dora einer Hand. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Aufgabe {n} von {total}",
+      "pickPrompt": "Welcher Stein ist Dora?",
+      "countPrompt": "Wie viele Dora hat diese Hand insgesamt? Zähle Dora, rote Fünfen und Ura-Dora zusammen.",
+      "riichi": "Mit Riichi gewonnen: Die Ura-Dora zählen mit.",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch.",
+      "answerPick": "Dora ist: {name}.",
+      "answerCount": "Dora: {dora}, rote Fünfen: {aka}, Ura-Dora: {ura}. Zusammen {total}.",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 8 geschafft. Stufe 9 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
   }
 }

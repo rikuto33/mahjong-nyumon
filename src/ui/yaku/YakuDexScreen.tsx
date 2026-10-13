@@ -5,6 +5,7 @@ import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
 import { DEX_EXAMPLES, LESSON_YAKU } from '../../tutorial/yakuDex';
 import { ScreenHeader } from '../ScreenHeader';
+import { MeldTiles } from '../tile/MeldTiles';
 import { Tile } from '../tile/Tile';
 
 type Group = 'g1' | 'g2' | 'g3' | 'gY';
@@ -43,16 +44,7 @@ function YakuCard({ info }: { info: YakuInfo }) {
             <Tile tile={parseTiles(ex.win)[0]} width="var(--dex-tile)" mark="correct" />
           </span>
           {(ex.melds ?? []).map((m, i) => (
-            <span key={i} className="meld">
-              {parseTiles(m.tiles).map((tile, j) => (
-                <Tile
-                  key={j}
-                  tile={m.type === 'ankan' && (j === 0 || j === 3) ? null : tile}
-                  sideways={m.type !== 'ankan' && j === 0}
-                  width="var(--dex-tile)"
-                />
-              ))}
-            </span>
+            <MeldTiles key={i} meld={{ type: m.type, tiles: parseTiles(m.tiles) }} width="var(--dex-tile)" />
           ))}
         </span>
         <span className="muted yaku-ctx">{ctx.join(' · ')}</span>

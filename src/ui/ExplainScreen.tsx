@@ -7,6 +7,8 @@ import { STAGE3_SLIDES } from '../tutorial/stage3';
 import { STAGE4_SLIDES } from '../tutorial/stage4';
 import { STAGE5_SLIDES } from '../tutorial/stage5';
 import { STAGE6_SLIDES } from '../tutorial/stage6';
+import { STAGE7_SLIDES } from '../tutorial/stage7';
+import { STAGE8_SLIDES } from '../tutorial/stage8';
 import type { ExplainSlide } from '../tutorial/types';
 import { ScreenHeader } from './ScreenHeader';
 import { TileRows } from './tile/TileRows';
@@ -18,6 +20,8 @@ const SLIDES: Record<number, ExplainSlide[]> = {
   4: STAGE4_SLIDES,
   5: STAGE5_SLIDES,
   6: STAGE6_SLIDES,
+  7: STAGE7_SLIDES,
+  8: STAGE8_SLIDES,
 };
 
 export function ExplainScreen({ stage, onDone }: { stage: number; onDone: () => void }) {

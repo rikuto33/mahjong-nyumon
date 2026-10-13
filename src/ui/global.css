@@ -1106,6 +1106,52 @@ button {
   font-size: 0.85rem;
 }
 
+/* ---------- 段階 7・8 ---------- */
+.call-scene {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.call-scene .solo-hand {
+  justify-content: flex-start;
+}
+
+.call-scene .tile:disabled {
+  opacity: 0.55;
+}
+
+.dora-inline {
+  margin-bottom: 12px;
+}
+
+.dora-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.count-btn {
+  min-width: 64px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.count-btn.mark-correct {
+  border: 2px solid var(--ok);
+  opacity: 1;
+}
+
+.count-btn.mark-wrong {
+  border: 2px solid var(--ng);
+  opacity: 1;
+}
+
+.count-btn.mark-missed {
+  border: 2px dashed var(--gold);
+  opacity: 1;
+}
+
 @media (max-width: 760px) {
   .stage-grid {
     grid-template-columns: repeat(2, 1fr);
