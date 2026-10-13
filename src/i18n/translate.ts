@@ -38,6 +38,11 @@ export function translate(
   );
 }
 
+/** その言語（またはドイツ語）にキーがあるか */
+export function hasMessage(lang: Lang, key: string): boolean {
+  return lookup(dicts[lang], key) !== undefined || lookup(dicts[DEFAULT_LANG], key) !== undefined;
+}
+
 /** テスト用：辞書の全キーを列挙する */
 export function allKeys(lang: Lang): string[] {
   const out: string[] = [];

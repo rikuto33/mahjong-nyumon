@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
-import type { Tile as TileCode } from '../../engine/tile';
+import { isRed, kindOf, type Tile as TileCode } from '../../engine/tile';
+import { doraFromIndicator } from '../../engine/score';
 import { doraIndicators, seatWindOf, type HandState, type OpenMeld, type Seat } from '../../game/hand';
 import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
-import type { From } from '../../tutorial/stage7';
+import type { From } from '../../tutorial/calls';
 import { MeldTiles } from '../tile/MeldTiles';
 import { Tile } from '../tile/Tile';
 
@@ -11,6 +12,8 @@ export type HandTarget = number | 'drawn';
 
 type Props = {
   hand: HandState;
+  /** 台本などで右上に出す説明 */
+  overlay?: ReactNode;
   lifted: HandTarget | null;
   canTap: (target: HandTarget) => boolean;
   onTap: (target: HandTarget) => void;
@@ -29,17 +32,17 @@ function relative(owner: Seat, from: Seat | null): From {
   return d === 3 ? 'left' : d === 2 ? 'opposite' : 'right';
 }
 
-function Melds({ owner, melds, width }: { owner: Seat; melds: OpenMeld[]; width: string }) {
+function Melds({ owner, melds, width, shine }: { owner: Seat; melds: OpenMeld[]; width: string; shine: (t: TileCode) => boolean }) {
   return (
     <>
       {melds.map((m, i) => (
-        <MeldTiles key={i} meld={m.meld} from={relative(owner, m.from)} called={m.called ?? undefined} width={width} />
+        <MeldTiles key={i} meld={m.meld} from={relative(owner, m.from)} called={m.called ?? undefined} width={width} shine={shine} />
       ))}
     </>
   );
 }
 
-function River({ hand, seat }: { hand: HandState; seat: Seat }) {
+function River({ hand, seat, shine }: { hand: HandState; seat: Seat; shine: (t: TileCode) => boolean }) {
   const p = hand.players[seat];
   // 鳴かれた牌は河から消す。立直宣言牌が鳴かれたら、次の牌を横向きにする
   const shown: { tile: TileCode; sideways: boolean; last: boolean }[] = [];
@@ -60,7 +63,7 @@ function River({ hand, seat }: { hand: HandState; seat: Seat }) {
       {rows.map((row, i) => (
         <div key={i} className="river-row">
           {row.map((d, j) => (
-            <Tile key={j} tile={d.tile} sideways={d.sideways} width="var(--river-tile)" mark={isLast && d.last ? 'tip' : undefined} />
+            <Tile key={j} tile={d.tile} sideways={d.sideways} width="var(--river-tile)" mark={isLast && d.last ? 'tip' : undefined} shine={shine(d.tile)} />
           ))}
         </div>
       ))}
@@ -68,10 +71,13 @@ function River({ hand, seat }: { hand: HandState; seat: Seat }) {
   );
 }
 
-export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft }: Props) {
+export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft, overlay }: Props) {
   const { t } = useI18n();
   const me = hand.players[0];
   const dora = doraIndicators(hand);
+  // 雀魂と同じく、ドラと赤ドラを光らせる
+  const doraKinds = dora.map(doraFromIndicator);
+  const shine = (tile: TileCode) => isRed(tile) || doraKinds.includes(kindOf(tile));
   const doraSlots = [...dora, ...new Array(Math.max(0, 5 - dora.length)).fill(null)];
 
   const handTile = (tile: TileCode, target: HandTarget) => (
@@ -82,6 +88,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
       selected={lifted === target}
       disabled={!canTap(target)}
       mark={marks.includes(tile) ? 'tip' : undefined}
+      shine={shine(tile)}
       onTap={() => onTap(target)}
     />
   );
@@ -121,13 +128,13 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
                   <span>{hand.scores[seat].toLocaleString('de-DE')}</span>
                   {p.riichi && <span className="riichi-stick" aria-label={t('actions.riichi')} />}
                 </div>
-                <River hand={hand} seat={seat} />
+                <River hand={hand} seat={seat} shine={shine} />
                 {seat !== 0 && (
                   <div className="opponent-hand">
                     {Array.from({ length: p.hand.length + (p.drawn ? 1 : 0) }, (_, i) => (
                       <Tile key={i} tile={null} width="var(--opp-tile)" />
                     ))}
-                    <Melds owner={seat} melds={p.melds} width="var(--opp-tile)" />
+                    <Melds owner={seat} melds={p.melds} width="var(--opp-tile)" shine={shine} />
                   </div>
                 )}
               </div>
@@ -136,6 +143,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
         </div>
       </div>
 
+      {overlay}
       <div className="my-area">
         <div className="game-hint" aria-live="polite">
           {hint}
@@ -147,7 +155,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
             {me.drawn && <span className="drawn-gap">{handTile(me.drawn, 'drawn')}</span>}
           </div>
           <div className="my-melds">
-            <Melds owner={0} melds={me.melds} width="var(--my-meld-tile)" />
+            <Melds owner={0} melds={me.melds} width="var(--my-meld-tile)" shine={shine} />
           </div>
         </div>
       </div>

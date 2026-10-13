@@ -16,9 +16,11 @@ type Props = {
   onTap?: () => void;
   /** 補助表示を強制的に消す（設定より優先） */
   noHint?: boolean;
+  /** ドラ・赤ドラをきらきら光らせる */
+  shine?: boolean;
 };
 
-export function Tile({ tile, width, sideways, selected, disabled, mark, onTap, noHint }: Props) {
+export function Tile({ tile, width, sideways, selected, disabled, mark, onTap, noHint, shine }: Props) {
   const { t } = useI18n();
   const { settings } = useApp();
   const hint = tile && settings.tileHints && !noHint ? tileHint(t, tile) : undefined;
@@ -30,6 +32,7 @@ export function Tile({ tile, width, sideways, selected, disabled, mark, onTap, n
     selected ? 'selected' : '',
     mark ? `mark-${mark}` : '',
     onTap ? 'tappable' : '',
+    shine && tile ? 'shine' : '',
   ]
     .filter(Boolean)
     .join(' ');

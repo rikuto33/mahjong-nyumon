@@ -18,26 +18,8 @@ import { StageSelectScreen } from './StageSelectScreen';
 import { StageMenuScreen } from './StageMenuScreen';
 import { ExplainScreen } from './ExplainScreen';
 import { ComingSoonScreen } from './ComingSoonScreen';
-import { Stage1Guided } from './stage1/Stage1Guided';
-import { Stage1Quiz } from './stage1/Stage1Quiz';
-import { Stage2Guided } from './stage2/Stage2Guided';
-import { Stage2Practice } from './stage2/Stage2Practice';
-import { Stage3Guided } from './stage3/Stage3Guided';
-import { Stage3Game } from './stage3/Stage3Game';
-import { Stage4Guided } from './stage4/Stage4Guided';
-import { Stage4Quiz } from './stage4/Stage4Quiz';
-import { Stage5Guided } from './stage5/Stage5Guided';
-import { Stage5Quiz } from './stage5/Stage5Quiz';
-import { Stage6Guided } from './stage6/Stage6Guided';
-import { Stage6Quiz } from './stage6/Stage6Quiz';
-import { Stage7Guided } from './stage7/Stage7Guided';
-import { Stage7Quiz } from './stage7/Stage7Quiz';
-import { Stage8Guided } from './stage8/Stage8Guided';
-import { Stage8Quiz } from './stage8/Stage8Quiz';
-import { Stage9Guided } from './stage9/Stage9Guided';
-import { Stage9Quiz } from './stage9/Stage9Quiz';
-import { Stage10Tour } from './stage10/Stage10Tour';
-import { Stage10Game } from './stage10/Stage10Game';
+import { CLEAR_ON_EXPLAIN, STAGE_ORDER } from '../tutorial/stages';
+import { STAGE_SCREENS } from './stageScreens';
 import { YakuDexScreen } from './yaku/YakuDexScreen';
 import { TableScreen } from './table/TableScreen';
 
@@ -68,7 +50,7 @@ export function App() {
       },
       markCleared: (stage) => {
         if (progress.cleared.includes(stage)) return;
-        const next = { cleared: [...progress.cleared, stage].sort((a, b) => a - b) };
+        const next = { cleared: STAGE_ORDER.filter((id) => id === stage || progress.cleared.includes(id)) };
         setProgress(next);
         setStorageOk(saveProgress(next));
       },
@@ -90,7 +72,6 @@ export function App() {
 }
 
 function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => void }) {
-  const toStage = (stage: number) => () => navigate({ name: 'stage', stage });
   switch (route.name) {
     case 'title':
       return <TitleScreen navigate={navigate} />;
@@ -100,32 +81,14 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
       return <StageSelectScreen navigate={navigate} />;
     case 'stage':
       return <StageMenuScreen stage={route.stage} navigate={navigate} />;
-    case 'explain':
-      return <ExplainScreen stage={route.stage} onDone={toStage(route.stage)} />;
-    case 'guided':
-      if (route.stage === 1) return <Stage1Guided onDone={toStage(1)} />;
-      if (route.stage === 2) return <Stage2Guided onDone={toStage(2)} />;
-      if (route.stage === 3) return <Stage3Guided onDone={toStage(3)} />;
-      if (route.stage === 4) return <Stage4Guided onDone={toStage(4)} />;
-      if (route.stage === 5) return <Stage5Guided onDone={toStage(5)} />;
-      if (route.stage === 6) return <Stage6Guided onDone={toStage(6)} />;
-      if (route.stage === 7) return <Stage7Guided onDone={toStage(7)} />;
-      if (route.stage === 8) return <Stage8Guided onDone={toStage(8)} />;
-      if (route.stage === 9) return <Stage9Guided onDone={toStage(9)} />;
-      if (route.stage === 10) return <Stage10Tour onDone={toStage(10)} />;
-      return <ComingSoonScreen onBack={toStage(route.stage)} />;
-    case 'practice':
-      if (route.stage === 1) return <Stage1Quiz onDone={toStage(1)} />;
-      if (route.stage === 2) return <Stage2Practice onDone={toStage(2)} />;
-      if (route.stage === 3) return <Stage3Game onDone={toStage(3)} />;
-      if (route.stage === 4) return <Stage4Quiz onDone={toStage(4)} />;
-      if (route.stage === 5) return <Stage5Quiz onDone={toStage(5)} />;
-      if (route.stage === 6) return <Stage6Quiz onDone={toStage(6)} />;
-      if (route.stage === 7) return <Stage7Quiz onDone={toStage(7)} />;
-      if (route.stage === 8) return <Stage8Quiz onDone={toStage(8)} />;
-      if (route.stage === 9) return <Stage9Quiz onDone={toStage(9)} />;
-      if (route.stage === 10) return <Stage10Game onDone={toStage(10)} />;
-      return <ComingSoonScreen onBack={toStage(route.stage)} />;
+    case 'part': {
+      const back = () => navigate({ name: 'stage', stage: route.stage });
+      if (route.part === 'explain') {
+        return <ExplainScreen stage={route.stage} onDone={back} clearOnFinish={CLEAR_ON_EXPLAIN.includes(route.stage)} />;
+      }
+      const Screen = STAGE_SCREENS[route.stage][route.part];
+      return Screen ? <Screen onDone={back} /> : <ComingSoonScreen onBack={back} />;
+    }
     case 'table':
       return <TableScreen onBack={() => navigate({ name: 'stages' })} />;
     case 'yakuDex':

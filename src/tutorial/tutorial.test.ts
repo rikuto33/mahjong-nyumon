@@ -3,8 +3,8 @@ import { checkGroup } from '../engine/group';
 import { decompose, isStandardComplete } from '../engine/decompose';
 import { isPossibleTileSet, parseTiles, sortTiles, toCounts } from '../engine/tile';
 import { translate, type MessageKey } from '../i18n/translate';
-import { FIND_CHOICES, makeQuiz, NAME_CHOICES, QUIZ_LENGTH, QUIZ_TILES, STAGE1_GUIDED, STAGE1_SLIDES } from './stage1';
-import { STAGE2_GUIDED, STAGE2_GUIDED_HAND, STAGE2_PUZZLES, STAGE2_SLIDES } from './stage2';
+import { FIND_CHOICES, makeQuiz, NAME_CHOICES, QUIZ_LENGTH, QUIZ_TILES, STAGE1_GUIDED, TILES_SLIDES } from './tiles';
+import { STAGE2_GUIDED, STAGE2_GUIDED_HAND, STAGE2_PUZZLES, SHAPE_SLIDES } from './shape';
 
 function seeded(seed: number) {
   let s = seed;
@@ -22,20 +22,20 @@ const has = (key: string) => {
 
 describe('stage 1', () => {
   it('スライドと台本の文字列がそろっている', () => {
-    for (const s of STAGE1_SLIDES) {
-      has(`stage1.explain.${s.id}.title`);
-      has(`stage1.explain.${s.id}.body`);
+    for (const s of TILES_SLIDES) {
+      has(`tiles.explain.${s.id}.title`);
+      has(`tiles.explain.${s.id}.body`);
       for (const row of s.rows ?? []) expect(() => parseTiles(row)).not.toThrow();
     }
     for (const g of STAGE1_GUIDED) {
-      has(`stage1.guided.${g.id}.prompt`);
-      has(`stage1.guided.${g.id}.after`);
+      has(`tiles.guided.${g.id}.prompt`);
+      has(`tiles.guided.${g.id}.after`);
       expect(QUIZ_TILES).toContain(g.target);
     }
   });
 
   it('まとめのスライドに 34 種類すべてが出る', () => {
-    const last = STAGE1_SLIDES.find((s) => s.id === 's8')!;
+    const last = TILES_SLIDES.find((s) => s.id === 's8')!;
     const tiles = last.rows!.flatMap((r) => parseTiles(r));
     expect(new Set(tiles).size).toBe(34);
   });
@@ -56,15 +56,15 @@ describe('stage 1', () => {
 
 describe('stage 2', () => {
   it('スライドの文字列と牌', () => {
-    for (const s of STAGE2_SLIDES) {
-      has(`stage2.explain.${s.id}.title`);
-      has(`stage2.explain.${s.id}.body`);
+    for (const s of SHAPE_SLIDES) {
+      has(`shape.explain.${s.id}.title`);
+      has(`shape.explain.${s.id}.body`);
       for (const row of s.rows ?? []) expect(() => parseTiles(row)).not.toThrow();
     }
   });
 
   it('完成形の例は和了形', () => {
-    const ex = STAGE2_SLIDES.find((s) => s.id === 's5')!.rows![0];
+    const ex = SHAPE_SLIDES.find((s) => s.id === 's5')!.rows![0];
     expect(isStandardComplete(parseTiles(ex))).toBe(true);
     for (const part of ex.split(' ')) expect(checkGroup(parseTiles(part)).ok).toBe(true);
   });
@@ -76,8 +76,8 @@ describe('stage 2', () => {
     for (const g of groups) expect(checkGroup(g).ok).toBe(true);
     expect(sortTiles(groups.flat())).toEqual(sortTiles(hand));
     for (const g of STAGE2_GUIDED) {
-      has(`stage2.guided.${g.id}.prompt`);
-      has(`stage2.guided.${g.id}.after`);
+      has(`shape.guided.${g.id}.prompt`);
+      has(`shape.guided.${g.id}.after`);
     }
   });
 

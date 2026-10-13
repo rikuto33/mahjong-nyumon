@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { parseTiles } from '../engine/tile';
 import { checkGroup } from '../engine/group';
 import { dissolveGroup, findTip, isSolved, makeGroup, newBoard, ungroupedIds, type Board } from './groupBoard';
-import { STAGE2_PUZZLES } from './stage2';
+import { STAGE2_PUZZLES } from './shape';
 
 // '11123m456p789s222z' → id: 1m=0,1,2 2m=3 3m=4 4p=5 5p=6 6p=7 7s=8 8s=9 9s=10 2z=11,12,13
 const board = () => newBoard(parseTiles('11123m456p789s222z'));

@@ -1,6 +1,6 @@
 import type { CalledMeld } from '../../engine/score';
 import { sortTiles, type Tile as TileCode } from '../../engine/tile';
-import type { From } from '../../tutorial/stage7';
+import type { From } from '../../tutorial/calls';
 import { Tile } from './Tile';
 
 /** 誰から鳴いたかで横向きにする位置：上家は左、対面は真ん中、下家は右 */
@@ -17,18 +17,20 @@ export function MeldTiles({
   from = 'left',
   called,
   width,
+  shine,
 }: {
   meld: CalledMeld;
   from?: From;
   called?: TileCode;
   width: string;
+  shine?: (tile: TileCode) => boolean;
 }) {
   const n = meld.tiles.length;
   if (meld.type === 'ankan') {
     return (
       <span className="meld">
         {sortTiles(meld.tiles).map((tile, i) => (
-          <Tile key={i} tile={i === 0 || i === n - 1 ? null : tile} width={width} />
+          <Tile key={i} tile={i === 0 || i === n - 1 ? null : tile} width={width} shine={shine?.(tile)} />
         ))}
       </span>
     );
@@ -42,7 +44,7 @@ export function MeldTiles({
   return (
     <span className="meld">
       {order.map((tile, i) => (
-        <Tile key={i} tile={tile} sideways={i === at} width={width} />
+        <Tile key={i} tile={tile} sideways={i === at} width={width} shine={shine?.(tile)} />
       ))}
     </span>
   );

@@ -3,7 +3,7 @@ import { fullTileSet, shuffled } from './solo';
 import { decideResponse, decideTurn, type AiLevel } from './ai';
 import { apply, SEATS, type HandResult, type HandState, type Seat } from './hand';
 import { afterHand, newMatch, rankingOf, startMatchHand, type MatchState } from './match';
-import { seeded } from './testing';
+import { seeded } from './arrange';
 
 /** 局の結果だけを持つ HandState（afterHand の判定に必要な項目のみ） */
 function ended(scores: number[], result: HandResult, riichiSticks = 0): HandState {

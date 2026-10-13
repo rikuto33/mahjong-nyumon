@@ -85,7 +85,7 @@ export const DEX_EXAMPLES: Record<YakuId, DexExample> = {
   junseiChuuren: { hand: '1112345678999p', win: '5p' },
 };
 
-/** 段階 5 のレッスンで教える役（SPEC §2、七対子は Rikuto 決定で追加） */
+/** 段階 6 のレッスンで教える役（「まずはこれだけ」の 6 種。平和はおまけ扱い） */
 export const LESSON_YAKU: YakuId[] = [
   'riichi',
   'menzenTsumo',
@@ -95,7 +95,7 @@ export const LESSON_YAKU: YakuId[] = [
   'chun',
   'seatWind',
   'roundWind',
-  'pinfu',
-  'iipeikou',
+  'toitoi',
   'chiitoitsu',
+  'pinfu',
 ];

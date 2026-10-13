@@ -61,19 +61,19 @@ describe('progress storage', () => {
     expect(loadProgress(throwingStore)).toEqual({ cleared: [] });
   });
 
-  it('保存して読み戻せる・不正な値は捨てる', () => {
+  it('保存して読み戻せる・不正な値は捨てる・段階順に並ぶ', () => {
     const store = memoryStore();
-    expect(saveProgress({ cleared: [2, 1] }, store)).toBe(true);
-    expect(loadProgress(store)).toEqual({ cleared: [1, 2] });
-    store.setItem('mahjong-nyumon:progress:v1', JSON.stringify({ cleared: [1, 1, 0, 11, 'x', 3] }));
-    expect(loadProgress(store)).toEqual({ cleared: [1, 3] });
-    expect(saveProgress({ cleared: [1] }, throwingStore)).toBe(false);
+    expect(saveProgress({ cleared: ['tiles', 'intro'] }, store)).toBe(true);
+    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'tiles'] });
+    store.setItem('mahjong-nyumon:progress:v2', JSON.stringify({ cleared: ['intro', 'intro', 'x', 3, 'shape'] }));
+    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'shape'] });
+    expect(saveProgress({ cleared: ['intro'] }, throwingStore)).toBe(false);
   });
 
   it('段階のロック', () => {
-    expect(isStageUnlocked({ cleared: [] }, 1)).toBe(true);
-    expect(isStageUnlocked({ cleared: [] }, 2)).toBe(false);
-    expect(isStageUnlocked({ cleared: [1] }, 2)).toBe(true);
-    expect(isStageUnlocked({ cleared: [1] }, 3)).toBe(false);
+    expect(isStageUnlocked({ cleared: [] }, 'intro')).toBe(true);
+    expect(isStageUnlocked({ cleared: [] }, 'tiles')).toBe(false);
+    expect(isStageUnlocked({ cleared: ['intro'] }, 'tiles')).toBe(true);
+    expect(isStageUnlocked({ cleared: ['intro'] }, 'shape')).toBe(false);
   });
 });

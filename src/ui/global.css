@@ -273,6 +273,41 @@ button {
   vertical-align: bottom;
 }
 
+.tile.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ドラのきらめき：光の帯が斜めに流れる */
+.tile.shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10%;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 246, 200, 0.85) 48%, rgba(255, 255, 255, 0.95) 50%, transparent 62%);
+  background-size: 300% 100%;
+  animation: tile-shine 2.6s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes tile-shine {
+  0% {
+    background-position: 120% 0;
+  }
+  60%,
+  100% {
+    background-position: -60% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile.shine::after {
+    animation: none;
+    background: rgba(255, 240, 180, 0.25);
+  }
+}
+
 .tile.sideways {
   width: calc(var(--tile-w, 48px) * 4 / 3);
 }
@@ -1364,11 +1399,64 @@ button {
   border-radius: 8px;
 }
 
+.intro-box {
+  max-width: 380px;
+  width: min(380px, calc(100vw - 32px));
+}
+
 @media (orientation: portrait) {
   .tour-box {
     top: auto;
     bottom: 200px;
   }
+}
+
+/* ---------- まとめ・役のクイズ ---------- */
+.summary {
+  margin-top: 16px !important;
+  padding: 10px 14px;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(201, 162, 74, 0.14);
+}
+
+.summary strong {
+  color: var(--gold);
+}
+
+.yaku-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.yaku-item-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  padding-top: 6px;
+}
+
+.called-group {
+  padding-left: 12px;
+  border-left: 2px dashed var(--line);
+}
+
+.hand-facts {
+  margin: 0;
+  padding: 10px 14px 10px 30px;
+  border-radius: 12px;
+  background: var(--card);
+  font-size: 0.95rem;
+}
+
+.small {
+  font-size: 0.85rem;
+  width: 100%;
+  margin: 0;
 }
 
 @media (max-width: 760px) {

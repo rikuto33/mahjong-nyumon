@@ -1,4 +1,5 @@
 import { DEFAULT_LANG, LANGS, type Lang } from './i18n/translate';
+import { isStageId, STAGE_ORDER, type StageId } from './tutorial/stages';
 
 export type AiLevel = 'easy' | 'normal';
 
@@ -17,7 +18,8 @@ export const DEFAULT_SETTINGS: Settings = {
 };
 
 const SETTINGS_KEY = 'mahjong-nyumon:settings:v1';
-const PROGRESS_KEY = 'mahjong-nyumon:progress:v1';
+// v2：段階を ID で保存（段階の構成を変えたので v1 は使わない）
+const PROGRESS_KEY = 'mahjong-nyumon:progress:v2';
 
 type KV = Pick<Storage, 'getItem' | 'setItem'>;
 
@@ -62,8 +64,8 @@ export function saveSettings(settings: Settings, store: KV | null = defaultStore
 }
 
 export type Progress = {
-  /** クリアした段階の番号（1–10） */
-  cleared: number[];
+  /** クリアした段階 */
+  cleared: StageId[];
 };
 
 export const EMPTY_PROGRESS: Progress = { cleared: [] };
@@ -73,10 +75,8 @@ export function loadProgress(store: KV | null = defaultStore()): Progress {
     const text = store?.getItem(PROGRESS_KEY);
     if (!text) return { cleared: [] };
     const raw = JSON.parse(text) as { cleared?: unknown };
-    const cleared = Array.isArray(raw.cleared)
-      ? raw.cleared.filter((n): n is number => Number.isInteger(n) && n >= 1 && n <= 10)
-      : [];
-    return { cleared: [...new Set(cleared)].sort((a, b) => a - b) };
+    const cleared = Array.isArray(raw.cleared) ? raw.cleared.filter(isStageId) : [];
+    return { cleared: STAGE_ORDER.filter((id) => cleared.includes(id)) };
   } catch {
     return { cleared: [] };
   }
@@ -92,7 +92,8 @@ export function saveProgress(progress: Progress, store: KV | null = defaultStore
   }
 }
 
-/** 段階 1 は常に開いている。それ以降は前の段階をクリアすると開く */
-export function isStageUnlocked(progress: Progress, stage: number): boolean {
-  return stage === 1 || progress.cleared.includes(stage - 1);
+/** 最初の段階は常に開いている。それ以降は前の段階をクリアすると開く */
+export function isStageUnlocked(progress: Progress, stage: StageId): boolean {
+  const i = STAGE_ORDER.indexOf(stage);
+  return i === 0 || progress.cleared.includes(STAGE_ORDER[i - 1]);
 }

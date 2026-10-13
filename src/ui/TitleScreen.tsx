@@ -15,7 +15,7 @@ export function TitleScreen({ navigate }: { navigate: Navigate }) {
       </section>
 
       <nav className="menu">
-        <button className="btn btn-primary" onClick={() => navigate({ name: 'stage', stage: 1 })}>
+        <button className="btn btn-primary" onClick={() => navigate({ name: 'stage', stage: 'intro' })}>
           {t('title.start')}
         </button>
         <button className="btn" onClick={() => navigate({ name: 'stages' })}>

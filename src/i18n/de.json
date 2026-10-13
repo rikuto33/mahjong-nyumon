@@ -27,7 +27,7 @@
     "gameHints": "Hinweise im Spiel",
     "gameHintsDesc": "Zeigt in Übungen und Partien kurze Hinweise, zum Beispiel wie viele Steine dir noch fehlen.",
     "aiLevel": "Stärke der Gegner",
-    "aiLevelDesc": "Gilt für die Partie in Stufe 10.",
+    "aiLevelDesc": "Gilt für die Partie in Stufe 11.",
     "easy": "Leicht",
     "normal": "Normal"
   },
@@ -43,7 +43,15 @@
     "cancel": "Abbrechen",
     "retry": "Noch einmal",
     "comingSoon": "Dieser Teil ist noch in Arbeit.",
-    "page": "{n} / {total}"
+    "page": "{n} / {total}",
+    "inShort": "Kurz gesagt:",
+    "startPractice": "Übung starten",
+    "score": "{score} von {total} richtig.",
+    "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal.",
+    "question": "Frage {n} von {total}",
+    "correct": "Richtig.",
+    "wrong": "Leider falsch.",
+    "notNeeded": "Musst du dir nicht merken."
   },
   "tile": {
     "suit": {
@@ -78,18 +86,18 @@
     "lockedHint": "Schließe zuerst die vorherige Stufe ab.",
     "cleared": "Geschafft",
     "open": "Offen",
-    "inProgress": "In Arbeit",
-    "s1": "Die Steine kennenlernen",
-    "s2": "Die fertige Hand",
-    "s3": "Allein spielen",
-    "s4": "Tenpai und Wartesteine",
-    "s5": "Ohne Yaku kein Gewinn",
-    "s6": "Ron, Einwerfen und Furiten",
-    "s7": "Steine ansagen: Pon, Chi, Kan",
-    "s8": "Dora",
-    "s9": "Der Ablauf einer Partie",
-    "s10": "Die echte Partie",
-    "yakuDex": "Yaku-Verzeichnis"
+    "yakuDex": "Yaku-Verzeichnis",
+    "intro": "Ein erstes Spiel",
+    "tiles": "Die Steine kennenlernen",
+    "shape": "Die fertige Hand",
+    "solo": "Allein spielen",
+    "tenpai": "Tenpai und Wartesteine",
+    "yaku": "Yaku: die Gewinnbedingung",
+    "ron": "Ron und Yaku",
+    "calls": "Steine ansagen: Pon, Chi, Kan",
+    "dora": "Dora",
+    "flow": "Der Ablauf einer Partie",
+    "finale": "Die echte Partie"
   },
   "stageMenu": {
     "explain": "Erklärung",
@@ -98,7 +106,9 @@
     "guidedDesc": "Ein Beispiel Schritt für Schritt. Du tippst nur, was angezeigt wird.",
     "practice": "Übung",
     "practiceDesc": "Probiere es selbst. Wenn du die Übung schaffst, öffnet sich die nächste Stufe.",
-    "clearedNote": "Diese Stufe hast du geschafft. Du kannst sie jederzeit wiederholen."
+    "clearedNote": "Diese Stufe hast du geschafft. Du kannst sie jederzeit wiederholen.",
+    "play": "Mitspielen",
+    "playDesc": "Spiele ein Spiel am echten Tisch mit. Du tippst nur, was angezeigt wird."
   },
   "actions": {
     "pon": "Pon",
@@ -121,280 +131,6 @@
     "wind2": "Süd",
     "wind3": "West",
     "wind4": "Nord"
-  },
-  "stage1": {
-    "explain": {
-      "s1": {
-        "title": "Die Spielsteine",
-        "body": "Mahjong spielt man mit Steinen, so wie man andere Spiele mit Karten spielt. Auf Japanisch heißen die Steine Hai.\nEs gibt 34 verschiedene Steine. Von jedem gibt es 4 gleiche Exemplare, zusammen also 136 Steine.\nDie Steine teilen sich in zwei Arten: Zahlensteine und Ehrensteine."
-      },
-      "s2": {
-        "title": "Zahlensteine: Manzu",
-        "body": "Es gibt drei Farben mit den Zahlen 1 bis 9. Die erste Farbe heißt Manzu.\nOben steht die Zahl als chinesisches Schriftzeichen, unten bei allen das Zeichen 萬.\nWenn die Hilfsanzeige eingeschaltet ist, steht in der Ecke zusätzlich die Zahl."
-      },
-      "s3": {
-        "title": "Zahlensteine: Pinzu",
-        "body": "Die zweite Farbe heißt Pinzu. Die Anzahl der Kreise ist die Zahl des Steins.\nBei Pinzu und Souzu gibt es keine Hilfszahl in der Ecke. Zähle die Kreise und Stäbe selbst."
-      },
-      "s4": {
-        "title": "Zahlensteine: Souzu",
-        "body": "Die dritte Farbe heißt Souzu. Die Anzahl der Bambusstäbe ist die Zahl des Steins.\nDie 1 sieht anders aus: Sie zeigt einen einzelnen großen Bambus. In vielen anderen Mahjong-Spielen ist auf der 1 Souzu ein Vogel abgebildet."
-      },
-      "s5": {
-        "title": "Ehrensteine: die Winde",
-        "body": "Neben den Zahlensteinen gibt es Ehrensteine (Jihai). Sie haben keine Zahl.\nVier davon sind Winde (Kazehai): 東 Osten (Ton), 南 Süden (Nan), 西 Westen (Sha) und 北 Norden (Pei)."
-      },
-      "s6": {
-        "title": "Ehrensteine: die Drachen",
-        "body": "Die anderen drei Ehrensteine sind Drachen (Sangenpai): Weiß (Haku), 發 Grün (Hatsu) und 中 Rot (Chun).\nDer weiße Drache ist ein leerer Stein ohne Zeichen."
-      },
-      "s7": {
-        "title": "Rote Fünfen",
-        "body": "In jeder der drei Farben ist eine der vier Fünfen rot. Eine rote 5 zählt wie eine normale 5.\nSie bringt aber zusätzliche Punkte. Solche Bonussteine heißen Dora, die roten Fünfen heißen Aka-Dora („rote Dora“). Mehr dazu in Stufe 8."
-      },
-      "s8": {
-        "title": "Zusammenfassung",
-        "body": "3 Farben mit je 9 Zahlen: 27 Zahlensteine.\n4 Winde und 3 Drachen: 7 Ehrensteine.\nZusammen 34 Steine, jeder viermal vorhanden: 136 Steine."
-      }
-    },
-    "guided": {
-      "intro": "Hier liegen alle 34 Steine und die drei roten Fünfen. Tippe auf den Stein, der gesucht wird.",
-      "g1": {
-        "prompt": "Tippe auf die 1 Manzu. Das Schriftzeichen 一 bedeutet 1.",
-        "after": "Richtig. Unten steht bei allen Manzu das Zeichen 萬."
-      },
-      "g2": {
-        "prompt": "Tippe auf die 7 Pinzu. Zähle die Kreise.",
-        "after": "Richtig: sieben Kreise."
-      },
-      "g3": {
-        "prompt": "Tippe auf die 1 Souzu. Sie sieht anders aus als die übrigen Souzu.",
-        "after": "Richtig. Die 1 Souzu zeigt einen einzelnen großen Bambus."
-      },
-      "g4": {
-        "prompt": "Tippe auf den Wind Osten (東, Ton).",
-        "after": "Richtig. Der Geber eines Spiels sitzt immer auf Osten. Mehr dazu in Stufe 9."
-      },
-      "g5": {
-        "prompt": "Tippe auf den weißen Drachen (Haku).",
-        "after": "Richtig. Der weiße Drache ist der Stein ohne Schriftzeichen."
-      },
-      "g6": {
-        "prompt": "Tippe auf die rote 5 Manzu.",
-        "after": "Richtig. Sie zählt als 5 und bringt zusätzlich Punkte."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "quiz": {
-      "intro": "{total} Fragen. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "findTile": "Tippe auf: {name}",
-      "nameTile": "Wie heißt dieser Stein?",
-      "correct": "Richtig.",
-      "wrong": "Leider falsch. Richtig ist: {name}.",
-      "question": "Frage {n} von {total}",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 1 geschafft. Stufe 2 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage2": {
-    "explain": {
-      "s1": {
-        "title": "Das Ziel",
-        "body": "Jeder Spieler hat 13 Steine. Wer an der Reihe ist, nimmt einen Stein dazu und hat dann 14 Steine. Danach legt er einen Stein ab.\nZiel ist eine fertige Hand aus 14 Steinen: 4 Gruppen und 1 Paar.\nMit einer fertigen Hand kann man gewinnen. Das heißt Agari. (In Stufe 5 kommt dafür noch eine Bedingung dazu.)"
-      },
-      "s2": {
-        "title": "Gruppe 1: Shuntsu (Folge)",
-        "body": "Ein Shuntsu ist eine Folge: drei Zahlen direkt hintereinander in derselben Farbe, zum Beispiel 3-4-5.\nDie Zahlen laufen nicht im Kreis: 8-9-1 ist keine Folge. Mit Ehrensteinen kann man keine Folge bilden."
-      },
-      "s3": {
-        "title": "Gruppe 2: Koutsu (Drilling)",
-        "body": "Ein Koutsu ist ein Drilling: drei gleiche Steine. Das geht mit Zahlensteinen und mit Ehrensteinen."
-      },
-      "s4": {
-        "title": "Das Paar: Jantou",
-        "body": "Dazu kommt ein Paar aus zwei gleichen Steinen. Es heißt Jantou."
-      },
-      "s5": {
-        "title": "Eine fertige Hand",
-        "body": "So sieht eine fertige Hand aus: 4 Gruppen und 1 Paar, also 3 + 3 + 3 + 3 + 2 = 14 Steine.\nEine rote 5 zählt dabei wie eine normale 5."
-      },
-      "s6": {
-        "title": "Ausnahmen",
-        "body": "Es gibt zwei besondere fertige Hände, die nicht aus 4 Gruppen und 1 Paar bestehen: Chiitoitsu (sieben Paare) und Kokushi Musou (alle Einsen, Neunen und Ehrensteine). Diese lernst du später kennen.\nAußerdem kann man aus vier gleichen Steinen eine Gruppe bilden (Kan). Das kommt in Stufe 7."
-      }
-    },
-    "guided": {
-      "intro": "Diese 14 Steine bilden eine fertige Hand. Teile sie Schritt für Schritt in Gruppen auf.",
-      "g1": {
-        "prompt": "Tippe auf 2, 3 und 4 Manzu und dann auf „Gruppe bilden“.",
-        "after": "Das ist ein Shuntsu (Folge): 2-3-4 in derselben Farbe."
-      },
-      "g2": {
-        "prompt": "Tippe auf 6, 7 und 8 Pinzu und bilde eine Gruppe.",
-        "after": "Noch ein Shuntsu: 6-7-8 Pinzu."
-      },
-      "g3": {
-        "prompt": "Tippe auf die drei 3 Souzu und bilde eine Gruppe.",
-        "after": "Drei gleiche Steine: ein Koutsu (Drilling)."
-      },
-      "g4": {
-        "prompt": "Tippe auf die drei Osten-Steine und bilde eine Gruppe.",
-        "after": "Auch mit Ehrensteinen kann man ein Koutsu bilden."
-      },
-      "g5": {
-        "prompt": "Tippe auf die beiden 9 Manzu und bilde eine Gruppe.",
-        "after": "Das ist das Paar (Jantou). Die Hand ist fertig: 4 Gruppen und 1 Paar."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "puzzle": {
-      "intro": "Teile jede Hand in 4 Gruppen und 1 Paar auf. Löse {total} Aufgaben, um die Stufe abzuschließen.",
-      "start": "Übung starten",
-      "instruction": "Tippe Steine an und dann auf „Gruppe bilden“. Ziel: 4 Gruppen und 1 Paar.",
-      "makeGroup": "Gruppe bilden",
-      "resetGroups": "Alle Gruppen auflösen",
-      "tip": "Tipp",
-      "ungroupHint": "Tippe auf eine Gruppe, um sie wieder aufzulösen.",
-      "shuntsu": "Shuntsu (Folge)",
-      "koutsu": "Koutsu (Drilling)",
-      "pair": "Jantou (Paar)",
-      "err": {
-        "wrongSize": "Eine Gruppe besteht aus 3 Steinen, ein Paar aus 2.",
-        "pairNotSame": "Ein Paar besteht aus zwei gleichen Steinen.",
-        "mixedSuits": "Eine Folge muss aus einer einzigen Farbe sein.",
-        "honorSequence": "Mit Ehrensteinen (Winden und Drachen) kann man keine Folge bilden, nur Drillinge und Paare.",
-        "notConsecutive": "Die Zahlen einer Folge müssen direkt aufeinander folgen, zum Beispiel 4-5-6.",
-        "secondPair": "Eine fertige Hand hat nur ein Paar."
-      },
-      "tipStuck": "Mit den bisherigen Gruppen geht die Hand nicht auf. Löse eine Gruppe wieder auf.",
-      "tipShown": "Diese Steine bilden zusammen eine Gruppe.",
-      "solved": "Fertig: 4 Gruppen und 1 Paar. Das ist eine fertige Hand.",
-      "task": "Aufgabe {n} von {total}",
-      "nextTask": "Nächste Aufgabe",
-      "passed": "Stufe 2 geschafft. Stufe 3 ist jetzt offen."
-    }
-  },
-  "stage3": {
-    "explain": {
-      "s1": {
-        "title": "Allein spielen",
-        "body": "In dieser Stufe spielst du allein, damit du den Ablauf kennenlernst. In einer echten Partie spielen vier Personen. Das kommt später.\nDu bekommst 13 Steine. Die übrigen Steine liegen verdeckt bereit. Sie heißen Mauer (Yama)."
-      },
-      "s2": {
-        "title": "Ziehen und Ablegen",
-        "body": "In jedem Zug ziehst du einen Stein aus der Mauer. Dann hast du 14 Steine und legst einen davon ab, sodass wieder 13 übrig bleiben.\nAbgelegte Steine liegen offen in Reihen vor dir. Diese Reihen heißen Kawa („Fluss“).\nSo legst du ab: Tippe einen Stein an, dann hebt er sich etwas. Tippe ihn noch einmal an, um ihn abzulegen."
-      },
-      "s3": {
-        "title": "Welchen Stein ablegen?",
-        "body": "Behalte Steine, die schon zu einer Gruppe passen oder fast passen, zum Beispiel 4-5 (es fehlt die 3 oder die 6) oder ein Paar.\nLege einzelne Steine ab, die zu nichts passen. Einzelne Ehrensteine sind oft die ersten Kandidaten, denn mit ihnen kann man keine Folge bilden."
-      },
-      "s4": {
-        "title": "Gewinnen mit Tsumo",
-        "body": "Wenn der gezogene Stein deine Hand fertig macht, erscheint der Knopf „Tsumo“. Tsumo bedeutet: Ich habe den Stein selbst gezogen und gewinne.\nIn dieser Stufe reicht eine fertige Hand zum Gewinnen. Die zusätzliche Bedingung kommt in Stufe 5."
-      }
-    },
-    "guided": {
-      "intro": "Folge den Anweisungen. Du kannst nur den Stein ablegen, der genannt wird. Der gezogene Stein liegt ganz rechts.",
-      "g1": {
-        "prompt": "Du hast die 8 Pinzu gezogen. Damit ist 6-7-8 Pinzu eine fertige Folge. Lege jetzt den Osten ab: Tippe ihn an und dann noch einmal.",
-        "after": "Der Osten passte zu keinem anderen Stein. Ein einzelner Ehrenstein wird nur dann nützlich, wenn du noch gleiche Steine ziehst."
-      },
-      "g2": {
-        "prompt": "Du hast die 8 Manzu gezogen. 8-9 Manzu ist fast eine Folge: Es fehlt nur die 7. Lege den weißen Drachen (Haku) ab.",
-        "after": "Jetzt fehlt dir nur noch ein einziger Stein: die 7 Manzu. Diesen Zustand lernst du in Stufe 4 genauer kennen."
-      },
-      "g3": {
-        "prompt": "Du hast die 2 Pinzu gezogen. Sie hilft dir nicht. Lege sie gleich wieder ab.",
-        "after": "Einen gezogenen Stein sofort wieder abzulegen ist ganz normal, wenn er nicht passt."
-      },
-      "g4": {
-        "prompt": "Du hast die 7 Manzu gezogen. Die Hand ist fertig: 2-3-4 und 7-8-9 Manzu, 6-7-8 Pinzu, 3-4-5 Souzu und das Paar Chun. Tippe auf „Tsumo“."
-      },
-      "finished": "Gewonnen mit Tsumo. Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "game": {
-      "intro": "Spiele allein, bis deine Hand fertig ist. Wenn du mit Tsumo gewinnst, ist die Stufe geschafft.",
-      "start": "Spiel starten",
-      "draws": "Zug {n}",
-      "wall": "Mauer: {n}",
-      "hintMany": "Dir fehlen noch mindestens {n} Steine bis zur fertigen Hand.",
-      "hintOne": "Dir fehlt nur noch ein Stein.",
-      "hintAgari": "Deine Hand ist fertig. Tippe auf „Tsumo“.",
-      "tip": "Tipp",
-      "tipShown": "Markiert sind die Steine, die du am besten ablegst.",
-      "won": "Gewonnen mit Tsumo nach {n} Zügen.",
-      "wonChiitoitsu": "Das ist Chiitoitsu (sieben Paare), eine der besonderen fertigen Hände.",
-      "wonKokushi": "Das ist Kokushi Musou, eine der besonderen fertigen Hände.",
-      "passed": "Stufe 3 geschafft. Stufe 4 ist jetzt offen.",
-      "wallEmpty": "Die Mauer ist leer, ohne dass die Hand fertig wurde. Versuche es noch einmal.",
-      "newGame": "Neues Spiel"
-    }
-  },
-  "stage4": {
-    "explain": {
-      "s1": {
-        "title": "Tenpai",
-        "body": "Wenn dir nur noch ein einziger Stein zur fertigen Hand fehlt, bist du Tenpai („bereit“).\nDiese Hand ist Tenpai: Es fehlt nur noch die 3 Souzu oder die 6 Souzu."
-      },
-      "s2": {
-        "title": "Wartesteine",
-        "body": "Die Steine, mit denen deine Hand fertig wird, heißen Wartesteine. Das Warten heißt auf Japanisch Machi.\nJe mehr verschiedene Wartesteine es gibt, desto leichter gewinnst du."
-      },
-      "s3": {
-        "title": "Ryanmen: zwei Seiten",
-        "body": "Zwei Zahlen direkt nebeneinander wie 4-5 warten auf beide Seiten: die 3 oder die 6. Diese Form heißt Ryanmen und ist die günstigste."
-      },
-      "s4": {
-        "title": "Kanchan und Penchan",
-        "body": "Mit einer Lücke wie 4-6 wartet man nur auf die Mitte, die 5. Das heißt Kanchan.\n1-2 wartet nur auf die 3, und 8-9 nur auf die 7. Das heißt Penchan."
-      },
-      "s5": {
-        "title": "Shanpon und Tanki",
-        "body": "Mit zwei Paaren wartet man darauf, dass eines davon zum Drilling wird. Das andere bleibt das Paar. Das heißt Shanpon.\nEin einzelner Stein wartet auf einen gleichen Stein, damit ein Paar entsteht. Das heißt Tanki."
-      },
-      "s6": {
-        "title": "Mehrere Möglichkeiten",
-        "body": "Manche Hände kann man auf verschiedene Arten aufteilen. 2-3-4-5 Manzu wartet zum Beispiel auf die 2 und die 5: 2-3-4 und eine einzelne 5, oder 3-4-5 und eine einzelne 2.\nPrüfe deshalb jede Möglichkeit."
-      }
-    },
-    "guided": {
-      "intro": "Jede dieser Hände ist Tenpai. Tippe unten auf alle Wartesteine.",
-      "g1": {
-        "prompt": "Die Hand wartet mit 4-5 Souzu auf beide Seiten. Tippe auf die 3 Souzu und die 6 Souzu.",
-        "after": "Richtig: Ryanmen, zwei verschiedene Wartesteine."
-      },
-      "g2": {
-        "prompt": "Hier fehlt die Mitte von 4-6 Manzu. Tippe auf die 5 Manzu.",
-        "after": "Richtig: Kanchan, nur ein Wartestein."
-      },
-      "g3": {
-        "prompt": "1-2 Pinzu kann nur mit der 3 zu einer Folge werden. Tippe auf die 3 Pinzu.",
-        "after": "Richtig: Penchan. Auf der anderen Seite gibt es keine Zahl mehr."
-      },
-      "g4": {
-        "prompt": "Zwei Paare: 5 Pinzu und 7 Souzu. Eines davon muss zum Drilling werden. Tippe auf die 5 Pinzu und die 7 Souzu.",
-        "after": "Richtig: Shanpon. Der Stein, der kommt, wird zum Drilling. Das andere Paar bleibt das Paar."
-      },
-      "g5": {
-        "prompt": "Vier Gruppen sind fertig, nur der Westen ist allein. Tippe auf den Westen.",
-        "after": "Richtig: Tanki. Ein zweiter Westen macht das Paar."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "quiz": {
-      "intro": "{total} Hände. Tippe bei jeder Hand alle Wartesteine an und dann auf „Prüfen“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Hand {n} von {total}",
-      "prompt": "Diese Hand ist Tenpai. Welche Steine fehlen? Tippe alle Wartesteine an.",
-      "check": "Prüfen",
-      "correct": "Richtig.",
-      "wrong": "Leider nicht ganz. Richtig ist: {tiles}.",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 4 geschafft. Stufe 5 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
   },
   "yaku": {
     "riichi": {
@@ -580,17 +316,17 @@
   },
   "dex": {
     "title": "Yaku-Verzeichnis",
-    "intro": "Alle Yaku, die in dieser App (nach den Regeln von Mahjong Soul) gelten. Mit „Stufe 5“ markierte Yaku werden in den Lektionen erklärt.",
+    "intro": "Alle Yaku, die in Mahjong Soul gelten. Die mit „Stufe 6“ markierten reichen für den Anfang. Den Rest musst du dir nicht merken.",
     "han": "{n} Han",
     "openHan": "mit angesagten Steinen: {n} Han",
-    "closedOnly": "nur ohne Steine von anderen",
+    "closedOnly": "nur mit geschlossener Hand (ohne Pon und Chi)",
     "yakuman": "Yakuman",
     "doubleYakuman": "Doppeltes Yakuman",
     "g1": "1 Han",
     "g2": "2 Han",
     "g3": "3 Han und mehr",
     "gY": "Yakuman",
-    "lesson": "Stufe 5",
+    "lesson": "Stufe 6",
     "example": "Beispiel",
     "winTile": "Gewinnstein",
     "tsumo": "Tsumo",
@@ -617,418 +353,6 @@
     "payTsumoChild": "Der Geber zahlt {d} Punkte, die beiden anderen je {c} Punkte.",
     "payTsumoDealer": "Alle anderen zahlen je {e} Punkte.",
     "note": "Je mehr Han, desto mehr Punkte. Die Punkte rechnet das Spiel automatisch aus."
-  },
-  "stage5": {
-    "explain": {
-      "s1": {
-        "title": "Die Bedingung: ein Yaku",
-        "body": "In Stufe 3 hast du mit jeder fertigen Hand gewonnen. In einer echten Partie brauchst du zusätzlich mindestens ein Yaku. Ein Yaku ist eine besondere Eigenschaft der Hand oder der Situation.\nEine fertige Hand ohne Yaku darf nicht gewinnen."
-      },
-      "s2": {
-        "title": "Han und Punkte",
-        "body": "Jedes Yaku ist eine bestimmte Anzahl Han wert. Hat die Hand mehrere Yaku, werden die Han zusammengezählt.\nJe mehr Han, desto mehr Punkte. Die genauen Punkte rechnet das Spiel automatisch aus."
-      },
-      "s3": {
-        "title": "Tsumo und Ron",
-        "body": "Du kannst auf zwei Arten gewinnen: mit einem selbst gezogenen Stein (Tsumo) oder mit einem Stein, den ein Mitspieler ablegt (Ron). Ron lernst du in Stufe 6 genauer kennen.\nOb die Hand ein Yaku hat, kann davon abhängen, wie du gewinnst."
-      },
-      "s4": {
-        "title": "Riichi und Menzen Tsumo",
-        "body": "Riichi (1 Han): Wenn deine Hand Tenpai ist und du keine Steine von anderen genommen hast, kannst du Riichi ansagen. Du zahlst 1.000 Punkte Einsatz. Danach legst du jeden gezogenen Stein wieder ab, außer er macht deine Hand fertig.\nMenzen Tsumo (1 Han): Du ziehst den Gewinnstein selbst, ohne Steine von anderen genommen zu haben. Deshalb hattest du in Stufe 3 immer ein Yaku.\nWie man Steine von anderen nimmt, lernst du in Stufe 7."
-      },
-      "s5": {
-        "title": "Tanyao",
-        "body": "Tanyao (1 Han): Die ganze Hand besteht nur aus Zahlensteinen von 2 bis 8. Keine Einsen, keine Neunen, keine Ehrensteine."
-      },
-      "s6": {
-        "title": "Yakuhai",
-        "body": "Yakuhai (je 1 Han): ein Drilling aus einem Drachen (Haku, Hatsu, Chun), aus dem Rundenwind oder aus deinem eigenen Wind.\nIn der Ostrunde ist Osten der Rundenwind. Dein eigener Wind hängt von deinem Sitzplatz ab. Ist Osten beides, zählt der Drilling 2 Han."
-      },
-      "s7": {
-        "title": "Pinfu",
-        "body": "Pinfu (1 Han): vier Folgen, ein Paar ohne Yaku-Wert (kein Drache, nicht der Rundenwind, nicht dein eigener Wind), und du wartest auf zwei Seiten (Ryanmen). Nur ohne Steine von anderen."
-      },
-      "s8": {
-        "title": "Iipeikou",
-        "body": "Iipeikou (1 Han): zwei genau gleiche Folgen, zum Beispiel zweimal 2-3-4 Manzu. Nur ohne Steine von anderen."
-      },
-      "s9": {
-        "title": "Chiitoitsu",
-        "body": "Chiitoitsu (2 Han): sieben verschiedene Paare, die besondere fertige Hand aus Stufe 2. Vier gleiche Steine zählen nicht als zwei Paare. Nur ohne Steine von anderen."
-      },
-      "s10": {
-        "title": "Weitere Yaku",
-        "body": "Es gibt noch viele weitere Yaku. Alle findest du im Yaku-Verzeichnis. Du kannst es jederzeit auf dem Startbildschirm oder bei der Stufenauswahl öffnen."
-      }
-    },
-    "guided": {
-      "intro": "In diesem Beispiel sagst du Riichi an und gewinnst danach mit Tsumo.",
-      "g1": {
-        "prompt": "Du hast die 4 Souzu gezogen. Wenn du jetzt den Osten ablegst, wartest du mit 3-4 Souzu auf die 2 oder die 5: Du bist Tenpai. Tippe auf „Riichi“ und lege dann den Osten ab.",
-        "after": "Du hast Riichi angesagt. Der abgelegte Stein liegt quer im Kawa, damit alle die Ansage sehen. Von jetzt an kannst du deine Hand nicht mehr ändern."
-      },
-      "g2": {
-        "prompt": "Du hast die 9 Manzu gezogen. Sie macht deine Hand nicht fertig. Nach Riichi musst du sie ablegen.",
-        "after": "Nach Riichi legst du jeden gezogenen Stein ab, der nicht passt."
-      },
-      "g3": {
-        "prompt": "Du hast die 2 Souzu gezogen. Deine Hand ist fertig. Tippe auf „Tsumo“."
-      },
-      "finished": "Gewonnen. Deine Hand hat drei Yaku: Riichi, Menzen Tsumo und Pinfu."
-    },
-    "quiz": {
-      "intro": "{total} Hände. Wähle bei jeder Hand alle Yaku aus, die sie hat, oder „Kein Yaku“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Hand {n} von {total}",
-      "prompt": "Welche Yaku hat diese Hand?",
-      "tsumo": "Gewonnen mit Tsumo (selbst gezogen).",
-      "ron": "Gewonnen mit Ron (Stein eines Mitspielers).",
-      "riichi": "Riichi wurde angesagt.",
-      "winds": "Dein Wind: {seat}. Rundenwind: {round}.",
-      "winTile": "Gewinnstein",
-      "noYaku": "Kein Yaku",
-      "check": "Prüfen",
-      "correct": "Richtig.",
-      "wrong": "Leider nicht ganz. Richtig ist: {list}.",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 5 geschafft. Stufe 6 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage6": {
-    "explain": {
-      "s1": {
-        "title": "Ron",
-        "body": "Du kannst auch mit einem Stein gewinnen, den ein Mitspieler gerade abgelegt hat. Das heißt Ron. Wenn das möglich ist, erscheint der Knopf „Ron“.\nAuch für Ron brauchst du ein Yaku. Menzen Tsumo zählt dabei nicht, weil du den Stein nicht selbst gezogen hast."
-      },
-      "s2": {
-        "title": "Einwerfen",
-        "body": "Wer den Gewinnstein ablegt, zahlt die Punkte allein. Das nennt man Einwerfen (Furikomi).\nBei Tsumo zahlen dagegen alle drei Mitspieler zusammen."
-      },
-      "s3": {
-        "title": "Furiten",
-        "body": "Wenn einer deiner Wartesteine in deinem eigenen Kawa liegt, darfst du mit keinem deiner Wartesteine Ron sagen. Das heißt Furiten.\nMit Tsumo darfst du trotzdem gewinnen."
-      },
-      "s4": {
-        "title": "Furiten durch Auslassen",
-        "body": "Wenn du einen Stein, mit dem du Ron sagen könntest, nicht nimmst, darfst du bis zu deinem nächsten Zug nicht Ron sagen.\nNach Riichi gilt das sogar bis zum Ende des Spiels."
-      },
-      "s5": {
-        "title": "Zusammenfassung",
-        "body": "Ron geht nur, wenn alles davon stimmt:\n1. Der Stein ist einer deiner Wartesteine.\n2. Deine Hand hat ein Yaku.\n3. Du bist nicht Furiten."
-      }
-    },
-    "guided": {
-      "intro": "Ein Mitspieler legt einen Stein ab. Prüfe, ob du Ron sagen kannst.",
-      "g1": {
-        "prompt": "Deine Hand wartet auf die 5 oder die 8 Souzu und hat Tanyao und Pinfu. Ein Mitspieler legt die 8 Souzu ab. Tippe auf „Ron“.",
-        "after": "Gewonnen mit Ron. Der Mitspieler, der die 8 Souzu abgelegt hat, zahlt alles."
-      },
-      "g2": {
-        "prompt": "Dieselbe Hand, aber in deinem Kawa liegt die 5 Souzu, einer deiner Wartesteine. Ein Mitspieler legt die 8 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
-        "after": "Du bist Furiten: Wenn ein eigener Wartestein in deinem Kawa liegt, darfst du mit keinem Wartestein Ron sagen. Mit Tsumo ginge es noch."
-      },
-      "g3": {
-        "prompt": "Diese Hand ist Tenpai, hat aber kein Yaku: kein Tanyao (wegen der 1 Manzu) und kein Pinfu (wegen des Drillings). Ein Mitspieler legt die 9 Souzu ab. Tippe auf „Weiter“.",
-        "after": "Ohne Yaku kein Ron. Mit Riichi oder mit Tsumo (Menzen Tsumo) hätte die Hand ein Yaku."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "quiz": {
-      "intro": "{total} Situationen. Entscheide jedes Mal, ob du Ron sagen darfst. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Situation {n} von {total}",
-      "prompt": "Ein Mitspieler legt diesen Stein ab. Darfst du Ron sagen?",
-      "yes": "Ja, Ron",
-      "no": "Nein",
-      "yourHand": "Deine Hand",
-      "yourRiver": "Dein Kawa",
-      "discarded": "Abgelegter Stein",
-      "riichi": "Du hast Riichi angesagt.",
-      "skipped": "Du hast in diesem Zug schon einen Stein ausgelassen, mit dem du Ron hättest sagen können.",
-      "skippedRiichi": "Du hast nach deiner Riichi-Ansage schon einmal einen Stein ausgelassen, mit dem du Ron hättest sagen können.",
-      "correct": "Richtig.",
-      "wrong": "Leider falsch.",
-      "reason": {
-        "ok": "Ron ist möglich: Es ist ein Wartestein, die Hand hat ein Yaku, und du bist nicht Furiten.",
-        "notWait": "Dieser Stein ist keiner deiner Wartesteine.",
-        "furitenDiscard": "Furiten: Einer deiner Wartesteine liegt in deinem Kawa.",
-        "furitenTemporary": "Furiten: Du hast in diesem Zug schon einen Ron-Stein ausgelassen.",
-        "furitenRiichi": "Furiten: Du hast nach Riichi einen Ron-Stein ausgelassen.",
-        "noYaku": "Kein Yaku: Ohne Yaku ist kein Ron möglich."
-      },
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 6 geschafft. Stufe 7 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage7": {
-    "explain": {
-      "s1": {
-        "title": "Steine ansagen",
-        "body": "Du kannst einen Stein nehmen, den ein Mitspieler gerade abgelegt hat, um damit eine Gruppe fertig zu machen. Das heißt Ansagen (Naki).\nDie fertige Gruppe legst du offen rechts neben deine Hand. Danach legst du einen Stein ab, und der Spieler rechts von dir ist an der Reihe."
-      },
-      "s2": {
-        "title": "Pon",
-        "body": "Hast du zwei gleiche Steine, kannst du den dritten gleichen Stein von jedem Mitspieler nehmen. Das ergibt einen Drilling. Das heißt Pon."
-      },
-      "s3": {
-        "title": "Chi",
-        "body": "Eine Folge kannst du nur mit dem Stein des Spielers links von dir bilden, also des Spielers, der direkt vor dir an der Reihe ist. Das heißt Chi."
-      },
-      "s4": {
-        "title": "Kan",
-        "body": "Vier gleiche Steine bilden ein Kan. Es gibt drei Arten:\n1. Mit drei gleichen Steinen nimmst du den vierten von einem Mitspieler (offenes Kan).\n2. Du hast alle vier selbst gezogen (verdecktes Kan, Ankan).\n3. Du legst den vierten Stein zu einem Pon dazu.\nNach einem Kan ziehst du einen Ersatzstein, und ein weiterer Dora-Anzeiger wird aufgedeckt (Stufe 8)."
-      },
-      "s5": {
-        "title": "Von wem kam der Stein?",
-        "body": "In einer angesagten Gruppe liegt ein Stein quer. Er zeigt, von wem er kam: liegt er links, vom Spieler links; in der Mitte, vom Spieler gegenüber; rechts, vom Spieler rechts."
-      },
-      "s6": {
-        "title": "Offene Hand",
-        "body": "Nach Pon, Chi oder einem offenen Kan ist deine Hand offen. Dann gelten manche Yaku nicht mehr: Riichi, Menzen Tsumo, Pinfu, Iipeikou und Chiitoitsu.\nEin verdecktes Kan (Ankan) lässt die Hand geschlossen."
-      },
-      "s7": {
-        "title": "Weniger Han",
-        "body": "Manche Yaku zählen mit offener Hand 1 Han weniger, zum Beispiel Honitsu, Chinitsu, Ittsu und Sanshoku Doujun.\nTanyao und Yakuhai zählen auch mit offener Hand voll."
-      },
-      "s8": {
-        "title": "Achtung: das Yaku",
-        "body": "Wer ansagt, verliert oft sein einziges mögliches Yaku. Sage nur an, wenn die Hand danach noch ein Yaku hat, zum Beispiel einen Drilling aus Drachen (Yakuhai) oder Tanyao."
-      },
-      "s9": {
-        "title": "Kuikae",
-        "body": "Direkt nach Pon oder Chi darfst du nicht denselben Stein ablegen, den du gerade genommen hast. Nach Chi ist auch der Stein auf der anderen Seite der Folge verboten: Wer mit 4-5 die 3 nimmt, darf weder die 3 noch die 6 ablegen.\nDieses Tauschen heißt Kuikae und ist bei Mahjong Soul verboten."
-      }
-    },
-    "guided": {
-      "intro": "Ein Mitspieler legt einen Stein ab. Entscheide, ob du ihn nimmst.",
-      "g1": {
-        "prompt": "Der Spieler gegenüber legt den roten Drachen (Chun) ab. Du hast zwei davon. Tippe auf „Pon“ und lege danach die 1 Manzu ab.",
-        "after": "Du hast einen Drilling aus Chun: Yakuhai. Damit hat deine offene Hand ein Yaku. Sie wartet auf die 2 oder 5 Souzu."
-      },
-      "g2": {
-        "prompt": "Der Spieler links legt die 5 Pinzu ab. Mit 6-7 Pinzu kannst du eine Folge bilden. Tippe auf „Chi“ und lege danach die 1 Manzu ab. Die 5 und die 8 Pinzu darfst du jetzt nicht ablegen (Kuikae). Sie sind rot markiert.",
-        "after": "Die Hand besteht nur aus Steinen von 2 bis 8: Tanyao gilt auch offen. Sie wartet auf die 6 Souzu oder die 8 Pinzu."
-      },
-      "g3": {
-        "prompt": "Dieselbe Hand, aber diesmal legt der Spieler gegenüber die 5 Pinzu ab. Es gibt keinen Chi-Knopf. Tippe auf „Weiter“.",
-        "after": "Chi geht nur mit dem Stein des Spielers links von dir. Pon geht dagegen mit dem Stein jedes Mitspielers."
-      },
-      "g4": {
-        "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: kein Riichi, kein Pinfu und kein Tanyao (wegen der 1 Manzu und des Chun-Paars). Tippe auf „Weiter“.",
-        "after": "Gut. Solange die Hand geschlossen bleibt, kannst du später noch Riichi ansagen."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
-    },
-    "quiz": {
-      "intro": "{total} Aufgaben. Du entscheidest, welche Ansagen möglich sind und ob eine offene Hand gewinnen kann. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Aufgabe {n} von {total}",
-      "callPrompt": "Welche Ansagen sind möglich? Wähle alle aus.",
-      "none": "Keine",
-      "from": {
-        "left": "Der Spieler links legt diesen Stein ab.",
-        "opposite": "Der Spieler gegenüber legt diesen Stein ab.",
-        "right": "Der Spieler rechts legt diesen Stein ab."
-      },
-      "openPrompt": "Ein Mitspieler legt deinen Gewinnstein ab. Kann diese offene Hand mit Ron gewinnen?",
-      "winds": "Dein Wind: Süd. Rundenwind: Ost.",
-      "yes": "Ja",
-      "no": "Nein",
-      "check": "Prüfen",
-      "correct": "Richtig.",
-      "wrong": "Leider falsch.",
-      "answerCalls": "Möglich: {list}.",
-      "answerYaku": "Yaku: {list}.",
-      "answerNoYaku": "Die Hand hat kein Yaku und kann nicht gewinnen.",
-      "melds": "Angesagt",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 7 geschafft. Stufe 8 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage8": {
-    "explain": {
-      "s1": {
-        "title": "Dora",
-        "body": "Zu Beginn jedes Spiels wird ein Stein der Mauer aufgedeckt: der Dora-Anzeiger. Der Stein, der in der Reihenfolge danach kommt, ist Dora.\nJede Dora in deiner Hand ist 1 Han wert. Hier zeigt die 3 Manzu an: Dora ist die 4 Manzu."
-      },
-      "s2": {
-        "title": "Die Reihenfolge",
-        "body": "Zahlensteine: der nächsthöhere Stein. Nach der 9 kommt wieder die 1.\nWinde: Osten, Süden, Westen, Norden, dann wieder Osten.\nDrachen: Haku, Hatsu, Chun, dann wieder Haku."
-      },
-      "s3": {
-        "title": "Dora sind kein Yaku",
-        "body": "Dora machen eine Hand nur wertvoller. Eine Hand ohne Yaku kann auch mit vielen Dora nicht gewinnen."
-      },
-      "s4": {
-        "title": "Aka-Dora",
-        "body": "Jede der drei roten Fünfen zählt 1 Han zusätzlich. Ist die Fünf gleichzeitig Dora, zählt sie für beides."
-      },
-      "s5": {
-        "title": "Ura-Dora",
-        "body": "Wer mit Riichi gewinnt, deckt zusätzlich den Stein unter dem Dora-Anzeiger auf. Er zeigt weitere Dora an: die Ura-Dora.\nOhne Riichi gibt es keine Ura-Dora."
-      },
-      "s6": {
-        "title": "Kan-Dora",
-        "body": "Nach jedem Kan wird ein weiterer Dora-Anzeiger aufgedeckt: die Kan-Dora. Bei einem verdeckten Kan sofort, bei einem offenen Kan erst nach dem nächsten Abwurf.\nWer mit Riichi gewinnt, bekommt auch für jede Kan-Dora eine Ura-Dora dazu."
-      }
-    },
-    "guided": {
-      "intro": "Oben siehst du einen Dora-Anzeiger. Tippe unten auf den Stein, der Dora ist.",
-      "g1": {
-        "prompt": "Der Dora-Anzeiger ist die 3 Manzu. Welcher Stein ist Dora?",
-        "after": "Richtig: die 4 Manzu, der nächsthöhere Stein."
-      },
-      "g2": {
-        "prompt": "Der Dora-Anzeiger ist die 9 Pinzu. Welcher Stein ist Dora?",
-        "after": "Richtig: Nach der 9 kommt wieder die 1. Dora ist die 1 Pinzu."
-      },
-      "g3": {
-        "prompt": "Der Dora-Anzeiger ist Norden. Welcher Stein ist Dora?",
-        "after": "Richtig: Nach Norden kommt wieder Osten."
-      },
-      "g4": {
-        "prompt": "Der Dora-Anzeiger ist Chun. Welcher Stein ist Dora?",
-        "after": "Richtig: Nach Chun kommt wieder Haku."
-      },
-      "g5": {
-        "prompt": "Der Dora-Anzeiger ist Haku. Welcher Stein ist Dora?",
-        "after": "Richtig: Nach Haku kommt Hatsu."
-      },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
-      "indicator": "Dora-Anzeiger",
-      "ura": "Ura-Dora-Anzeiger"
-    },
-    "quiz": {
-      "intro": "{total} Aufgaben. Finde die Dora und zähle die Dora einer Hand. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Aufgabe {n} von {total}",
-      "pickPrompt": "Welcher Stein ist Dora?",
-      "countPrompt": "Wie viele Dora hat diese Hand insgesamt? Zähle Dora, rote Fünfen und Ura-Dora zusammen.",
-      "riichi": "Mit Riichi gewonnen: Die Ura-Dora zählen mit.",
-      "correct": "Richtig.",
-      "wrong": "Leider falsch.",
-      "answerPick": "Dora ist: {name}.",
-      "answerCount": "Dora: {dora}, rote Fünfen: {aka}, Ura-Dora: {ura}. Zusammen {total}.",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 8 geschafft. Stufe 9 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage9": {
-    "explain": {
-      "s1": {
-        "title": "Geber und Sitzwind",
-        "body": "In jedem Spiel ist ein Spieler der Geber (Oya), die anderen sind Nicht-Geber (Ko).\nDer Geber hat den Sitzwind Osten. Der Spieler rechts von ihm hat Süden, dann folgen Westen und Norden."
-      },
-      "s2": {
-        "title": "Mehr Punkte für den Geber",
-        "body": "Gewinnt der Geber, bekommt er 1,5-mal so viele Punkte wie ein Nicht-Geber.\nGewinnt ein Nicht-Geber mit Tsumo, zahlt der Geber doppelt so viel wie die beiden anderen."
-      },
-      "s3": {
-        "title": "Spiel und Runde",
-        "body": "Ein Spiel endet, wenn jemand gewinnt oder die Mauer leer ist. Danach wird meistens der nächste Spieler (rechts) Geber.\nVier Spiele bilden eine Runde: Ost 1 bis Ost 4."
-      },
-      "s4": {
-        "title": "Renchan und Honba",
-        "body": "Gewinnt der Geber, bleibt er Geber, und das Spiel wird wiederholt. Das heißt Renchan.\nDabei kommt ein Honba dazu. Jeder Honba bringt dem nächsten Gewinner 300 Punkte mehr. Gewinnt ein Nicht-Geber, fallen die Honba wieder weg."
-      },
-      "s5": {
-        "title": "Ryuukyoku",
-        "body": "Ist die Mauer leer und niemand hat gewonnen, endet das Spiel ohne Gewinner (Ryuukyoku).\nWer nicht Tenpai ist (Noten), zahlt an die Tenpai-Spieler zusammen 3.000 Punkte.\nIst der Geber Tenpai, bleibt er Geber. Nach einem Ryuukyoku kommt immer ein Honba dazu."
-      },
-      "s6": {
-        "title": "Riichi-Einsätze",
-        "body": "Die 1.000 Punkte für Riichi bleiben auf dem Tisch, auch nach einem Ryuukyoku. Wer als Nächstes gewinnt, bekommt sie alle."
-      },
-      "s7": {
-        "title": "Abbruch",
-        "body": "In seltenen Fällen wird ein Spiel abgebrochen und mit demselben Geber wiederholt.\nEinen Fall darfst du selbst ansagen: Hast du bei deinem ersten Zug neun verschiedene Einsen, Neunen und Ehrensteine, kannst du abbrechen (Kyuushu Kyuuhai). Andere Fälle passieren automatisch, zum Beispiel wenn alle vier Riichi ansagen."
-      },
-      "s8": {
-        "title": "Tonpuusen",
-        "body": "Hier spielst du Tonpuusen: eine kurze Partie mit der Ostrunde (Ost 1 bis Ost 4). Jeder beginnt mit 25.000 Punkten."
-      },
-      "s9": {
-        "title": "Wann endet die Partie?",
-        "body": "Nach Ost 4 endet die Partie, wenn jemand mindestens 30.000 Punkte hat. Sonst geht es in die Südrunde. Dort endet die Partie, sobald jemand 30.000 Punkte erreicht, spätestens nach Süd 4.\nIst der Geber in Ost 4 vorne und hat mindestens 30.000 Punkte, endet die Partie auch bei Renchan.\nRutscht jemand unter 0 Punkte, endet die Partie sofort."
-      },
-      "s10": {
-        "title": "Das Ergebnis",
-        "body": "Am Ende zählt die Platzierung nach Punkten. Bei Gleichstand liegt vorne, wer näher am ersten Geber sitzt.\nRiichi-Einsätze, die am Ende noch auf dem Tisch liegen, bekommt der Erste."
-      }
-    },
-    "guided": {
-      "intro": "Verfolge, wie eine Partie weitergeht. Du sitzt unten und bist im ersten Spiel der Geber.",
-      "g1": "Ost 1: Du bist Geber (Osten). Alle haben 25.000 Punkte.",
-      "g2": "Du gewinnst als Geber. Renchan: Du bleibst Geber, und es gibt 1 Honba. Das nächste Spiel heißt weiterhin Ost 1.",
-      "g3": "Der Spieler rechts gewinnt. Die Honba fallen weg, und er wird Geber: Ost 2.",
-      "g4": "Ryuukyoku. Der Geber (rechts) ist Tenpai und bleibt Geber. Es gibt 1 Honba. Wer Noten war, hat gezahlt.",
-      "g5": "Wieder Ryuukyoku, aber diesmal ist der Geber Noten. Der nächste Spieler wird Geber: Ost 3. Die Honba steigen trotzdem auf 2.",
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
-      "dealer": "Geber",
-      "you": "Du"
-    },
-    "quiz": {
-      "intro": "{total} Fragen zum Ablauf einer Partie. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
-      "question": "Frage {n} von {total}",
-      "flowPrompt": "Was passiert als Nächstes?",
-      "situation": "{round}, {honba} Honba.",
-      "event": {
-        "dealerWin": "Der Geber gewinnt.",
-        "childWin": "Ein Nicht-Geber gewinnt.",
-        "drawDealerTenpai": "Ryuukyoku. Der Geber ist Tenpai.",
-        "drawDealerNoten": "Ryuukyoku. Der Geber ist Noten."
-      },
-      "scoresAfter": "Punkte danach:",
-      "end": "Die Partie endet.",
-      "next": "Nächstes Spiel: {round}, {honba} Honba",
-      "notenPrompt": "Ryuukyoku. Anzahl der Spieler, die Tenpai sind: {n}. Die anderen sind Noten. Wie viel zahlt jeder Noten-Spieler?",
-      "points": "{n} Punkte",
-      "correct": "Richtig.",
-      "wrong": "Leider falsch. Richtig ist: {answer}",
-      "score": "{score} von {total} richtig.",
-      "passed": "Stufe 9 geschafft. Stufe 10 ist jetzt offen.",
-      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
-    }
-  },
-  "stage10": {
-    "explain": {
-      "s1": {
-        "title": "Die echte Partie",
-        "body": "Jetzt spielst du eine ganze Partie Tonpuusen gegen drei Computer-Gegner. Es gelten alle Regeln, die du gelernt hast."
-      },
-      "s2": {
-        "title": "Die Gegner",
-        "body": "Du kannst leichte oder normale Gegner wählen. Leichte Gegner machen öfter Fehler, sagen fast nie an und achten nicht auf Gefahr. Normale Gegner spielen schneller auf Tenpai, sagen Riichi an und weichen bei Riichi aus."
-      },
-      "s3": {
-        "title": "Hinweise",
-        "body": "Wenn „Hinweise im Spiel“ in den Einstellungen eingeschaltet ist, siehst du, wie viele Steine dir fehlen, ob du Tenpai bist und auf welche Steine du wartest. Mit „Tipp“ werden gute Steine zum Ablegen markiert."
-      },
-      "s4": {
-        "title": "Bedienung",
-        "body": "Tippe einen Stein an, um ihn anzuheben, und noch einmal, um ihn abzulegen. Knöpfe wie Pon, Chi, Kan, Ron, Tsumo oder Riichi erscheinen nur, wenn sie möglich sind. Mit „Weiter“ lässt du eine Möglichkeit aus."
-      }
-    },
-    "tour": {
-      "intro": "Ein kurzer Rundgang über den Spieltisch.",
-      "t1": "In der Mitte siehst du das Spiel (zum Beispiel Ost 2), die Honba, die Riichi-Einsätze auf dem Tisch und wie viele Steine noch in der Mauer sind.",
-      "t2": "An jeder Seite der Mitte stehen Sitzwind und Punkte des Spielers. Der Geber ist golden markiert. Ein weißer Stab zeigt eine Riichi-Ansage.",
-      "t3": "Oben links liegen die Dora-Anzeiger. Nach einem Kan wird ein weiterer aufgedeckt.",
-      "t4": "Vor jedem Spieler liegen seine abgelegten Steine (Kawa), sechs pro Reihe. Ein quer liegender Stein ist eine Riichi-Ansage.",
-      "t5": "Die Hände der Gegner siehst du nur von hinten. Ihre angesagten Gruppen liegen offen daneben.",
-      "t6": "Unten ist deine Hand. Tippe einen Stein an und noch einmal, um ihn abzulegen.",
-      "t7": "Deine angesagten Gruppen liegen rechts neben deiner Hand.",
-      "t8": "Über deiner Hand erscheinen die Knöpfe für Pon, Chi, Kan, Ron, Tsumo und Riichi, wenn sie möglich sind.",
-      "finished": "Der Rundgang ist zu Ende. Jetzt kannst du die Partie spielen."
-    },
-    "start": "Partie starten",
-    "chooseLevel": "Wähle die Stärke der Gegner.",
-    "passed": "Stufe 10 geschafft. Du hast alle Stufen abgeschlossen."
   },
   "game": {
     "names": {
@@ -1081,5 +405,725 @@
       }
     },
     "south": "Niemand hat 30.000 Punkte: Es geht in die Südrunde."
+  },
+  "finale": {
+    "explain": {
+      "s1": {
+        "title": "Die echte Partie",
+        "body": "Jetzt spielst du eine ganze Partie Tonpuusen gegen drei Computer-Gegner. Es gelten alle Regeln, die du gelernt hast."
+      },
+      "s2": {
+        "title": "Die Gegner",
+        "body": "Du kannst leichte oder normale Gegner wählen. Leichte Gegner machen öfter Fehler, sagen fast nie an und achten nicht auf Gefahr. Normale Gegner spielen schneller auf Tenpai, sagen Riichi an und weichen bei Riichi aus."
+      },
+      "s3": {
+        "title": "Hinweise",
+        "body": "Wenn „Hinweise im Spiel“ in den Einstellungen eingeschaltet ist, siehst du, wie viele Steine dir fehlen, ob du Tenpai bist und auf welche Steine du wartest. Mit „Tipp“ werden gute Steine zum Ablegen markiert."
+      },
+      "s4": {
+        "title": "Bedienung",
+        "body": "Tippe einen Stein an, um ihn anzuheben, und noch einmal, um ihn abzulegen. Knöpfe wie Pon, Chi, Kan, Ron, Tsumo oder Riichi erscheinen nur, wenn sie möglich sind. Mit „Weiter“ lässt du eine Möglichkeit aus."
+      }
+    },
+    "tour": {
+      "intro": "Ein kurzer Rundgang über den Spieltisch.",
+      "t1": "In der Mitte siehst du das Spiel (zum Beispiel Ost 2), die Honba, die Riichi-Einsätze auf dem Tisch und wie viele Steine noch in der Mauer sind.",
+      "t2": "An jeder Seite der Mitte stehen Sitzwind und Punkte des Spielers. Der Geber ist golden markiert. Ein weißer Stab zeigt eine Riichi-Ansage.",
+      "t3": "Oben links liegen die Dora-Anzeiger. Nach einem Kan wird ein weiterer aufgedeckt.",
+      "t4": "Vor jedem Spieler liegen seine abgelegten Steine (Kawa), sechs pro Reihe. Ein quer liegender Stein ist eine Riichi-Ansage.",
+      "t5": "Die Hände der Gegner siehst du nur von hinten. Ihre angesagten Gruppen liegen offen daneben.",
+      "t6": "Unten ist deine Hand. Tippe einen Stein an und noch einmal, um ihn abzulegen.",
+      "t7": "Deine angesagten Gruppen liegen rechts neben deiner Hand.",
+      "t8": "Über deiner Hand erscheinen die Knöpfe für Pon, Chi, Kan, Ron, Tsumo und Riichi, wenn sie möglich sind.",
+      "finished": "Der Rundgang ist zu Ende. Jetzt kannst du die Partie spielen."
+    },
+    "start": "Partie starten",
+    "chooseLevel": "Wähle die Stärke der Gegner.",
+    "passed": "Stufe 11 geschafft. Du hast alle Stufen abgeschlossen."
+  },
+  "tiles": {
+    "explain": {
+      "s1": {
+        "title": "Die Spielsteine",
+        "body": "Mahjong spielt man mit Steinen, so wie man andere Spiele mit Karten spielt. Auf Japanisch heißen die Steine Hai.\nEs gibt 34 verschiedene Steine. Von jedem gibt es 4 gleiche Exemplare, zusammen also 136 Steine.\nDie Steine teilen sich in zwei Arten: Zahlensteine und Ehrensteine.",
+        "summary": "136 Steine, 34 verschiedene, von jedem vier."
+      },
+      "s2": {
+        "title": "Zahlensteine: Manzu",
+        "body": "Es gibt drei Farben mit den Zahlen 1 bis 9. Die erste Farbe heißt Manzu.\nOben steht die Zahl als chinesisches Schriftzeichen, unten bei allen das Zeichen 萬.\nWenn die Hilfsanzeige eingeschaltet ist, steht in der Ecke zusätzlich die Zahl.",
+        "summary": "Manzu erkennst du am Zeichen 萬 unten."
+      },
+      "s3": {
+        "title": "Zahlensteine: Pinzu",
+        "body": "Die zweite Farbe heißt Pinzu. Die Anzahl der Kreise ist die Zahl des Steins.\nBei Pinzu und Souzu gibt es keine Hilfszahl in der Ecke. Zähle die Kreise und Stäbe selbst.",
+        "summary": "Pinzu sind Kreise. Zähle sie."
+      },
+      "s4": {
+        "title": "Zahlensteine: Souzu",
+        "body": "Die dritte Farbe heißt Souzu. Die Anzahl der Bambusstäbe ist die Zahl des Steins.\nDie 1 sieht anders aus: Sie zeigt einen einzelnen großen Bambus. In vielen anderen Mahjong-Spielen ist auf der 1 Souzu ein Vogel abgebildet.",
+        "summary": "Souzu sind Bambusstäbe. Die 1 sieht besonders aus."
+      },
+      "s5": {
+        "title": "Ehrensteine: die Winde",
+        "body": "Neben den Zahlensteinen gibt es Ehrensteine (Jihai). Sie haben keine Zahl.\nVier davon sind Winde: 東 Osten (Ton), 南 Süden (Nan), 西 Westen (Sha) und 北 Norden (Pei).\nIn Stufe 1 hast du gesehen: Jeder Sitzplatz am Tisch hat einen Wind. Wozu das gut ist, kommt später.",
+        "summary": "Vier Windsteine: Osten, Süden, Westen, Norden."
+      },
+      "s6": {
+        "title": "Ehrensteine: die Drachen",
+        "body": "Die anderen drei Ehrensteine sind Drachen (Sangenpai): Weiß (Haku), 發 Grün (Hatsu) und 中 Rot (Chun).\nDer weiße Drache ist ein leerer Stein ohne Zeichen.",
+        "summary": "Drei Drachen: weiß (leer), grün (發), rot (中)."
+      },
+      "s7": {
+        "title": "Rote Fünfen",
+        "body": "In jeder der drei Farben ist eine der vier Fünfen rot. Eine rote 5 zählt wie eine normale 5.\nSie bringt aber zusätzliche Punkte. Solche Bonussteine heißen Dora, die roten Fünfen heißen Aka-Dora („rote Dora“). Mehr dazu in Stufe 9.",
+        "summary": "Rote Fünfen bringen mehr Punkte."
+      },
+      "s8": {
+        "title": "Zusammenfassung",
+        "body": "3 Farben mit je 9 Zahlen: 27 Zahlensteine.\n4 Winde und 3 Drachen: 7 Ehrensteine.\nZusammen 34 Steine, jeder viermal vorhanden: 136 Steine."
+      }
+    },
+    "guided": {
+      "intro": "Hier liegen alle 34 Steine und die drei roten Fünfen. Tippe auf den Stein, der gesucht wird.",
+      "g1": {
+        "prompt": "Tippe auf die 1 Manzu. Das Schriftzeichen 一 bedeutet 1.",
+        "after": "Richtig. Unten steht bei allen Manzu das Zeichen 萬."
+      },
+      "g2": {
+        "prompt": "Tippe auf die 7 Pinzu. Zähle die Kreise.",
+        "after": "Richtig: sieben Kreise."
+      },
+      "g3": {
+        "prompt": "Tippe auf die 1 Souzu. Sie sieht anders aus als die übrigen Souzu.",
+        "after": "Richtig. Die 1 Souzu zeigt einen einzelnen großen Bambus."
+      },
+      "g4": {
+        "prompt": "Tippe auf den Wind Osten (東, Ton).",
+        "after": "Richtig. Der Geber eines Spiels sitzt immer auf Osten. Mehr dazu in Stufe 10."
+      },
+      "g5": {
+        "prompt": "Tippe auf den weißen Drachen (Haku).",
+        "after": "Richtig. Der weiße Drache ist der Stein ohne Schriftzeichen."
+      },
+      "g6": {
+        "prompt": "Tippe auf die rote 5 Manzu.",
+        "after": "Richtig. Sie zählt als 5 und bringt zusätzlich Punkte."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Fragen. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "findTile": "Tippe auf: {name}",
+      "nameTile": "Wie heißt dieser Stein?",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch. Richtig ist: {name}.",
+      "question": "Frage {n} von {total}",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 2 geschafft. Stufe 3 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "shape": {
+    "explain": {
+      "s1": {
+        "title": "Das Ziel",
+        "body": "Jeder Spieler hat 13 Steine. Wer an der Reihe ist, nimmt einen Stein dazu und hat dann 14. Danach legt er einen Stein ab.\nZiel ist eine fertige Hand aus 14 Steinen: 4 Gruppen und 1 Paar.\nMit einer fertigen Hand kann man gewinnen. Das heißt Agari. (In Stufe 6 kommt noch eine Bedingung dazu.)",
+        "summary": "Fertige Hand = 4 Gruppen + 1 Paar."
+      },
+      "s2": {
+        "title": "Gruppe 1: Shuntsu (Folge)",
+        "body": "Ein Shuntsu ist eine Folge: drei Zahlen direkt hintereinander in derselben Farbe, zum Beispiel 3-4-5.\nDie Zahlen laufen nicht im Kreis: 8-9-1 ist keine Folge. Mit Ehrensteinen kann man keine Folge bilden.",
+        "summary": "Folge = drei Zahlen hintereinander, gleiche Farbe."
+      },
+      "s3": {
+        "title": "Gruppe 2: Koutsu (Drilling)",
+        "body": "Ein Koutsu ist ein Drilling: drei gleiche Steine. Das geht mit Zahlensteinen und mit Ehrensteinen.",
+        "summary": "Drilling = drei gleiche Steine."
+      },
+      "s4": {
+        "title": "Das Paar: Jantou",
+        "body": "Dazu kommt ein Paar aus zwei gleichen Steinen. Es heißt Jantou.",
+        "summary": "Paar = zwei gleiche Steine."
+      },
+      "s5": {
+        "title": "Eine fertige Hand",
+        "body": "So sieht eine fertige Hand aus: 4 Gruppen und 1 Paar, also 3 + 3 + 3 + 3 + 2 = 14 Steine.\nEine rote 5 zählt dabei wie eine normale 5."
+      },
+      "s6": {
+        "title": "Ausnahmen",
+        "body": "Es gibt eine besondere fertige Hand aus sieben Paaren (Chiitoitsu). Die lernst du in Stufe 6 kennen. Eine zweite Sonderform ist so selten, dass du sie dir jetzt nicht merken musst.\nAußerdem gibt es Gruppen aus vier gleichen Steinen (Kan). Die kommen in Stufe 8.",
+        "summary": "Fast immer gilt: 4 Gruppen + 1 Paar."
+      }
+    },
+    "guided": {
+      "intro": "Diese 14 Steine bilden eine fertige Hand. Teile sie Schritt für Schritt in Gruppen auf.",
+      "g1": {
+        "prompt": "Tippe auf 2, 3 und 4 Manzu und dann auf „Gruppe bilden“.",
+        "after": "Das ist ein Shuntsu (Folge): 2-3-4 in derselben Farbe."
+      },
+      "g2": {
+        "prompt": "Tippe auf 6, 7 und 8 Pinzu und bilde eine Gruppe.",
+        "after": "Noch ein Shuntsu: 6-7-8 Pinzu."
+      },
+      "g3": {
+        "prompt": "Tippe auf die drei 3 Souzu und bilde eine Gruppe.",
+        "after": "Drei gleiche Steine: ein Koutsu (Drilling)."
+      },
+      "g4": {
+        "prompt": "Tippe auf die drei Osten-Steine und bilde eine Gruppe.",
+        "after": "Auch mit Ehrensteinen kann man ein Koutsu bilden."
+      },
+      "g5": {
+        "prompt": "Tippe auf die beiden 9 Manzu und bilde eine Gruppe.",
+        "after": "Das ist das Paar (Jantou). Die Hand ist fertig: 4 Gruppen und 1 Paar."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "puzzle": {
+      "intro": "Teile jede Hand in 4 Gruppen und 1 Paar auf. Löse {total} Aufgaben, um die Stufe abzuschließen.",
+      "start": "Übung starten",
+      "instruction": "Tippe Steine an und dann auf „Gruppe bilden“. Ziel: 4 Gruppen und 1 Paar.",
+      "makeGroup": "Gruppe bilden",
+      "resetGroups": "Alle Gruppen auflösen",
+      "tip": "Tipp",
+      "ungroupHint": "Tippe auf eine Gruppe, um sie wieder aufzulösen.",
+      "shuntsu": "Shuntsu (Folge)",
+      "koutsu": "Koutsu (Drilling)",
+      "pair": "Jantou (Paar)",
+      "err": {
+        "wrongSize": "Eine Gruppe besteht aus 3 Steinen, ein Paar aus 2.",
+        "pairNotSame": "Ein Paar besteht aus zwei gleichen Steinen.",
+        "mixedSuits": "Eine Folge muss aus einer einzigen Farbe sein.",
+        "honorSequence": "Mit Ehrensteinen (Winden und Drachen) kann man keine Folge bilden, nur Drillinge und Paare.",
+        "notConsecutive": "Die Zahlen einer Folge müssen direkt aufeinander folgen, zum Beispiel 4-5-6.",
+        "secondPair": "Eine fertige Hand hat nur ein Paar."
+      },
+      "tipStuck": "Mit den bisherigen Gruppen geht die Hand nicht auf. Löse eine Gruppe wieder auf.",
+      "tipShown": "Diese Steine bilden zusammen eine Gruppe.",
+      "solved": "Fertig: 4 Gruppen und 1 Paar. Das ist eine fertige Hand.",
+      "task": "Aufgabe {n} von {total}",
+      "nextTask": "Nächste Aufgabe",
+      "passed": "Stufe 3 geschafft. Stufe 4 ist jetzt offen."
+    }
+  },
+  "solo": {
+    "explain": {
+      "s1": {
+        "title": "Allein spielen",
+        "body": "Wie in Stufe 1 ziehst du Steine und legst welche ab. Diesmal spielst du allein, ohne Gegner, damit du in Ruhe üben kannst.\nDu bekommst 13 Steine. Die übrigen Steine liegen verdeckt bereit. Sie heißen Mauer (Yama).",
+        "summary": "Allein üben: ziehen, ablegen, bis die Hand fertig ist."
+      },
+      "s2": {
+        "title": "Ziehen und Ablegen",
+        "body": "In jedem Zug ziehst du einen Stein aus der Mauer. Dann hast du 14 Steine und legst einen davon ab, sodass wieder 13 übrig bleiben.\nAbgelegte Steine liegen offen in Reihen vor dir. Diese Reihen heißen Kawa („Fluss“).\nSo legst du ab: Tippe einen Stein an, dann hebt er sich etwas. Tippe ihn noch einmal an, um ihn abzulegen.",
+        "summary": "Antippen hebt den Stein an, nochmal antippen legt ihn ab."
+      },
+      "s3": {
+        "title": "Welchen Stein ablegen?",
+        "body": "Behalte Steine, die schon zu einer Gruppe passen oder fast passen, zum Beispiel 4-5 (es fehlt die 3 oder die 6) oder ein Paar.\nLege einzelne Steine ab, die zu nichts passen. Einzelne Ehrensteine sind oft die ersten Kandidaten, denn mit ihnen kann man keine Folge bilden.",
+        "summary": "Behalte, was zusammenpasst. Lege einzelne Steine ab."
+      },
+      "s4": {
+        "title": "Gewinnen mit Tsumo",
+        "body": "Wenn der gezogene Stein deine Hand fertig macht, erscheint der Knopf „Tsumo“. Tsumo bedeutet: Ich habe den Stein selbst gezogen und gewinne.\nIn dieser Stufe reicht eine fertige Hand zum Gewinnen. Die zusätzliche Bedingung kommt in Stufe 6.",
+        "summary": "Hand fertig mit selbst gezogenem Stein: „Tsumo“ drücken."
+      }
+    },
+    "guided": {
+      "intro": "Folge den Anweisungen. Du kannst nur den Stein ablegen, der genannt wird. Der gezogene Stein liegt ganz rechts.",
+      "g1": {
+        "prompt": "Du hast die 8 Pinzu gezogen. Damit ist 6-7-8 Pinzu eine fertige Folge. Lege jetzt den Osten ab: Tippe ihn an und dann noch einmal.",
+        "after": "Der Osten passte zu keinem anderen Stein. Ein einzelner Ehrenstein wird nur dann nützlich, wenn du noch gleiche Steine ziehst."
+      },
+      "g2": {
+        "prompt": "Du hast die 8 Manzu gezogen. 8-9 Manzu ist fast eine Folge: Es fehlt nur die 7. Lege den weißen Drachen (Haku) ab.",
+        "after": "Jetzt fehlt dir nur noch ein einziger Stein: die 7 Manzu. Diesen Zustand lernst du in Stufe 5 genauer kennen."
+      },
+      "g3": {
+        "prompt": "Du hast die 2 Pinzu gezogen. Sie hilft dir nicht. Lege sie gleich wieder ab.",
+        "after": "Einen gezogenen Stein sofort wieder abzulegen ist ganz normal, wenn er nicht passt."
+      },
+      "g4": {
+        "prompt": "Du hast die 7 Manzu gezogen. Die Hand ist fertig: 2-3-4 und 7-8-9 Manzu, 6-7-8 Pinzu, 3-4-5 Souzu und das Paar Chun. Tippe auf „Tsumo“."
+      },
+      "finished": "Gewonnen mit Tsumo. Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "game": {
+      "intro": "Spiele allein, bis deine Hand fertig ist. Wenn du mit Tsumo gewinnst, ist die Stufe geschafft.",
+      "start": "Spiel starten",
+      "draws": "Zug {n}",
+      "wall": "Mauer: {n}",
+      "hintMany": "Dir fehlen noch mindestens {n} Steine bis zur fertigen Hand.",
+      "hintOne": "Dir fehlt nur noch ein Stein.",
+      "hintAgari": "Deine Hand ist fertig. Tippe auf „Tsumo“.",
+      "tip": "Tipp",
+      "tipShown": "Markiert sind die Steine, die du am besten ablegst.",
+      "won": "Gewonnen mit Tsumo nach {n} Zügen.",
+      "wonChiitoitsu": "Das ist Chiitoitsu (sieben Paare), eine der besonderen fertigen Hände.",
+      "wonKokushi": "Das ist Kokushi Musou, eine der besonderen fertigen Hände.",
+      "passed": "Stufe 4 geschafft. Stufe 5 ist jetzt offen.",
+      "wallEmpty": "Die Mauer ist leer, ohne dass die Hand fertig wurde. Versuche es noch einmal.",
+      "newGame": "Neues Spiel"
+    }
+  },
+  "tenpai": {
+    "explain": {
+      "s1": {
+        "title": "Tenpai",
+        "body": "Wenn dir nur noch ein einziger Stein zur fertigen Hand fehlt, bist du Tenpai („bereit“).\nDiese Hand ist Tenpai: Es fehlt nur noch die 3 Souzu oder die 6 Souzu.",
+        "summary": "Tenpai = nur noch ein Stein fehlt."
+      },
+      "s2": {
+        "title": "Wartesteine",
+        "body": "Die Steine, mit denen deine Hand fertig wird, heißen Wartesteine. Das Warten heißt auf Japanisch Machi.\nJe mehr verschiedene Wartesteine es gibt, desto leichter gewinnst du.",
+        "summary": "Wartesteine = die Steine, mit denen du gewinnst."
+      },
+      "s3": {
+        "title": "Ryanmen: zwei Seiten",
+        "body": "Zwei Zahlen direkt nebeneinander wie 4-5 warten auf beide Seiten: die 3 oder die 6. Diese Form heißt Ryanmen und ist die günstigste.",
+        "summary": "Die Namen musst du dir nicht merken. Wichtig ist nur: Welche Steine fehlen mir?"
+      },
+      "s4": {
+        "title": "Kanchan und Penchan",
+        "body": "Mit einer Lücke wie 4-6 wartet man nur auf die Mitte, die 5. Das heißt Kanchan.\n1-2 wartet nur auf die 3, und 8-9 nur auf die 7. Das heißt Penchan.",
+        "summary": "Die Namen musst du dir nicht merken. Wichtig ist nur: Welche Steine fehlen mir?"
+      },
+      "s5": {
+        "title": "Shanpon und Tanki",
+        "body": "Mit zwei Paaren wartet man darauf, dass eines davon zum Drilling wird. Das andere bleibt das Paar. Das heißt Shanpon.\nEin einzelner Stein wartet auf einen gleichen Stein, damit ein Paar entsteht. Das heißt Tanki.",
+        "summary": "Die Namen musst du dir nicht merken. Wichtig ist nur: Welche Steine fehlen mir?"
+      },
+      "s6": {
+        "title": "Mehrere Möglichkeiten",
+        "body": "Manche Hände kann man auf verschiedene Arten aufteilen. 2-3-4-5 Manzu wartet zum Beispiel auf die 2 und die 5: 2-3-4 und eine einzelne 5, oder 3-4-5 und eine einzelne 2.\nPrüfe deshalb jede Möglichkeit.",
+        "summary": "Probiere jede Aufteilung aus. In Mahjong Soul siehst du deine Wartesteine auch angezeigt."
+      }
+    },
+    "guided": {
+      "intro": "Jede dieser Hände ist Tenpai. Tippe unten auf alle Wartesteine.",
+      "g1": {
+        "prompt": "Die Hand wartet mit 4-5 Souzu auf beide Seiten. Tippe auf die 3 Souzu und die 6 Souzu.",
+        "after": "Richtig: Ryanmen, zwei verschiedene Wartesteine."
+      },
+      "g2": {
+        "prompt": "Hier fehlt die Mitte von 4-6 Manzu. Tippe auf die 5 Manzu.",
+        "after": "Richtig: Kanchan, nur ein Wartestein."
+      },
+      "g3": {
+        "prompt": "1-2 Pinzu kann nur mit der 3 zu einer Folge werden. Tippe auf die 3 Pinzu.",
+        "after": "Richtig: Penchan. Auf der anderen Seite gibt es keine Zahl mehr."
+      },
+      "g4": {
+        "prompt": "Zwei Paare: 5 Pinzu und 7 Souzu. Eines davon muss zum Drilling werden. Tippe auf die 5 Pinzu und die 7 Souzu.",
+        "after": "Richtig: Shanpon. Der Stein, der kommt, wird zum Drilling. Das andere Paar bleibt das Paar."
+      },
+      "g5": {
+        "prompt": "Vier Gruppen sind fertig, nur der Westen ist allein. Tippe auf den Westen.",
+        "after": "Richtig: Tanki. Ein zweiter Westen macht das Paar."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Hände. Tippe bei jeder Hand alle Wartesteine an und dann auf „Prüfen“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Hand {n} von {total}",
+      "prompt": "Diese Hand ist Tenpai. Welche Steine fehlen? Tippe alle Wartesteine an.",
+      "check": "Prüfen",
+      "correct": "Richtig.",
+      "wrong": "Leider nicht ganz. Richtig ist: {tiles}.",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 5 geschafft. Stufe 6 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "ron": {
+    "explain": {
+      "s1": {
+        "title": "Ron",
+        "body": "In Stufe 1 hast du mit Ron gewonnen: mit dem Stein, den ein anderer Spieler gerade abgelegt hat.\nMahjong Soul zeigt dir den Knopf „Ron“ nur dann, wenn du damit gewinnen darfst.",
+        "summary": "Ron = mit dem abgelegten Stein eines anderen gewinnen."
+      },
+      "s2": {
+        "title": "Auch Ron braucht ein Yaku",
+        "body": "Auch beim Ron braucht deine Hand ein Yaku. Achtung: Menzen Tsumo zählt hier nicht, denn du hast den Stein nicht selbst gezogen.\nEine geschlossene Hand ohne anderes Yaku kann also nur mit Tsumo gewinnen, oder du sagst vorher Riichi an.",
+        "summary": "Für Ron brauchst du ein Yaku außer Menzen Tsumo. Riichi hilft immer."
+      },
+      "s3": {
+        "title": "Wer zahlt?",
+        "body": "Bei Ron zahlt der Spieler allein, der den Stein abgelegt hat. Das nennt man Einwerfen. Bei Tsumo zahlen alle drei anderen zusammen.",
+        "summary": "Wer den Gewinnstein ablegt, zahlt alles allein."
+      },
+      "s4": {
+        "title": "Furiten",
+        "body": "Hast du einen deiner Wartesteine selbst abgelegt, darfst du nicht mit Ron gewinnen, auch nicht mit deinen anderen Wartesteinen. Mahjong Soul zeigt dann keinen Ron-Knopf. Mit Tsumo kannst du weiterhin gewinnen.\nEs gibt dazu noch ein paar Sonderfälle. Die musst du dir nicht merken: Mahjong Soul passt für dich auf.",
+        "summary": "Kommt dein Stein, aber kein Ron-Knopf erscheint, bist du Furiten. Dann hilft nur Tsumo."
+      }
+    },
+    "guided": {
+      "intro": "Ein Mitspieler legt einen Stein ab. Prüfe, ob du Ron sagen kannst.",
+      "g1": {
+        "prompt": "Deine Hand wartet auf die 5 Pinzu oder die 7 Souzu und besteht nur aus Steinen von 2 bis 8 (Tanyao). Ein Mitspieler legt die 7 Souzu ab. Tippe auf „Ron“.",
+        "after": "Gewonnen mit Ron. Der Mitspieler, der die 7 Souzu abgelegt hat, zahlt alles."
+      },
+      "g2": {
+        "prompt": "Dieselbe Hand, aber in deinem Kawa liegt die 5 Pinzu, einer deiner Wartesteine. Ein Mitspieler legt die 7 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
+        "after": "Du bist Furiten: Ein eigener Wartestein liegt in deinem Kawa. Darum gibt es keinen Ron-Knopf. Mit Tsumo ginge es noch."
+      },
+      "g3": {
+        "prompt": "Diese Hand ist geschlossen und Tenpai, hat aber kein Yaku. Ein Mitspieler legt die 9 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
+        "after": "Ohne Yaku kein Ron. Mit Riichi hätte die Hand ein Yaku, mit Tsumo auch (Menzen Tsumo)."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Hände. Ein Mitspieler legt deinen Gewinnstein ab. Entscheide jedes Mal: Wenn du jetzt Ron sagst, hat die Hand ein Yaku? Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "prompt": "Wenn du hier Ron sagst: Hat die Hand ein Yaku?",
+      "passed": "Stufe 7 geschafft. Stufe 8 ist jetzt offen."
+    }
+  },
+  "calls": {
+    "explain": {
+      "s1": {
+        "title": "Steine ansagen",
+        "body": "Du kannst einen Stein nehmen, den ein Mitspieler gerade abgelegt hat, um damit eine Gruppe fertig zu machen. Das heißt Ansagen (Naki).\nDie fertige Gruppe legst du offen rechts neben deine Hand. Danach legst du einen Stein ab, und der Spieler rechts von dir ist an der Reihe.",
+        "summary": "Ansagen = einen abgelegten Stein nehmen, um eine Gruppe fertig zu machen."
+      },
+      "s2": {
+        "title": "Pon",
+        "body": "Hast du zwei gleiche Steine, kannst du den dritten gleichen Stein von jedem Mitspieler nehmen. Das ergibt einen Drilling. Das heißt Pon.",
+        "summary": "Pon: drei gleiche, von jedem Spieler."
+      },
+      "s3": {
+        "title": "Chi",
+        "body": "Eine Folge kannst du nur mit dem Stein des Spielers links von dir bilden, also des Spielers, der direkt vor dir an der Reihe ist. Das heißt Chi.",
+        "summary": "Chi: eine Folge, nur vom Spieler links."
+      },
+      "s4": {
+        "title": "Kan",
+        "body": "Mit vier gleichen Steinen kannst du Kan ansagen. Danach ziehst du einen Extra-Stein, und es gibt zusätzliche Dora (Stufe 9).\nKan kommt selten vor. Mahjong Soul zeigt dir den Knopf, wenn es möglich ist.",
+        "summary": "Vier gleiche Steine = Kan. Bringt mehr Dora."
+      },
+      "s6": {
+        "title": "Offene Hand",
+        "body": "Nach Pon, Chi oder einem offenen Kan ist deine Hand offen. Dann gelten manche Yaku nicht mehr: Riichi, Menzen Tsumo, Pinfu, Iipeikou und Chiitoitsu.\nEin verdecktes Kan (Ankan) lässt die Hand geschlossen.",
+        "summary": "Nach Pon oder Chi gehen Riichi, Menzen Tsumo und Chiitoitsu nicht mehr."
+      },
+      "s7": {
+        "title": "Weniger Han",
+        "body": "Manche seltenere Yaku zählen mit offener Hand etwas weniger. Das musst du dir nicht merken.\nTanyao und Yakuhai zählen auch mit offener Hand voll.",
+        "summary": "Tanyao und Yakuhai klappen auch nach Pon und Chi."
+      },
+      "s8": {
+        "title": "Achtung: das Yaku",
+        "body": "Wer ansagt, verliert oft sein einziges mögliches Yaku. Sage nur an, wenn die Hand danach noch ein Yaku hat, zum Beispiel einen Drilling aus Drachen (Yakuhai) oder Tanyao.",
+        "summary": "Sag nur an, wenn die Hand danach noch ein Yaku hat."
+      },
+      "s9": {
+        "title": "Kleine Sperre",
+        "body": "Direkt nach Pon oder Chi darfst du manche Steine nicht ablegen. Mahjong Soul sperrt sie automatisch. Das musst du dir nicht merken.",
+        "summary": "Mahjong Soul passt hier für dich auf."
+      }
+    },
+    "guided": {
+      "intro": "Ein Mitspieler legt einen Stein ab. Entscheide, ob du ihn nimmst.",
+      "g1": {
+        "prompt": "Der Spieler gegenüber legt den roten Drachen (Chun) ab. Du hast zwei davon. Tippe auf „Pon“ und lege danach die 1 Manzu ab.",
+        "after": "Du hast einen Drilling aus Chun: Yakuhai. Damit hat deine offene Hand ein Yaku. Sie wartet auf die 2 oder 5 Souzu."
+      },
+      "g2": {
+        "prompt": "Der Spieler links legt die 5 Pinzu ab. Mit 6-7 Pinzu kannst du eine Folge bilden. Tippe auf „Chi“ und lege danach die 1 Manzu ab. Die rot markierten Steine sind gerade gesperrt; das macht Mahjong Soul automatisch.",
+        "after": "Die Hand besteht nur aus Steinen von 2 bis 8: Tanyao gilt auch offen. Sie wartet auf die 6 Souzu oder die 8 Pinzu."
+      },
+      "g3": {
+        "prompt": "Dieselbe Hand, aber diesmal legt der Spieler gegenüber die 5 Pinzu ab. Es gibt keinen Chi-Knopf. Tippe auf „Weiter“.",
+        "after": "Chi geht nur mit dem Stein des Spielers links von dir. Pon geht dagegen mit dem Stein jedes Mitspielers."
+      },
+      "g4": {
+        "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: kein Riichi, kein Pinfu und kein Tanyao (wegen der 1 Manzu und des Chun-Paars). Tippe auf „Weiter“.",
+        "after": "Gut. Solange die Hand geschlossen bleibt, kannst du später noch Riichi ansagen."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Hände, bei denen du Pon oder Chi gemacht hast. Ein Mitspieler legt deinen Gewinnstein ab. Hat die Hand dann ein Yaku? Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "prompt": "Du hast angesagt. Wenn du hier Ron sagst: Hat die Hand ein Yaku?",
+      "passed": "Stufe 8 geschafft. Stufe 9 ist jetzt offen."
+    }
+  },
+  "dora": {
+    "explain": {
+      "s1": {
+        "title": "Dora",
+        "body": "Zu Beginn jedes Spiels wird ein Stein der Mauer aufgedeckt: der Dora-Anzeiger. Der Stein, der in der Reihenfolge danach kommt, ist Dora.\nJede Dora in deiner Hand ist 1 Han wert. Hier zeigt die 3 Manzu an: Dora ist die 4 Manzu.",
+        "summary": "Dora = Bonussteine. In Mahjong Soul glitzern sie, du musst sie nicht suchen."
+      },
+      "s2": {
+        "title": "Die Reihenfolge",
+        "body": "Zahlensteine: der nächsthöhere Stein. Nach der 9 kommt wieder die 1.\nWinde: Osten, Süden, Westen, Norden, dann wieder Osten.\nDrachen: Haku, Hatsu, Chun, dann wieder Haku.",
+        "summary": "Immer der nächste Stein in der Reihenfolge."
+      },
+      "s3": {
+        "title": "Dora sind kein Yaku",
+        "body": "Dora machen eine Hand nur wertvoller. Eine Hand ohne Yaku kann auch mit vielen Dora nicht gewinnen.",
+        "summary": "Dora machen die Hand teurer, ersetzen aber kein Yaku."
+      },
+      "s4": {
+        "title": "Aka-Dora",
+        "body": "Jede der drei roten Fünfen zählt 1 Han zusätzlich. Ist die Fünf gleichzeitig Dora, zählt sie für beides.",
+        "summary": "Rote Fünfen sind immer Dora."
+      },
+      "s5": {
+        "title": "Ura-Dora",
+        "body": "Wer mit Riichi gewinnt, deckt zusätzlich den Stein unter dem Dora-Anzeiger auf. Er zeigt weitere Dora an: die Ura-Dora.\nOhne Riichi gibt es keine Ura-Dora.",
+        "summary": "Riichi lohnt sich doppelt: Es gibt die Chance auf Ura-Dora."
+      },
+      "s6": {
+        "title": "Kan-Dora",
+        "body": "Nach jedem Kan wird ein weiterer Dora-Anzeiger aufgedeckt. Es gibt dann also mehr Dora.",
+        "summary": "Kan = mehr Dora."
+      }
+    },
+    "guided": {
+      "intro": "Oben siehst du einen Dora-Anzeiger. Tippe unten auf den Stein, der Dora ist.",
+      "g1": {
+        "prompt": "Der Dora-Anzeiger ist die 3 Manzu. Welcher Stein ist Dora?",
+        "after": "Richtig: die 4 Manzu, der nächsthöhere Stein."
+      },
+      "g2": {
+        "prompt": "Der Dora-Anzeiger ist die 9 Pinzu. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach der 9 kommt wieder die 1. Dora ist die 1 Pinzu."
+      },
+      "g3": {
+        "prompt": "Der Dora-Anzeiger ist Norden. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Norden kommt wieder Osten."
+      },
+      "g4": {
+        "prompt": "Der Dora-Anzeiger ist Chun. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Chun kommt wieder Haku."
+      },
+      "g5": {
+        "prompt": "Der Dora-Anzeiger ist Haku. Welcher Stein ist Dora?",
+        "after": "Richtig: Nach Haku kommt Hatsu."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "indicator": "Dora-Anzeiger",
+      "ura": "Ura-Dora-Anzeiger"
+    },
+    "quiz": {
+      "intro": "{total} Aufgaben. Finde die Dora und zähle die Dora einer Hand. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Aufgabe {n} von {total}",
+      "pickPrompt": "Welcher Stein ist Dora?",
+      "countPrompt": "Wie viele Dora hat diese Hand insgesamt? Zähle Dora, rote Fünfen und Ura-Dora zusammen.",
+      "riichi": "Mit Riichi gewonnen: Die Ura-Dora zählen mit.",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch.",
+      "answerPick": "Dora ist: {name}.",
+      "answerCount": "Dora: {dora}, rote Fünfen: {aka}, Ura-Dora: {ura}. Zusammen {total}.",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 9 geschafft. Stufe 10 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "flow": {
+    "explain": {
+      "s1": {
+        "title": "Geber und Sitzwind",
+        "body": "In jedem Spiel ist ein Spieler der Geber (Oya), die anderen sind Nicht-Geber (Ko).\nDer Geber hat den Sitzwind Osten. Der Spieler rechts von ihm hat Süden, dann folgen Westen und Norden."
+      },
+      "s2": {
+        "title": "Mehr Punkte für den Geber",
+        "body": "Gewinnt der Geber, bekommt er 1,5-mal so viele Punkte wie ein Nicht-Geber.\nGewinnt ein Nicht-Geber mit Tsumo, zahlt der Geber doppelt so viel wie die beiden anderen.",
+        "summary": "Der Geber gewinnt mehr, zahlt aber auch mehr: hohes Risiko, hoher Gewinn."
+      },
+      "s3": {
+        "title": "Spiel und Runde",
+        "body": "Ein Spiel endet, wenn jemand gewinnt oder die Mauer leer ist. Danach wird meistens der nächste Spieler (rechts) Geber.\nVier Spiele bilden eine Runde: Ost 1 bis Ost 4.",
+        "summary": "Nach jedem Spiel wird meistens der nächste Spieler Geber."
+      },
+      "s4": {
+        "title": "Renchan und Honba",
+        "body": "Gewinnt der Geber, bleibt er Geber, und das Spiel wird wiederholt. Das heißt Renchan.\nDabei kommt ein Honba dazu. Jeder Honba bringt dem nächsten Gewinner 300 Punkte mehr. Gewinnt ein Nicht-Geber, fallen die Honba wieder weg.",
+        "summary": "Gewinnt der Geber, darf er nochmal Geber sein."
+      },
+      "s5": {
+        "title": "Ryuukyoku",
+        "body": "Ist die Mauer leer und niemand hat gewonnen, endet das Spiel ohne Gewinner (Ryuukyoku).\nWer nicht Tenpai ist (Noten), zahlt an die Tenpai-Spieler zusammen 3.000 Punkte.\nIst der Geber Tenpai, bleibt er Geber. Nach einem Ryuukyoku kommt immer ein Honba dazu.",
+        "summary": "Niemand gewinnt: Wer Tenpai war, bekommt Punkte von den anderen."
+      },
+      "s6": {
+        "title": "Riichi-Einsätze",
+        "body": "Die 1.000 Punkte für Riichi bleiben auf dem Tisch, auch nach einem Ryuukyoku. Wer als Nächstes gewinnt, bekommt sie alle.",
+        "summary": "Riichi-Einsätze bekommt der nächste Gewinner."
+      },
+      "s7": {
+        "title": "Abbruch",
+        "body": "In seltenen Fällen wird ein Spiel abgebrochen und mit demselben Geber wiederholt.\nEinen Fall darfst du selbst ansagen: Hast du bei deinem ersten Zug neun verschiedene Einsen, Neunen und Ehrensteine, kannst du abbrechen (Kyuushu Kyuuhai). Andere Fälle passieren automatisch, zum Beispiel wenn alle vier Riichi ansagen.",
+        "summary": "Abbrüche sind selten. Mahjong Soul zeigt den Knopf, falls du einen ansagen darfst."
+      },
+      "s8": {
+        "title": "Tonpuusen",
+        "body": "Hier spielst du Tonpuusen: eine kurze Partie mit der Ostrunde (Ost 1 bis Ost 4). Jeder beginnt mit 25.000 Punkten."
+      },
+      "s9": {
+        "title": "Wann endet die Partie?",
+        "body": "Nach Ost 4 endet die Partie, wenn jemand mindestens 30.000 Punkte hat. Sonst geht es in die Südrunde. Dort endet die Partie, sobald jemand 30.000 Punkte erreicht, spätestens nach Süd 4.\nIst der Geber in Ost 4 vorne und hat mindestens 30.000 Punkte, endet die Partie auch bei Renchan.\nRutscht jemand unter 0 Punkte, endet die Partie sofort.",
+        "summary": "Meist dauert eine Partie vier Spiele. Mahjong Soul sagt dir, wann sie zu Ende ist."
+      },
+      "s10": {
+        "title": "Das Ergebnis",
+        "body": "Am Ende zählt die Platzierung nach Punkten. Bei Gleichstand liegt vorne, wer näher am ersten Geber sitzt.\nRiichi-Einsätze, die am Ende noch auf dem Tisch liegen, bekommt der Erste.",
+        "summary": "Am Ende zählt die Platzierung."
+      },
+      "s0": {
+        "title": "Nur zum Lesen",
+        "body": "In dieser Stufe erfährst du, wie eine ganze Partie abläuft. Auswendig lernen musst du das nicht: Mahjong Soul zeigt dir alles an und rechnet für dich. Lies es einfach einmal durch.",
+        "summary": "Diese Stufe ist geschafft, sobald du sie gelesen hast."
+      }
+    },
+    "guided": {
+      "intro": "Verfolge, wie eine Partie weitergeht. Du sitzt unten und bist im ersten Spiel der Geber.",
+      "g1": "Ost 1: Du bist Geber (Osten). Alle haben 25.000 Punkte.",
+      "g2": "Du gewinnst als Geber. Renchan: Du bleibst Geber, und es gibt 1 Honba. Das nächste Spiel heißt weiterhin Ost 1.",
+      "g3": "Der Spieler rechts gewinnt. Die Honba fallen weg, und er wird Geber: Ost 2.",
+      "g4": "Ryuukyoku. Der Geber (rechts) ist Tenpai und bleibt Geber. Es gibt 1 Honba. Wer Noten war, hat gezahlt.",
+      "g5": "Wieder Ryuukyoku, aber diesmal ist der Geber Noten. Der nächste Spieler wird Geber: Ost 3. Die Honba steigen trotzdem auf 2.",
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "dealer": "Geber",
+      "you": "Du"
+    }
+  },
+  "yakuLesson": {
+    "explain": {
+      "s1": {
+        "title": "Ohne Yaku kein Gewinn",
+        "body": "Eine fertige Hand allein reicht nicht: Sie braucht mindestens ein Yaku. Ein Yaku ist eine bestimmte Eigenschaft der Hand, zum Beispiel „nur Steine von 2 bis 8“.\nIn Stufe 1 war dein Yaku der Drilling aus Chun.",
+        "summary": "Ohne Yaku darfst du nicht gewinnen, auch wenn die Hand fertig ist."
+      },
+      "s2": {
+        "title": "Han und Punkte",
+        "body": "Jedes Yaku ist eine bestimmte Anzahl Han wert. Hat die Hand mehrere Yaku, werden die Han zusammengezählt.\nDie Punkte rechnet Mahjong Soul automatisch aus.",
+        "summary": "Mehr Han bedeutet mehr Punkte. Zählen musst du nicht."
+      },
+      "s3": {
+        "title": "Geschlossen oder offen",
+        "body": "Erinnerst du dich an Pon und Chi aus Stufe 1? Damit nimmst du dir den abgelegten Stein eines anderen Spielers.\nHast du kein Pon und kein Chi gemacht, ist deine Hand geschlossen. Manche Yaku gibt es nur mit geschlossener Hand.",
+        "summary": "Geschlossen = kein Pon, kein Chi. Manche Yaku gehen nur dann."
+      },
+      "s4": {
+        "title": "Riichi",
+        "body": "Wenn dir nur noch ein Stein fehlt (Tenpai) und deine Hand geschlossen ist, kannst du Riichi ansagen: Tippe auf „Riichi“ und lege einen Stein ab.\nDu zahlst 1.000 Punkte Einsatz und darfst deine Hand danach nicht mehr ändern. Dafür hast du sicher ein Yaku.",
+        "summary": "Riichi ist das einfachste Yaku: geschlossen bleiben, Tenpai werden, Riichi drücken."
+      },
+      "s5": {
+        "title": "Menzen Tsumo",
+        "body": "Ziehst du mit geschlossener Hand den letzten Stein selbst (Tsumo), ist das ein Yaku. Deshalb hattest du in Stufe 4 immer ein Yaku.",
+        "summary": "Geschlossen + selbst gezogen = ein Yaku. Bei Ron gilt es nicht."
+      },
+      "s6": {
+        "title": "Tanyao",
+        "body": "Die ganze Hand besteht nur aus Zahlensteinen von 2 bis 8: keine 1, keine 9, keine Ehrensteine.\nDas geht auch mit Pon und Chi.",
+        "summary": "Nur 2 bis 8. Klappt auch mit Pon und Chi und ist deshalb sehr beliebt."
+      },
+      "s7": {
+        "title": "Yakuhai",
+        "body": "Ein Drilling aus Drachen (Haku, Hatsu, Chun) ist immer ein Yaku.\nEbenso ein Drilling aus dem Wind deines Platzes oder aus dem Rundenwind. In der Ostrunde ist der Rundenwind Osten.\nDas geht auch mit Pon.",
+        "summary": "Drei gleiche Drachen sind immer ein Yaku. Am leichtesten mit Pon."
+      },
+      "s8": {
+        "title": "Toitoi",
+        "body": "Alle vier Gruppen sind Drillinge, also jeweils drei gleiche Steine. Keine Folgen.\nDas geht auch mit Pon.",
+        "summary": "Nur Drillinge sammeln. Mit Pon kommst du schnell voran."
+      },
+      "s9": {
+        "title": "Chiitoitsu",
+        "body": "Sieben verschiedene Paare statt 4 Gruppen und 1 Paar. Nur mit geschlossener Hand. Zweimal dasselbe Paar zählt nicht.",
+        "summary": "Sieben Paare sammeln: die Ausnahme von der normalen Form."
+      },
+      "s10": {
+        "title": "Bonus: Pinfu",
+        "body": "Pinfu musst du dir noch nicht merken, es ist etwas schwieriger.\nPinfu heißt: geschlossene Hand, nur Folgen (keine Drillinge), ein Paar, das kein Drache und nicht dein Wind ist, und du wartest auf zwei Seiten.\nIm Bild wartet die Hand mit 4-5 Souzu auf die 3 oder die 6.",
+        "summary": "Eine „ruhige“ Hand aus lauter Folgen. Lerne sie später, wenn du schon sicher spielst."
+      },
+      "s11": {
+        "title": "Das reicht erst einmal",
+        "body": "Es gibt noch viele weitere Yaku. Für den Anfang reichen diese sechs: Riichi, Menzen Tsumo, Tanyao, Yakuhai, Toitoi und Chiitoitsu.\nDie anderen stehen im Yaku-Verzeichnis, wenn du neugierig bist.",
+        "summary": "Mit diesen sechs Yaku kannst du in Mahjong Soul loslegen."
+      }
+    },
+    "guided": {
+      "intro": "In diesem Beispiel sagst du Riichi an und gewinnst danach mit Tsumo.",
+      "g1": {
+        "prompt": "Du hast die 5 Souzu gezogen. Wenn du jetzt den Osten ablegst, wartest du mit 3 und 5 Souzu auf die 4: Du bist Tenpai. Tippe auf „Riichi“ und lege dann den Osten ab.",
+        "after": "Du hast Riichi angesagt. Der abgelegte Stein liegt quer im Kawa, damit alle die Ansage sehen. Von jetzt an kannst du deine Hand nicht mehr ändern."
+      },
+      "g2": {
+        "prompt": "Du hast die 9 Manzu gezogen. Sie macht deine Hand nicht fertig. Nach Riichi musst du sie ablegen.",
+        "after": "Nach Riichi legst du jeden gezogenen Stein ab, der nicht passt."
+      },
+      "g3": {
+        "prompt": "Du hast die 4 Souzu gezogen. Deine Hand ist fertig. Tippe auf „Tsumo“."
+      },
+      "finished": "Gewonnen. Deine Hand hat zwei Yaku: Riichi und Menzen Tsumo."
+    },
+    "quiz": {
+      "intro": "{total} Hände. Wähle bei jeder Hand alle Yaku aus, die sie hat, oder „Kein Yaku“. Neben der Hand steht, in welchem Zustand sie ist. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "prompt": "Welche Yaku hat diese Hand?",
+      "check": "Prüfen",
+      "wrong": "Leider nicht ganz. Richtig ist: {list}.",
+      "passed": "Stufe 6 geschafft. Stufe 7 ist jetzt offen."
+    },
+    "choice": {
+      "riichi": "Riichi",
+      "menzenTsumo": "Menzen Tsumo",
+      "tanyao": "Tanyao",
+      "yakuhai": "Yakuhai (Drache/Wind)",
+      "toitoi": "Toitoi",
+      "chiitoitsu": "Chiitoitsu",
+      "none": "Kein Yaku"
+    }
+  },
+  "intro": {
+    "welcome": "Willkommen am Mahjong-Tisch! Vier Spieler sitzen um den Tisch, du sitzt unten.\nJeder Platz hat einen Wind: Osten, Süden, Westen oder Norden. Du siehst ihn in der Mitte neben den Punkten.\nWer auf Osten sitzt, ist der Geber. Hier ist das der Spieler links von dir. Du sitzt auf Süden.",
+    "goal": "Jeder hat 13 Steine. Wer an der Reihe ist, zieht einen Stein und legt einen ab.\nZiel ist eine fertige Hand. Was das genau heißt, lernst du später. Jetzt geht es nur darum, den Ablauf einmal zu sehen.",
+    "leftFirst": "Der Geber fängt an: Er zieht einen Stein und legt einen ab. Abgelegte Steine liegen offen vor jedem Spieler.",
+    "yourTurn": "Jetzt bist du dran. Du hast automatisch einen Stein gezogen (ganz rechts). Lege den Norden ab: Tippe ihn an und dann noch einmal.",
+    "order": "Danach ist der Spieler rechts von dir dran, dann der gegenüber, dann der links. So geht es reihum.",
+    "pon": "Der Spieler rechts hat Chun (den roten Drachen) abgelegt. Du hast zwei davon.\nMit zwei gleichen Steinen darfst du dir den dritten von jedem Spieler nehmen. Das heißt Pon. Tippe auf „Pon“.",
+    "afterPon": "Die drei Chun liegen jetzt offen rechts neben deiner Hand. Weil du einen Stein genommen hast, bist du sofort dran: Die Spieler dazwischen werden übersprungen. Lege den Osten ab.",
+    "chi": "Der Spieler links hat die 5 Pinzu abgelegt. Mit deiner 4 und 6 Pinzu wird daraus eine Folge 4-5-6.\nFür eine Folge darfst du nur den Stein des Spielers links von dir nehmen. Das heißt Chi. Tippe auf „Chi“.",
+    "afterChi": "Lege jetzt die 1 Manzu ab.",
+    "waiting": "Dir fehlt nur noch ein Stein: eine zweite 9 Manzu. Warte, bis jemand sie ablegt.",
+    "ron": "Der Spieler gegenüber hat die 9 Manzu abgelegt. Damit ist deine Hand fertig! Tippe auf „Ron“.",
+    "end": "Gewonnen! Mit dem abgelegten Stein eines anderen Spielers zu gewinnen heißt Ron. Dieser Spieler zahlt dir die Punkte.\nZiehst du den letzten Stein selbst, heißt das Tsumo. Das ist ein Glücksfall, dann zahlen alle anderen.\nZum Gewinnen braucht die Hand außerdem eine Bedingung, ein Yaku. Hier war es der Drilling aus Chun. Das alles lernst du Schritt für Schritt in den nächsten Stufen.",
+    "next": "Weiter",
+    "cleared": "Stufe 1 geschafft. Stufe 2 ist jetzt offen."
+  },
+  "quizHelp": {
+    "closed": "Geschlossen: kein Pon, kein Chi",
+    "open": "Offen: Pon oder Chi gemacht",
+    "tsumo": "Gewonnen mit Tsumo (selbst gezogen)",
+    "ron": "Gewonnen mit Ron (Stein eines anderen)",
+    "riichi": "Riichi wurde angesagt",
+    "simplesYes": "Nur Steine von 2 bis 8: ja",
+    "simplesNo": "Nur Steine von 2 bis 8: nein",
+    "winds": "Dein Wind: Süden. Rundenwind: Osten.",
+    "winTile": "Der grün umrandete Stein ist der Gewinnstein. Die Hand ist schon in Gruppen aufgeteilt.",
+    "answerYaku": "Yaku: {list}.",
+    "answerNoYaku": "Kein Yaku. So kann die Hand nicht gewinnen.",
+    "hasYaku": "Ja, hat ein Yaku",
+    "noYaku": "Nein, kein Yaku"
+  },
+  "scene": {
+    "from": {
+      "left": "Der Spieler links legt diesen Stein ab.",
+      "opposite": "Der Spieler gegenüber legt diesen Stein ab.",
+      "right": "Der Spieler rechts legt diesen Stein ab."
+    },
+    "discarded": "Abgelegter Stein",
+    "yourRiver": "Dein Kawa (deine abgelegten Steine)",
+    "yourHand": "Deine Hand",
+    "riichi": "Du hast Riichi angesagt."
   }
 }

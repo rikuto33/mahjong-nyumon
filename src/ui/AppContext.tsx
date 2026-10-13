@@ -1,12 +1,13 @@
 import { createContext, useContext } from 'react';
 import type { Progress, Settings } from '../storage';
+import type { StageId } from '../tutorial/stages';
 
 export type AppState = {
   settings: Settings;
   progress: Progress;
   storageOk: boolean;
   updateSettings: (patch: Partial<Settings>) => void;
-  markCleared: (stage: number) => void;
+  markCleared: (stage: StageId) => void;
   resetProgress: () => void;
 };
 

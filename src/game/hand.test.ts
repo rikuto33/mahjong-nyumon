@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { kindOf, parseTiles, type Tile } from '../engine/tile';
 import { apply, doraIndicators, responseOptions, startHand, turnOptions, type HandState, type Response, type Seat } from './hand';
-import { makeTiles } from './testing';
+import { makeTiles } from './arrange';
 
 const t1 = (s: string) => parseTiles(s)[0] as Tile;
 const passAll = (s: HandState): Response[] =>
