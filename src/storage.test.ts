@@ -75,5 +75,7 @@ describe('progress storage', () => {
     expect(isStageUnlocked({ cleared: [] }, 'tiles')).toBe(false);
     expect(isStageUnlocked({ cleared: ['intro'] }, 'tiles')).toBe(true);
     expect(isStageUnlocked({ cleared: ['intro'] }, 'shape')).toBe(false);
+    // 日本語モード（確認用）は全段階が開いている
+    expect(isStageUnlocked({ cleared: [] }, 'finale', true)).toBe(true);
   });
 });

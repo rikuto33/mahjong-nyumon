@@ -8,13 +8,13 @@ import { ScreenHeader } from './ScreenHeader';
 
 export function StageSelectScreen({ navigate }: { navigate: Navigate }) {
   const { t } = useI18n();
-  const { progress } = useApp();
+  const { progress, settings } = useApp();
   return (
     <main className="screen screen-wide">
       <ScreenHeader title={t('stages.title')} onBack={() => navigate({ name: 'title' })} />
       <ol className="stage-grid">
         {STAGE_ORDER.map((id) => {
-          const unlocked = isStageUnlocked(progress, id);
+          const unlocked = isStageUnlocked(progress, id, settings.lang === 'ja');
           const cleared = progress.cleared.includes(id);
           const status = cleared ? t('stages.cleared') : unlocked ? t('stages.open') : t('stages.locked');
           return (
@@ -32,7 +32,7 @@ export function StageSelectScreen({ navigate }: { navigate: Navigate }) {
           );
         })}
       </ol>
-      <p className="locked-hint">{t('stages.lockedHint')}</p>
+      {settings.lang !== 'ja' && <p className="locked-hint">{t('stages.lockedHint')}</p>}
       <div className="button-row">
         <button className="btn" onClick={() => navigate({ name: 'yakuDex', back: { name: 'stages' } })}>
           {t('stages.yakuDex')}

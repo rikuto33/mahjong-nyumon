@@ -95,8 +95,12 @@ export function saveProgress(progress: Progress, store: KV | null = defaultStore
   }
 }
 
-/** 最初の段階は常に開いている。それ以降は前の段階をクリアすると開く */
-export function isStageUnlocked(progress: Progress, stage: StageId): boolean {
+/**
+ * 最初の段階は常に開いている。それ以降は前の段階をクリアすると開く。
+ * 日本語モードは Rikuto の確認用なので、全段階を最初から開く（allUnlocked）。
+ */
+export function isStageUnlocked(progress: Progress, stage: StageId, allUnlocked = false): boolean {
+  if (allUnlocked) return true;
   const i = STAGE_ORDER.indexOf(stage);
   return i === 0 || progress.cleared.includes(STAGE_ORDER[i - 1]);
 }
