@@ -21,6 +21,9 @@ export function TitleScreen({ navigate }: { navigate: Navigate }) {
         <button className="btn" onClick={() => navigate({ name: 'stages' })}>
           {t('title.continue')}
         </button>
+        <button className="btn" onClick={() => navigate({ name: 'yakuDex', back: { name: 'title' } })}>
+          {t('title.yakuDex')}
+        </button>
         <button className="btn" onClick={() => navigate({ name: 'settings' })}>
           {t('title.settings')}
         </button>

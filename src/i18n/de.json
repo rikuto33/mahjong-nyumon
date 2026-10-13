@@ -8,7 +8,8 @@
     "continue": "Weitermachen",
     "settings": "Einstellungen",
     "messageHeading": "Eine Nachricht von Rikuto",
-    "messagePlaceholder": "(Hier steht bald eine Nachricht.)"
+    "messagePlaceholder": "(Hier steht bald eine Nachricht.)",
+    "yakuDex": "Yaku-Verzeichnis"
   },
   "settings": {
     "title": "Einstellungen",
@@ -84,7 +85,8 @@
     "s7": "Steine ansagen: Pon, Chi, Kan",
     "s8": "Dora",
     "s9": "Der Ablauf einer Partie",
-    "s10": "Die echte Partie"
+    "s10": "Die echte Partie",
+    "yakuDex": "Yaku-Verzeichnis"
   },
   "stageMenu": {
     "explain": "Erklärung",
@@ -168,7 +170,7 @@
       },
       "g4": {
         "prompt": "Tippe auf den Wind Osten (東, Ton).",
-        "after": "Richtig. Der Geber einer Runde sitzt immer auf Osten. Mehr dazu in Stufe 9."
+        "after": "Richtig. Der Geber eines Spiels sitzt immer auf Osten. Mehr dazu in Stufe 9."
       },
       "g5": {
         "prompt": "Tippe auf den weißen Drachen (Haku).",
@@ -388,6 +390,372 @@
       "wrong": "Leider nicht ganz. Richtig ist: {tiles}.",
       "score": "{score} von {total} richtig.",
       "passed": "Stufe 4 geschafft. Stufe 5 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "yaku": {
+    "riichi": {
+      "name": "Riichi",
+      "desc": "Du sagst Riichi an, wenn deine Hand Tenpai ist und du keine Steine von anderen genommen hast. Du zahlst 1.000 Punkte Einsatz. Danach darfst du deine Hand nicht mehr ändern."
+    },
+    "ippatsu": {
+      "name": "Ippatsu",
+      "desc": "Du gewinnst nach deiner Riichi-Ansage, bevor du das nächste Mal ablegst und bevor jemand Steine ansagt."
+    },
+    "menzenTsumo": {
+      "name": "Menzen Tsumo",
+      "desc": "Du ziehst den Gewinnstein selbst (Tsumo), ohne Steine von anderen genommen zu haben."
+    },
+    "tanyao": {
+      "name": "Tanyao",
+      "desc": "Die ganze Hand besteht nur aus Zahlensteinen von 2 bis 8: keine Einsen, keine Neunen, keine Ehrensteine."
+    },
+    "pinfu": {
+      "name": "Pinfu",
+      "desc": "Vier Folgen, ein Paar ohne Yaku-Wert, und du wartest auf zwei Seiten (Ryanmen). Nur ohne Steine von anderen."
+    },
+    "iipeikou": {
+      "name": "Iipeikou",
+      "desc": "Zwei genau gleiche Folgen in derselben Farbe, zum Beispiel zweimal 2-3-4 Manzu. Nur ohne Steine von anderen."
+    },
+    "haku": {
+      "name": "Yakuhai: Haku",
+      "desc": "Ein Drilling aus weißen Drachen."
+    },
+    "hatsu": {
+      "name": "Yakuhai: Hatsu",
+      "desc": "Ein Drilling aus grünen Drachen."
+    },
+    "chun": {
+      "name": "Yakuhai: Chun",
+      "desc": "Ein Drilling aus roten Drachen."
+    },
+    "seatWind": {
+      "name": "Yakuhai: eigener Wind",
+      "desc": "Ein Drilling aus deinem eigenen Wind (dem Wind deines Sitzplatzes)."
+    },
+    "roundWind": {
+      "name": "Yakuhai: Rundenwind",
+      "desc": "Ein Drilling aus dem Wind der aktuellen Runde. In der Ostrunde ist das Osten."
+    },
+    "haitei": {
+      "name": "Haitei",
+      "desc": "Du gewinnst mit Tsumo mit dem allerletzten Stein der Mauer."
+    },
+    "houtei": {
+      "name": "Houtei",
+      "desc": "Du gewinnst mit Ron mit dem allerletzten abgelegten Stein der Runde."
+    },
+    "rinshan": {
+      "name": "Rinshan Kaihou",
+      "desc": "Nach einem Kan ziehst du einen Ersatzstein und gewinnst mit genau diesem Stein."
+    },
+    "chankan": {
+      "name": "Chankan",
+      "desc": "Ein Mitspieler erweitert ein Pon zu einem Kan, und genau dieser Stein ist dein Gewinnstein."
+    },
+    "doubleRiichi": {
+      "name": "Double Riichi",
+      "desc": "Du sagst Riichi schon mit deinem allerersten Abwurf an, bevor jemand Steine ansagt."
+    },
+    "chiitoitsu": {
+      "name": "Chiitoitsu",
+      "desc": "Sieben verschiedene Paare. Vier gleiche Steine zählen nicht als zwei Paare. Nur ohne Steine von anderen."
+    },
+    "chanta": {
+      "name": "Chanta",
+      "desc": "Jede Gruppe und das Paar enthalten eine 1, eine 9 oder einen Ehrenstein. Mindestens eine Folge ist dabei."
+    },
+    "ittsu": {
+      "name": "Ittsu",
+      "desc": "Die Folgen 1-2-3, 4-5-6 und 7-8-9 in derselben Farbe."
+    },
+    "sanshokuDoujun": {
+      "name": "Sanshoku Doujun",
+      "desc": "Dieselbe Folge in allen drei Farben, zum Beispiel 2-3-4 in Manzu, Pinzu und Souzu."
+    },
+    "sanshokuDoukou": {
+      "name": "Sanshoku Doukou",
+      "desc": "Derselbe Drilling in allen drei Farben, zum Beispiel dreimal 3 in Manzu, Pinzu und Souzu."
+    },
+    "sankantsu": {
+      "name": "Sankantsu",
+      "desc": "Drei Kan (Gruppen aus vier gleichen Steinen)."
+    },
+    "toitoi": {
+      "name": "Toitoi",
+      "desc": "Alle vier Gruppen sind Drillinge (oder Kan)."
+    },
+    "sanankou": {
+      "name": "Sanankou",
+      "desc": "Drei Drillinge, die du komplett selbst gezogen hast (nicht durch Pon und nicht durch Ron vervollständigt)."
+    },
+    "shousangen": {
+      "name": "Shousangen",
+      "desc": "Zwei Drillinge aus Drachen und ein Paar aus dem dritten Drachen."
+    },
+    "honroutou": {
+      "name": "Honroutou",
+      "desc": "Die Hand besteht nur aus Einsen, Neunen und Ehrensteinen."
+    },
+    "ryanpeikou": {
+      "name": "Ryanpeikou",
+      "desc": "Zweimal Iipeikou: zwei Paare von genau gleichen Folgen. Nur ohne Steine von anderen."
+    },
+    "junchan": {
+      "name": "Junchan",
+      "desc": "Jede Gruppe und das Paar enthalten eine 1 oder eine 9. Keine Ehrensteine. Mindestens eine Folge ist dabei."
+    },
+    "honitsu": {
+      "name": "Honitsu",
+      "desc": "Nur eine einzige Farbe (Manzu, Pinzu oder Souzu) und dazu Ehrensteine."
+    },
+    "chinitsu": {
+      "name": "Chinitsu",
+      "desc": "Die ganze Hand besteht aus einer einzigen Farbe, ohne Ehrensteine."
+    },
+    "tenhou": {
+      "name": "Tenhou",
+      "desc": "Der Geber gewinnt schon mit seinen ersten 14 Steinen."
+    },
+    "chiihou": {
+      "name": "Chiihou",
+      "desc": "Ein Nicht-Geber gewinnt mit seinem allerersten gezogenen Stein, bevor jemand Steine ansagt."
+    },
+    "daisangen": {
+      "name": "Daisangen",
+      "desc": "Drillinge aus allen drei Drachen."
+    },
+    "suuankou": {
+      "name": "Suuankou",
+      "desc": "Vier Drillinge, die du komplett selbst gezogen hast."
+    },
+    "suuankouTanki": {
+      "name": "Suuankou Tanki",
+      "desc": "Suuankou, bei dem du auf den Stein für das Paar wartest. Zählt als doppeltes Yakuman."
+    },
+    "tsuuiisou": {
+      "name": "Tsuuiisou",
+      "desc": "Die Hand besteht nur aus Ehrensteinen."
+    },
+    "ryuuiisou": {
+      "name": "Ryuuiisou",
+      "desc": "Nur grüne Steine: 2, 3, 4, 6 und 8 Souzu und der grüne Drache. Der grüne Drache ist nicht nötig."
+    },
+    "chinroutou": {
+      "name": "Chinroutou",
+      "desc": "Die Hand besteht nur aus Einsen und Neunen."
+    },
+    "kokushi": {
+      "name": "Kokushi Musou",
+      "desc": "Von jeder 1, jeder 9 und jedem Ehrenstein ein Exemplar, dazu eines davon doppelt."
+    },
+    "kokushi13": {
+      "name": "Kokushi Musou, 13 Wartesteine",
+      "desc": "Kokushi Musou, bei dem du alle 13 Sorten schon einmal hast und auf jede davon wartest. Zählt als doppeltes Yakuman."
+    },
+    "shousuushi": {
+      "name": "Shousuushi",
+      "desc": "Drillinge aus drei Winden und ein Paar aus dem vierten Wind."
+    },
+    "daisuushi": {
+      "name": "Daisuushi",
+      "desc": "Drillinge aus allen vier Winden. Zählt als doppeltes Yakuman."
+    },
+    "suukantsu": {
+      "name": "Suukantsu",
+      "desc": "Vier Kan."
+    },
+    "chuuren": {
+      "name": "Chuuren Poutou",
+      "desc": "Nur eine Farbe ohne Steine von anderen: 1-1-1, 2 bis 8 je einmal, 9-9-9 und dazu ein beliebiger Stein derselben Farbe."
+    },
+    "junseiChuuren": {
+      "name": "Junsei Chuuren Poutou",
+      "desc": "Chuuren Poutou, bei dem du schon 1-1-1-2-3-4-5-6-7-8-9-9-9 hattest und auf alle neun Steine gewartet hast. Zählt als doppeltes Yakuman."
+    }
+  },
+  "dex": {
+    "title": "Yaku-Verzeichnis",
+    "intro": "Alle Yaku, die in dieser App (nach den Regeln von Mahjong Soul) gelten. Mit „Stufe 5“ markierte Yaku werden in den Lektionen erklärt.",
+    "han": "{n} Han",
+    "openHan": "mit angesagten Steinen: {n} Han",
+    "closedOnly": "nur ohne Steine von anderen",
+    "yakuman": "Yakuman",
+    "doubleYakuman": "Doppeltes Yakuman",
+    "g1": "1 Han",
+    "g2": "2 Han",
+    "g3": "3 Han und mehr",
+    "gY": "Yakuman",
+    "lesson": "Stufe 5",
+    "example": "Beispiel",
+    "winTile": "Gewinnstein",
+    "tsumo": "Tsumo",
+    "ron": "Ron",
+    "riichi": "mit Riichi"
+  },
+  "result": {
+    "tsumo": "Tsumo",
+    "ron": "Ron",
+    "han": "{n} Han",
+    "fu": "{n} Fu",
+    "dora": "Dora",
+    "aka": "Aka-Dora",
+    "ura": "Ura-Dora",
+    "mangan": "Mangan",
+    "haneman": "Haneman",
+    "baiman": "Baiman",
+    "sanbaiman": "Sanbaiman",
+    "kazoeYakuman": "Kazoe-Yakuman",
+    "yakuman": "Yakuman",
+    "multiYakuman": "{n}-faches Yakuman",
+    "points": "{n} Punkte",
+    "payRon": "Der Spieler, der den Stein abgelegt hat, zahlt {n} Punkte.",
+    "payTsumoChild": "Der Geber zahlt {d} Punkte, die beiden anderen je {c} Punkte.",
+    "payTsumoDealer": "Alle anderen zahlen je {e} Punkte.",
+    "note": "Je mehr Han, desto mehr Punkte. Die Punkte rechnet das Spiel automatisch aus."
+  },
+  "stage5": {
+    "explain": {
+      "s1": {
+        "title": "Die Bedingung: ein Yaku",
+        "body": "In Stufe 3 hast du mit jeder fertigen Hand gewonnen. In einer echten Partie brauchst du zusätzlich mindestens ein Yaku. Ein Yaku ist eine besondere Eigenschaft der Hand oder der Situation.\nEine fertige Hand ohne Yaku darf nicht gewinnen."
+      },
+      "s2": {
+        "title": "Han und Punkte",
+        "body": "Jedes Yaku ist eine bestimmte Anzahl Han wert. Hat die Hand mehrere Yaku, werden die Han zusammengezählt.\nJe mehr Han, desto mehr Punkte. Die genauen Punkte rechnet das Spiel automatisch aus."
+      },
+      "s3": {
+        "title": "Tsumo und Ron",
+        "body": "Du kannst auf zwei Arten gewinnen: mit einem selbst gezogenen Stein (Tsumo) oder mit einem Stein, den ein Mitspieler ablegt (Ron). Ron lernst du in Stufe 6 genauer kennen.\nOb die Hand ein Yaku hat, kann davon abhängen, wie du gewinnst."
+      },
+      "s4": {
+        "title": "Riichi und Menzen Tsumo",
+        "body": "Riichi (1 Han): Wenn deine Hand Tenpai ist und du keine Steine von anderen genommen hast, kannst du Riichi ansagen. Du zahlst 1.000 Punkte Einsatz. Danach legst du jeden gezogenen Stein wieder ab, außer er macht deine Hand fertig.\nMenzen Tsumo (1 Han): Du ziehst den Gewinnstein selbst, ohne Steine von anderen genommen zu haben. Deshalb hattest du in Stufe 3 immer ein Yaku.\nWie man Steine von anderen nimmt, lernst du in Stufe 7."
+      },
+      "s5": {
+        "title": "Tanyao",
+        "body": "Tanyao (1 Han): Die ganze Hand besteht nur aus Zahlensteinen von 2 bis 8. Keine Einsen, keine Neunen, keine Ehrensteine."
+      },
+      "s6": {
+        "title": "Yakuhai",
+        "body": "Yakuhai (je 1 Han): ein Drilling aus einem Drachen (Haku, Hatsu, Chun), aus dem Rundenwind oder aus deinem eigenen Wind.\nIn der Ostrunde ist Osten der Rundenwind. Dein eigener Wind hängt von deinem Sitzplatz ab. Ist Osten beides, zählt der Drilling 2 Han."
+      },
+      "s7": {
+        "title": "Pinfu",
+        "body": "Pinfu (1 Han): vier Folgen, ein Paar ohne Yaku-Wert (kein Drache, nicht der Rundenwind, nicht dein eigener Wind), und du wartest auf zwei Seiten (Ryanmen). Nur ohne Steine von anderen."
+      },
+      "s8": {
+        "title": "Iipeikou",
+        "body": "Iipeikou (1 Han): zwei genau gleiche Folgen, zum Beispiel zweimal 2-3-4 Manzu. Nur ohne Steine von anderen."
+      },
+      "s9": {
+        "title": "Chiitoitsu",
+        "body": "Chiitoitsu (2 Han): sieben verschiedene Paare, die besondere fertige Hand aus Stufe 2. Vier gleiche Steine zählen nicht als zwei Paare. Nur ohne Steine von anderen."
+      },
+      "s10": {
+        "title": "Weitere Yaku",
+        "body": "Es gibt noch viele weitere Yaku. Alle findest du im Yaku-Verzeichnis. Du kannst es jederzeit auf dem Startbildschirm oder bei der Stufenauswahl öffnen."
+      }
+    },
+    "guided": {
+      "intro": "In diesem Beispiel sagst du Riichi an und gewinnst danach mit Tsumo.",
+      "g1": {
+        "prompt": "Du hast die 4 Souzu gezogen. Wenn du jetzt den Osten ablegst, wartest du mit 3-4 Souzu auf die 2 oder die 5: Du bist Tenpai. Tippe auf „Riichi“ und lege dann den Osten ab.",
+        "after": "Du hast Riichi angesagt. Der abgelegte Stein liegt quer im Kawa, damit alle die Ansage sehen. Von jetzt an kannst du deine Hand nicht mehr ändern."
+      },
+      "g2": {
+        "prompt": "Du hast die 9 Manzu gezogen. Sie macht deine Hand nicht fertig. Nach Riichi musst du sie ablegen.",
+        "after": "Nach Riichi legst du jeden gezogenen Stein ab, der nicht passt."
+      },
+      "g3": {
+        "prompt": "Du hast die 2 Souzu gezogen. Deine Hand ist fertig. Tippe auf „Tsumo“."
+      },
+      "finished": "Gewonnen. Deine Hand hat drei Yaku: Riichi, Menzen Tsumo und Pinfu."
+    },
+    "quiz": {
+      "intro": "{total} Hände. Wähle bei jeder Hand alle Yaku aus, die sie hat, oder „Kein Yaku“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Hand {n} von {total}",
+      "prompt": "Welche Yaku hat diese Hand?",
+      "tsumo": "Gewonnen mit Tsumo (selbst gezogen).",
+      "ron": "Gewonnen mit Ron (Stein eines Mitspielers).",
+      "riichi": "Riichi wurde angesagt.",
+      "winds": "Dein Wind: {seat}. Rundenwind: {round}.",
+      "winTile": "Gewinnstein",
+      "noYaku": "Kein Yaku",
+      "check": "Prüfen",
+      "correct": "Richtig.",
+      "wrong": "Leider nicht ganz. Richtig ist: {list}.",
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 5 geschafft. Stufe 6 ist jetzt offen.",
+      "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
+    }
+  },
+  "stage6": {
+    "explain": {
+      "s1": {
+        "title": "Ron",
+        "body": "Du kannst auch mit einem Stein gewinnen, den ein Mitspieler gerade abgelegt hat. Das heißt Ron. Wenn das möglich ist, erscheint der Knopf „Ron“.\nAuch für Ron brauchst du ein Yaku. Menzen Tsumo zählt dabei nicht, weil du den Stein nicht selbst gezogen hast."
+      },
+      "s2": {
+        "title": "Einwerfen",
+        "body": "Wer den Gewinnstein ablegt, zahlt die Punkte allein. Das nennt man Einwerfen (Furikomi).\nBei Tsumo zahlen dagegen alle drei Mitspieler zusammen."
+      },
+      "s3": {
+        "title": "Furiten",
+        "body": "Wenn einer deiner Wartesteine in deinem eigenen Kawa liegt, darfst du mit keinem deiner Wartesteine Ron sagen. Das heißt Furiten.\nMit Tsumo darfst du trotzdem gewinnen."
+      },
+      "s4": {
+        "title": "Furiten durch Auslassen",
+        "body": "Wenn du einen Stein, mit dem du Ron sagen könntest, nicht nimmst, darfst du bis zu deinem nächsten Zug nicht Ron sagen.\nNach Riichi gilt das sogar bis zum Ende des Spiels."
+      },
+      "s5": {
+        "title": "Zusammenfassung",
+        "body": "Ron geht nur, wenn alles davon stimmt:\n1. Der Stein ist einer deiner Wartesteine.\n2. Deine Hand hat ein Yaku.\n3. Du bist nicht Furiten."
+      }
+    },
+    "guided": {
+      "intro": "Ein Mitspieler legt einen Stein ab. Prüfe, ob du Ron sagen kannst.",
+      "g1": {
+        "prompt": "Deine Hand wartet auf die 5 oder die 8 Souzu und hat Tanyao und Pinfu. Ein Mitspieler legt die 8 Souzu ab. Tippe auf „Ron“.",
+        "after": "Gewonnen mit Ron. Der Mitspieler, der die 8 Souzu abgelegt hat, zahlt alles."
+      },
+      "g2": {
+        "prompt": "Dieselbe Hand, aber in deinem Kawa liegt die 5 Souzu, einer deiner Wartesteine. Ein Mitspieler legt die 8 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Weiter“.",
+        "after": "Du bist Furiten: Wenn ein eigener Wartestein in deinem Kawa liegt, darfst du mit keinem Wartestein Ron sagen. Mit Tsumo ginge es noch."
+      },
+      "g3": {
+        "prompt": "Diese Hand ist Tenpai, hat aber kein Yaku: kein Tanyao (wegen der 1 Manzu) und kein Pinfu (wegen des Drillings). Ein Mitspieler legt die 9 Souzu ab. Tippe auf „Weiter“.",
+        "after": "Ohne Yaku kein Ron. Mit Riichi oder mit Tsumo (Menzen Tsumo) hätte die Hand ein Yaku."
+      },
+      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+    },
+    "quiz": {
+      "intro": "{total} Situationen. Entscheide jedes Mal, ob du Ron sagen darfst. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
+      "start": "Übung starten",
+      "question": "Situation {n} von {total}",
+      "prompt": "Ein Mitspieler legt diesen Stein ab. Darfst du Ron sagen?",
+      "yes": "Ja, Ron",
+      "no": "Nein",
+      "yourHand": "Deine Hand",
+      "yourRiver": "Dein Kawa",
+      "discarded": "Abgelegter Stein",
+      "riichi": "Du hast Riichi angesagt.",
+      "skipped": "Du hast in diesem Zug schon einen Stein ausgelassen, mit dem du Ron hättest sagen können.",
+      "skippedRiichi": "Du hast nach deiner Riichi-Ansage schon einmal einen Stein ausgelassen, mit dem du Ron hättest sagen können.",
+      "correct": "Richtig.",
+      "wrong": "Leider falsch.",
+      "reason": {
+        "ok": "Ron ist möglich: Es ist ein Wartestein, die Hand hat ein Yaku, und du bist nicht Furiten.",
+        "notWait": "Dieser Stein ist keiner deiner Wartesteine.",
+        "furitenDiscard": "Furiten: Einer deiner Wartesteine liegt in deinem Kawa.",
+        "furitenTemporary": "Furiten: Du hast in diesem Zug schon einen Ron-Stein ausgelassen.",
+        "furitenRiichi": "Furiten: Du hast nach Riichi einen Ron-Stein ausgelassen.",
+        "noYaku": "Kein Yaku: Ohne Yaku ist kein Ron möglich."
+      },
+      "score": "{score} von {total} richtig.",
+      "passed": "Stufe 6 geschafft. Stufe 7 ist jetzt offen.",
       "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal."
     }
   }

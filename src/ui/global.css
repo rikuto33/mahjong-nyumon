@@ -22,6 +22,7 @@
   --group-tile: clamp(32px, 4.2vw, 46px);
   --picker-tile: min(58px, calc((100vw - 80px) / 10));
   --solo-river-tile: clamp(32px, 4vw, 44px);
+  --dex-tile: clamp(26px, 3.2vw, 36px);
   color-scheme: dark;
 }
 
@@ -892,6 +893,217 @@ button {
   padding: 18px 14px 12px;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- 段階 5・6、役図鑑、和了画面 ---------- */
+.action-riichi.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1d1a12;
+}
+
+.win-tile {
+  margin-left: 10px;
+  display: inline-flex;
+}
+
+.win-result {
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(201, 162, 74, 0.6);
+  max-width: 760px;
+}
+
+.win-kind {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.win-hand {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin: 10px 0 14px;
+  flex-wrap: wrap;
+}
+
+.yaku-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.yaku-rows li,
+.win-total,
+.win-pay {
+  opacity: 0;
+  animation: appear 0.35s ease-out forwards;
+}
+
+.yaku-rows li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(246, 241, 227, 0.15);
+  font-size: 1.15rem;
+}
+
+.win-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 12px;
+  font-size: 1.15rem;
+}
+
+.win-total strong {
+  color: var(--gold);
+}
+
+.win-points {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.win-note {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yaku-rows li,
+  .win-total,
+  .win-pay {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.situation {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  color: var(--ink-muted);
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.choice.selected,
+.choice[aria-pressed='true'] {
+  background: rgba(201, 162, 74, 0.3);
+  border-color: var(--gold);
+}
+
+.choice.mark-missed {
+  border: 2px dashed var(--gold);
+}
+
+.ron-scene {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ron-discard,
+.ron-river {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tile-row-inline {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.dex-tabs {
+  margin: 8px 0 16px;
+}
+
+.yaku-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+}
+
+.yaku-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.yaku-card header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.yaku-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.yaku-han {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.yaku-open {
+  margin: 4px 0 0;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.yaku-card p {
+  margin: 8px 0;
+}
+
+.yaku-example {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.yaku-example-tiles {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.yaku-example-tiles .meld {
+  margin-left: 8px;
+}
+
+.yaku-ctx {
+  font-size: 0.85rem;
 }
 
 @media (max-width: 760px) {

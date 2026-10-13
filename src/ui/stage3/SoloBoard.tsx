@@ -14,12 +14,29 @@ type Props = {
   showTsumo: boolean;
   onDiscard: (target: DiscardTarget) => void;
   onTsumo: () => void;
+  /** 立直ボタン（押すと次の打牌が立直宣言牌になる） */
+  showRiichi?: boolean;
+  riichiPending?: boolean;
+  onRiichi?: () => void;
+  /** 河で横向きにする牌の位置（立直宣言牌） */
+  riichiAt?: number | null;
 };
 
 const RIVER_ROW = 6;
 
 /** 一人麻雀の盤面：上に河、下に手牌（ツモ牌は右に離して置く） */
-export function SoloBoard({ state, canDiscard, tipTiles = [], showTsumo, onDiscard, onTsumo }: Props) {
+export function SoloBoard({
+  state,
+  canDiscard,
+  tipTiles = [],
+  showTsumo,
+  onDiscard,
+  onTsumo,
+  showRiichi,
+  riichiPending,
+  onRiichi,
+  riichiAt = null,
+}: Props) {
   const { t } = useI18n();
   const [lifted, setLifted] = useState<DiscardTarget | null>(null);
   useEffect(() => setLifted(null), [state]);
@@ -52,12 +69,17 @@ export function SoloBoard({ state, canDiscard, tipTiles = [], showTsumo, onDisca
         {rows.map((row, i) => (
           <div key={i} className="river-row">
             {row.map((tile, j) => (
-              <Tile key={j} tile={tile} width="var(--solo-river-tile)" />
+              <Tile key={j} tile={tile} width="var(--solo-river-tile)" sideways={i * RIVER_ROW + j === riichiAt} />
             ))}
           </div>
         ))}
       </div>
       <div className="action-bar">
+        {showRiichi && (
+          <button className={`btn action-btn action-riichi ${riichiPending ? 'active' : ''}`} onClick={onRiichi}>
+            {t('actions.riichi')}
+          </button>
+        )}
         {showTsumo && (
           <button className="btn action-btn action-tsumo" onClick={onTsumo}>
             {t('actions.tsumo')}

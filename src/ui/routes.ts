@@ -6,9 +6,10 @@ export type Route =
   | { name: 'explain'; stage: number }
   | { name: 'guided'; stage: number }
   | { name: 'practice'; stage: number }
-  | { name: 'table' };
+  | { name: 'table' }
+  | { name: 'yakuDex'; back: Route };
 
 export type Navigate = (route: Route) => void;
 
 /** 実装済みの段階 */
-export const IMPLEMENTED_STAGES = [1, 2, 3, 4];
+export const IMPLEMENTED_STAGES = [1, 2, 3, 4, 5, 6];
