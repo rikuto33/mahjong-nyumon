@@ -18,6 +18,8 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
   const [index, setIndex] = useState(0);
   const [lifted, setLifted] = useState<HandTarget | null>(null);
   const [showResult, setShowResult] = useState(false);
+  // 説明付きの他家の手番は、説明を読んで「次へ」を押してから進める
+  const [ackIndex, setAckIndex] = useState(-1);
   const step = INTRO_STEPS[index];
   const next = INTRO_STEPS[index + 1];
 
@@ -31,8 +33,13 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
     }
   }
 
+  // 同じ説明が 2 回目以降なら止めない
+  const firstTime =
+    step?.kind === 'ai' && !!step.id && !INTRO_STEPS.slice(0, index).some((x) => 'id' in x && x.id === step.id);
+  const waitingForAck = firstTime && ackIndex !== index;
+
   useEffect(() => {
-    if (!step || step.kind !== 'ai') return;
+    if (!step || step.kind !== 'ai' || waitingForAck) return;
     const id = setTimeout(() => {
       let h = aiTsumogiri(hand);
       if (!(next && (next.kind === 'call' || next.kind === 'ron'))) h = passAll(h);
@@ -40,7 +47,7 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
       setIndex(index + 1);
     }, AI_DELAY_MS);
     return () => clearTimeout(id);
-  }, [step, next, hand, index]);
+  }, [step, next, hand, index, waitingForAck]);
 
   const target = step?.kind === 'discard' ? parseTiles(step.tile)[0] : null;
   const tileOf = (x: HandTarget) => (x === 'drawn' ? hand.players[0].drawn : hand.players[0].hand[x]);
@@ -105,6 +112,13 @@ export function IntroPlay({ onDone }: { onDone: () => void }) {
         t(`intro.${textId}` as MessageKey)
           .split('\n')
           .map((p, i) => <p key={i}>{p}</p>)}
+      {waitingForAck && (
+        <div className="button-row">
+          <button className="btn btn-primary" onClick={() => setAckIndex(index)}>
+            {t('intro.next')}
+          </button>
+        </div>
+      )}
       {step?.kind === 'info' && (
         <div className="button-row">
           <button className="btn btn-primary" onClick={isLast ? finish : () => setIndex(index + 1)}>

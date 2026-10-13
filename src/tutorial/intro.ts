@@ -30,6 +30,7 @@ export function introHand(): HandState {
 
 export type IntroStep =
   | { kind: 'info'; id: string }
+  /** 他家のツモ切り。id があれば、説明を読んで「次へ」を押すまで待ってから進める */
   | { kind: 'ai'; id?: string }
   | { kind: 'discard'; id: string; tile: string }
   | { kind: 'call'; id: string; call: 'pon' | 'chi' }
@@ -39,7 +40,7 @@ export const INTRO_STEPS: IntroStep[] = [
   { kind: 'info', id: 'welcome' },
   { kind: 'info', id: 'goal' },
   { kind: 'ai', id: 'leftFirst' },
-  { kind: 'discard', id: 'yourTurn', tile: '1z' },
+  { kind: 'discard', id: 'yourTurn', tile: '3z' },
   { kind: 'ai', id: 'order' },
   { kind: 'ai' },
   { kind: 'ai' },
@@ -55,7 +56,7 @@ export const INTRO_STEPS: IntroStep[] = [
   { kind: 'discard', id: 'turn4', tile: '2z' },
   { kind: 'ai' },
   { kind: 'call', id: 'pon', call: 'pon' },
-  { kind: 'discard', id: 'afterPon', tile: '3z' },
+  { kind: 'discard', id: 'afterPon', tile: '1z' },
   { kind: 'ai', id: 'keepGoing' },
   { kind: 'ai' },
   { kind: 'ai' },
