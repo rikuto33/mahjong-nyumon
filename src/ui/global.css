@@ -1,0 +1,185 @@
+:root {
+  --felt: #1f5e3b;
+  --felt-dark: #154329;
+  --felt-light: #2a7a4e;
+  --ink: #f6f1e3;
+  --ink-muted: #c7d6cc;
+  --gold: #c9a24a;
+  --card: rgba(0, 0, 0, 0.22);
+  --tap: 48px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: radial-gradient(ellipse at center, var(--felt-light), var(--felt) 55%, var(--felt-dark));
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  touch-action: manipulation;
+}
+
+.screen {
+  min-height: 100dvh;
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.screen-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* タイトル画面 */
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.app-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: 0.04em;
+}
+
+.app-subtitle {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 1.1rem;
+}
+
+.message-card {
+  width: min(560px, 100%);
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid rgba(201, 162, 74, 0.5);
+}
+
+.message-card h2 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.message-card p {
+  margin: 0;
+}
+
+.message-placeholder {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(360px, 100%);
+}
+
+/* ボタン：タップ領域 44px 以上を保証 */
+.btn {
+  min-height: var(--tap);
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(246, 241, 227, 0.35);
+  background: var(--card);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.btn-primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1d1a12;
+  font-weight: 600;
+}
+
+.btn-primary:active {
+  background: #b38d3a;
+}
+
+.btn-small {
+  font-size: 1rem;
+  padding: 8px 16px;
+  min-width: var(--tap);
+}
+
+/* 設定 */
+.settings-group h2 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+
+.segmented {
+  display: inline-flex;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 241, 227, 0.35);
+}
+
+.segmented button {
+  min-height: var(--tap);
+  min-width: 120px;
+  padding: 10px 20px;
+  border: none;
+  background: var(--card);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.segmented button.active {
+  background: var(--gold);
+  color: #1d1a12;
+  font-weight: 600;
+}
+
+.notice {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--ink-muted);
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .title-screen {
+    gap: 12px;
+  }
+}

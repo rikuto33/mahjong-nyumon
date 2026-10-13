@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title": "Mahjong lernen",
+    "subtitle": "Japanisches Riichi-Mahjong, Schritt für Schritt erklärt"
+  },
+  "title": {
+    "start": "Von vorne beginnen",
+    "continue": "Weitermachen",
+    "settings": "Einstellungen",
+    "messageHeading": "Eine Nachricht von Rikuto",
+    "messagePlaceholder": "(Hier steht bald eine Nachricht.)"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "storageUnavailable": "Einstellungen können auf diesem Gerät nicht gespeichert werden. Sie gelten nur, bis die Seite geschlossen wird."
+  },
+  "language": {
+    "de": "Deutsch",
+    "ja": "日本語"
+  },
+  "common": {
+    "back": "Zurück",
+    "comingSoon": "Dieser Teil ist noch in Arbeit."
+  }
+}

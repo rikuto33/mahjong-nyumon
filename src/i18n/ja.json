@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title": "麻雀入門",
+    "subtitle": "日本式リーチ麻雀をひとつずつ覚えよう"
+  },
+  "title": {
+    "start": "はじめから",
+    "continue": "続きから",
+    "settings": "設定",
+    "messageHeading": "Rikuto からのメッセージ",
+    "messagePlaceholder": "（ここにメッセージが入ります）"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "言語",
+    "storageUnavailable": "この端末では設定を保存できません。ページを閉じるまでのみ有効です。"
+  },
+  "language": {
+    "de": "Deutsch",
+    "ja": "日本語"
+  },
+  "common": {
+    "back": "戻る",
+    "comingSoon": "この部分は準備中です。"
+  }
+}
