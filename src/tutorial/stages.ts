@@ -3,6 +3,7 @@ import { DORA_SLIDES } from './dora';
 import { FINALE_SLIDES } from './finale';
 import { FLOW_SLIDES } from './flow';
 import { RON_SLIDES } from './ron';
+import { STRATEGY_SLIDES } from './strategy';
 import { SHAPE_SLIDES } from './shape';
 import { SOLO_SLIDES } from './solo';
 import { TENPAI_SLIDES } from './tenpai';
@@ -22,11 +23,12 @@ export const STAGE_ORDER = [
   'calls',
   'dora',
   'flow',
+  'strategy',
   'finale',
 ] as const;
 export type StageId = (typeof STAGE_ORDER)[number];
 
-export type StagePart = 'explain' | 'guided' | 'practice' | 'play';
+export type StagePart = 'explain' | 'guided' | 'practice' | 'play' | 'scenarios';
 
 /** 各段階にある部分。flow は説明を読み終えればクリア、intro は 1 局通せばクリア */
 export const STAGE_PARTS: Record<StageId, StagePart[]> = {
@@ -40,6 +42,7 @@ export const STAGE_PARTS: Record<StageId, StagePart[]> = {
   calls: ['explain', 'guided', 'practice'],
   dora: ['explain', 'guided', 'practice'],
   flow: ['explain', 'guided'],
+  strategy: ['explain', 'scenarios'],
   finale: ['explain', 'guided', 'practice'],
 };
 
@@ -57,6 +60,7 @@ export const STAGE_SLIDES: Record<StageId, ExplainSlide[]> = {
   calls: CALLS_SLIDES,
   dora: DORA_SLIDES,
   flow: FLOW_SLIDES,
+  strategy: STRATEGY_SLIDES,
   finale: FINALE_SLIDES,
 };
 
@@ -72,6 +76,7 @@ export const STAGE_I18N: Record<StageId, string> = {
   calls: 'calls',
   dora: 'dora',
   flow: 'flow',
+  strategy: 'strategy',
   finale: 'finale',
 };
 

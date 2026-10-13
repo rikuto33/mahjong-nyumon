@@ -1462,6 +1462,44 @@ button {
   margin: 0;
 }
 
+/* ---------- 考え方のシナリオ：組の色 ---------- */
+.role {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.role::after {
+  content: '';
+  display: block;
+  width: 92%;
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 3px;
+}
+
+.role-meld::after {
+  background: #46d17f;
+}
+
+.role-pair::after,
+.role-partial::after {
+  background: #f2c94c;
+}
+
+.role-single::after {
+  background: rgba(246, 241, 227, 0.35);
+}
+
+.legend {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.strong {
+  font-weight: 700;
+}
+
 @media (max-width: 760px) {
   .stage-grid {
     grid-template-columns: repeat(2, 1fr);

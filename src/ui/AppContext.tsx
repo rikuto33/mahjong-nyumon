@@ -8,6 +8,7 @@ export type AppState = {
   storageOk: boolean;
   updateSettings: (patch: Partial<Settings>) => void;
   markCleared: (stage: StageId) => void;
+  markScenario: (id: string) => void;
   resetProgress: () => void;
 };
 

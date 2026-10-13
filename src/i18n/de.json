@@ -27,7 +27,7 @@
     "gameHints": "Hinweise im Spiel",
     "gameHintsDesc": "Zeigt in Übungen und Partien kurze Hinweise, zum Beispiel wie viele Steine dir noch fehlen.",
     "aiLevel": "Stärke der Gegner",
-    "aiLevelDesc": "Gilt für die Partie in Stufe 11.",
+    "aiLevelDesc": "Gilt für die Partie in Stufe 12.",
     "easy": "Leicht",
     "normal": "Normal",
     "sound": "Töne"
@@ -98,7 +98,8 @@
     "calls": "Steine ansagen: Pon, Chi, Kan",
     "dora": "Dora",
     "flow": "Der Ablauf einer Partie",
-    "finale": "Die echte Partie"
+    "finale": "Die echte Partie",
+    "strategy": "Mit Plan spielen"
   },
   "stageMenu": {
     "explain": "Erklärung",
@@ -109,7 +110,9 @@
     "practiceDesc": "Probiere es selbst. Wenn du die Übung schaffst, öffnet sich die nächste Stufe.",
     "clearedNote": "Diese Stufe hast du geschafft. Du kannst sie jederzeit wiederholen.",
     "play": "Mitspielen",
-    "playDesc": "Spiele ein Spiel am echten Tisch mit. Du tippst nur, was angezeigt wird."
+    "playDesc": "Spiele ein Spiel am echten Tisch mit. Du tippst nur, was angezeigt wird.",
+    "scenarios": "Szenarien",
+    "scenariosDesc": "Vier Spiele am Tisch. Du entscheidest selbst, was du ablegst, und bekommst die Gedanken dazu erklärt."
   },
   "actions": {
     "pon": "Pon",
@@ -440,7 +443,7 @@
     },
     "start": "Partie starten",
     "chooseLevel": "Wähle die Stärke der Gegner.",
-    "passed": "Stufe 11 geschafft. Du hast alle Stufen abgeschlossen."
+    "passed": "Stufe 12 geschafft. Du hast alle Stufen abgeschlossen."
   },
   "tiles": {
     "explain": {
@@ -1132,5 +1135,131 @@
     "yourRiver": "Dein Kawa (deine abgelegten Steine)",
     "yourHand": "Deine Hand",
     "riichi": "Du hast Riichi angesagt."
+  },
+  "scenario": {
+    "good": "Richtig!",
+    "ok": "Auch nicht schlecht. Hier legen wir aber {tile} ab.",
+    "wrong": "Nicht ganz. Besser ist {tile}. Lege ihn ab.",
+    "legend": "Linien unter deiner Hand: grün = fertige Gruppe, gelb = fast fertig (Paar oder zwei passende Steine), grau = einzeln.",
+    "legendPairs": "Linien unter deiner Hand: gelb = Paar, grau = einzeln."
+  },
+  "strategy": {
+    "explain": {
+      "s1": {
+        "title": "Erst schauen, dann planen",
+        "body": "Schau dir am Anfang deine Hand an und überlege, welches Yaku am besten passt. Festlegen musst du dich nicht sofort, aber eine Richtung hilft dir beim Ablegen.",
+        "summary": "Erst die Hand anschauen, dann ein Ziel wählen."
+      },
+      "s2": {
+        "title": "Viele Steine von 2 bis 8: Tanyao",
+        "body": "Hast du fast nur Steine von 2 bis 8, ziele auf Tanyao. Lege Einsen, Neunen und Ehrensteine zuerst ab. Pon und Chi sind dabei erlaubt.",
+        "summary": "2 bis 8 behalten, den Rest zuerst ablegen."
+      },
+      "s3": {
+        "title": "Viele Paare: Toitoi und Yakuhai",
+        "body": "Hast du viele Paare, sammle Drillinge (Toitoi). Hast du ein Paar aus Drachen, sage Pon, sobald der dritte kommt: Dann hast du sicher ein Yaku.",
+        "summary": "Drachen-Paar: Pon sagen, dann ist das Yaku sicher."
+      },
+      "s4": {
+        "title": "Fünf oder mehr Paare: Chiitoitsu",
+        "body": "Hast du fünf oder sechs Paare, ziele auf sieben Paare. Sage dabei kein Pon: Chiitoitsu geht nur mit geschlossener Hand.",
+        "summary": "Viele Paare und kein Pon: Chiitoitsu."
+      },
+      "s5": {
+        "title": "Nichts davon: Riichi",
+        "body": "Passt nichts davon, bleib geschlossen und sage Riichi an, sobald du Tenpai bist. Pon und Chi lässt du dann lieber aus, sonst hast du kein Yaku.",
+        "summary": "Im Zweifel: geschlossen bleiben und Riichi."
+      }
+    },
+    "hub": {
+      "intro": "Vier Spiele, jedes mit einem anderen Ziel. Du entscheidest selbst, welchen Stein du ablegst. Danach siehst du, wie man darüber nachdenkt.",
+      "start": "Los geht’s",
+      "tanyao": "Tanyao anpeilen",
+      "tanyaoDesc": "Randsteine früh ablegen, mit Chi schneller Tenpai werden.",
+      "riichi": "Geschlossen bleiben und Riichi",
+      "riichiDesc": "Ein Pon auslassen, weil sonst das Yaku fehlt.",
+      "toitoi": "Yakuhai und Toitoi",
+      "toitoiDesc": "Viele Paare: Drachen mit Pon sichern und Drillinge sammeln.",
+      "chiitoitsu": "Chiitoitsu",
+      "chiitoitsuDesc": "Sieben Paare sammeln, ohne Pon."
+    },
+    "tanyao": {
+      "start": "Ziel: Tanyao. Schau dir deine Hand an: Fast alles sind Steine von 2 bis 8. Nur die 9 Manzu, die 9 Souzu und der Osten passen nicht dazu.",
+      "h1": {
+        "prompt": "Du hast die 8 Pinzu gezogen. Welchen Stein legst du ab? Tipp: Was passt nicht zu Tanyao?",
+        "why": "Für Tanyao brauchst du nur Steine von 2 bis 8. Der Osten passt zu keinem Stein und kann nie Teil einer Folge werden. Darum zuerst der Osten."
+      },
+      "wait": "Die anderen sind dran.",
+      "h2": {
+        "prompt": "Du hast die 5 Manzu gezogen: 3-4-5-6 Manzu hängen jetzt zusammen. Welchen Stein legst du ab?",
+        "why": "Die 9 Manzu passt weder zu Tanyao noch zu deinen anderen Manzu. Weg damit."
+      },
+      "h3": {
+        "prompt": "Die 4 Souzu verbindet deine Souzu zu 3-4-5-6. Was legst du ab?",
+        "why": "Die 9 Souzu ist der letzte Stein, der nicht zu Tanyao passt. Jetzt besteht deine Hand nur noch aus Steinen von 2 bis 8."
+      },
+      "chi": "Der Spieler links legt die 3 Pinzu ab. Mit deiner 2 und 4 Pinzu wird daraus 2-3-4. Bei Tanyao darfst du ansagen, das Yaku bleibt erhalten. Tippe auf „Chi“.",
+      "afterChi": {
+        "prompt": "Jetzt legst du einen Stein ab. Mit welchem wirst du Tenpai?",
+        "why": "Bei 3-4-5-6 Manzu ist ein Stein zu viel. Legst du die 3 Manzu ab, bleibt 4-5-6 Manzu, und mit 3-4-5-6 Souzu wartest du auf die 3 oder 6 Souzu."
+      },
+      "tenpai": "Du bist Tenpai und hast Tanyao. Jetzt wartest du.",
+      "ron": "Die 6 Souzu! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Tanyao. Merke: Bei vielen Steinen von 2 bis 8 die Randsteine früh ablegen. Chi und Pon sind dabei erlaubt."
+    },
+    "riichi": {
+      "start": "Ziel: Riichi. Deine Hand hat Einsen, Neunen und Ehrensteine, also kein Tanyao, und kein Drachen-Paar. Darum bleibst du geschlossen und sagst Riichi an, sobald du Tenpai bist.",
+      "h1": {
+        "prompt": "Du hast die 9 Pinzu gezogen: 7-8-9 Pinzu ist fertig. Welchen Stein legst du ab?",
+        "why": "Einzelne Ehrensteine sind am wenigsten nützlich, denn mit ihnen kann man keine Folge bauen. Zahlensteine wie die 1 Pinzu oder die 6 Manzu können noch Nachbarn bekommen."
+      },
+      "wait": "Die anderen sind dran.",
+      "h2": {
+        "prompt": "Die 3 Souzu macht 3-4-5 Souzu fertig. Was legst du ab?",
+        "why": "Wieder der einzelne Ehrenstein. Zahlensteine behältst du, solange sie noch helfen können."
+      },
+      "passPon": "Der Spieler rechts legt die 9 Souzu ab. Du könntest Pon sagen. Aber dann wäre deine Hand offen: Riichi ginge nicht mehr, und Tanyao hast du auch nicht. Ohne Yaku könntest du nicht gewinnen. Tippe auf „Passen“.",
+      "riichi": "Du hast die 8 Manzu gezogen. Legst du die 1 Pinzu ab, wartest du mit 6 und 8 Manzu auf die 7 Manzu: Tenpai! Deine Hand ist geschlossen, also tippe auf „Riichi“ und lege die 1 Pinzu ab.",
+      "afterRiichi": "Riichi ist angesagt. Jetzt heißt es warten.",
+      "tsumogiri": "Die 1 Souzu ist es nicht. Nach Riichi legst du sie einfach wieder ab.",
+      "ron": "Die 7 Manzu! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Riichi. Merke: Ohne anderes Yaku bleibst du geschlossen, lässt Pon und Chi aus und sagst Riichi, sobald du Tenpai bist."
+    },
+    "toitoi": {
+      "start": "Ziel: Yakuhai und Toitoi. Du hast viele Paare: 2 Manzu, 7 Pinzu, 3 Souzu und Haku. Paare können zu Drillingen werden. Und Haku ist ein Drache: Ein Drilling daraus ist sicher ein Yaku.",
+      "h1": {
+        "prompt": "Du hast die 8 Souzu gezogen: noch ein Paar! Welchen Stein legst du ab?",
+        "why": "Bei so vielen Paaren sammelst du Drillinge. Einzelne Steine wie der Norden helfen dabei nicht."
+      },
+      "pon": "Der Spieler rechts legt Haku ab. Mit deinem Paar wird daraus ein Drilling, und dein Yaku (Yakuhai) ist sicher. Tippe auf „Pon“.",
+      "afterPon": {
+        "prompt": "Lege jetzt einen Stein ab. Welcher ist am wenigsten nützlich?",
+        "why": "Die einzelne 1 Manzu passt zu nichts mehr. Deine Paare behältst du, denn sie können noch Drillinge werden."
+      },
+      "wait": "Die anderen sind dran.",
+      "h2": {
+        "prompt": "Du hast die 2 Manzu gezogen: ein Drilling! Was legst du ab?",
+        "why": "Die 9 Pinzu ist ein einzelner Randstein. Alles andere sind jetzt Drillinge oder Paare: Toitoi rückt näher."
+      },
+      "pon2": "Der Spieler rechts legt die 7 Pinzu ab. Pon! Dann hast du schon drei Drillinge. Tippe auf „Pon“.",
+      "afterPon2": "Lege die 6 Pinzu ab. Jetzt wartest du darauf, dass eines deiner Paare (3 Souzu oder 8 Souzu) zum Drilling wird.",
+      "tenpai": "Tenpai mit Yakuhai und Toitoi. Warte auf die 3 oder 8 Souzu.",
+      "ron": "Die 8 Souzu! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Yakuhai (Haku) und Toitoi. Merke: Viele Paare bedeuten Drillinge sammeln. Ein Drachen-Paar machst du mit Pon zum Drilling."
+    },
+    "chiitoitsu": {
+      "start": "Ziel: Chiitoitsu. Du hast schon vier Paare. Kommt noch eins dazu, sind sieben Paare (Chiitoitsu) ein gutes Ziel.",
+      "h1": {
+        "prompt": "Du hast die 7 Manzu gezogen: das fünfte Paar! Welchen Stein legst du ab?",
+        "why": "Für Chiitoitsu brauchst du Paare. Einzelne Steine kommen weg, und der Osten ist dafür ein guter Kandidat."
+      },
+      "passPon": "Der Spieler rechts legt die 9 Souzu ab. Pon würde aus deinem Paar einen Drilling machen. Aber Chiitoitsu braucht Paare und geht nur geschlossen. Tippe auf „Passen“.",
+      "wait": "Die anderen sind dran.",
+      "riichi": "Du hast die 3 Pinzu gezogen: sechs Paare! Legst du die 5 Souzu ab, wartest du auf die zweite 8 Pinzu. Tippe auf „Riichi“ und lege die 5 Souzu ab.",
+      "afterRiichi": "Riichi ist angesagt. Jetzt heißt es warten.",
+      "tsumogiri": "Die 1 Souzu ist es nicht. Lege sie wieder ab.",
+      "ron": "Die 8 Pinzu! Tippe auf „Ron“.",
+      "end": "Gewonnen mit Chiitoitsu und Riichi. Merke: Ab fünf Paaren lohnt sich Chiitoitsu. Dabei sagst du kein Pon und kein Chi."
+    }
   }
 }

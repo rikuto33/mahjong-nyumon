@@ -53,9 +53,17 @@ export function App() {
       },
       markCleared: (stage) => {
         if (progress.cleared.includes(stage)) return;
-        const next = { cleared: STAGE_ORDER.filter((id) => id === stage || progress.cleared.includes(id)) };
+        const next = { ...progress, cleared: STAGE_ORDER.filter((id) => id === stage || progress.cleared.includes(id)) };
         setProgress(next);
         setStorageOk(saveProgress(next));
+      },
+      markScenario: (id) => {
+        setProgress((p) => {
+          if (p.scenarios?.includes(id)) return p;
+          const next = { ...p, scenarios: [...(p.scenarios ?? []), id] };
+          setStorageOk(saveProgress(next));
+          return next;
+        });
       },
       resetProgress: () => {
         setProgress(EMPTY_PROGRESS);

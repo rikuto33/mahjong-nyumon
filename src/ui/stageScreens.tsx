@@ -18,6 +18,7 @@ import { Stage7Quiz } from './calls/Stage7Quiz';
 import { Stage8Guided } from './dora/Stage8Guided';
 import { Stage8Quiz } from './dora/Stage8Quiz';
 import { Stage9Guided } from './flow/Stage9Guided';
+import { StrategyScenarios } from './strategy/StrategyScenarios';
 import { Stage10Tour } from './finale/Stage10Tour';
 import { Stage10Game } from './finale/Stage10Game';
 
@@ -36,5 +37,6 @@ export const STAGE_SCREENS: Record<StageId, Partial<Record<StagePart, Screen>>> 
   calls: { guided: Stage7Guided, practice: Stage7Quiz },
   dora: { guided: Stage8Guided, practice: Stage8Quiz },
   flow: { guided: Stage9Guided },
+  strategy: { scenarios: StrategyScenarios },
   finale: { guided: Stage10Tour, practice: Stage10Game },
 };

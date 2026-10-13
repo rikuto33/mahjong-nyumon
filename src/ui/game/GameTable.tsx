@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react';
 import { play } from '../sound';
 import { isRed, kindOf, type Tile as TileCode } from '../../engine/tile';
 import { doraFromIndicator } from '../../engine/score';
+import type { GroupRole } from '../../engine/analyze';
 import { doraIndicators, seatWindOf, type HandState, type OpenMeld, type Seat } from '../../game/hand';
 import { useI18n } from '../../i18n/I18nContext';
 import type { MessageKey } from '../../i18n/translate';
@@ -15,6 +16,8 @@ type Props = {
   hand: HandState;
   /** 台本などで右上に出す説明 */
   overlay?: ReactNode;
+  /** 自分の手牌（手の内＋ツモ牌の順）の各牌の役割。色の線で示す */
+  roles?: GroupRole[];
   lifted: HandTarget | null;
   canTap: (target: HandTarget) => boolean;
   onTap: (target: HandTarget) => void;
@@ -89,7 +92,7 @@ function useTableSounds(hand: HandState) {
   }, [hand]);
 }
 
-export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft, overlay }: Props) {
+export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft, overlay, roles }: Props) {
   const { t } = useI18n();
   const me = hand.players[0];
   useTableSounds(hand);
@@ -99,7 +102,9 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
   const shine = (tile: TileCode) => isRed(tile) || doraKinds.includes(kindOf(tile));
   const doraSlots = [...dora, ...new Array(Math.max(0, 5 - dora.length)).fill(null)];
 
+  const roleOf = (target: HandTarget) => (roles ? roles[target === 'drawn' ? me.hand.length : target] : undefined);
   const handTile = (tile: TileCode, target: HandTarget) => (
+    <span key={`${target}-${tile}`} className={roleOf(target) ? `role role-${roleOf(target)}` : undefined}>
     <Tile
       key={`${target}-${tile}`}
       tile={tile}
@@ -110,6 +115,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
       shine={shine(tile)}
       onTap={() => onTap(target)}
     />
+    </span>
   );
 
   return (

@@ -8,3 +8,4 @@ export * from './yaku';
 export * from './score';
 export * from './furiten';
 export * from './calls';
+export * from './analyze';

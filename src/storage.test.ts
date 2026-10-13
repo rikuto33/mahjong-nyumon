@@ -57,16 +57,16 @@ describe('settings storage', () => {
 
 describe('progress storage', () => {
   it('初期状態は何もクリアしていない', () => {
-    expect(loadProgress(memoryStore())).toEqual({ cleared: [] });
-    expect(loadProgress(throwingStore)).toEqual({ cleared: [] });
+    expect(loadProgress(memoryStore())).toEqual({ cleared: [], scenarios: [] });
+    expect(loadProgress(throwingStore)).toEqual({ cleared: [], scenarios: [] });
   });
 
   it('保存して読み戻せる・不正な値は捨てる・段階順に並ぶ', () => {
     const store = memoryStore();
     expect(saveProgress({ cleared: ['tiles', 'intro'] }, store)).toBe(true);
-    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'tiles'] });
+    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'tiles'], scenarios: [] });
     store.setItem('mahjong-nyumon:progress:v2', JSON.stringify({ cleared: ['intro', 'intro', 'x', 3, 'shape'] }));
-    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'shape'] });
+    expect(loadProgress(store)).toEqual({ cleared: ['intro', 'shape'], scenarios: [] });
     expect(saveProgress({ cleared: ['intro'] }, throwingStore)).toBe(false);
   });
 

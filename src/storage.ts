@@ -69,19 +69,22 @@ export function saveSettings(settings: Settings, store: KV | null = defaultStore
 export type Progress = {
   /** クリアした段階 */
   cleared: StageId[];
+  /** 「考えながら打つ」で終えたシナリオ */
+  scenarios?: string[];
 };
 
-export const EMPTY_PROGRESS: Progress = { cleared: [] };
+export const EMPTY_PROGRESS: Progress = { cleared: [], scenarios: [] };
 
 export function loadProgress(store: KV | null = defaultStore()): Progress {
   try {
     const text = store?.getItem(PROGRESS_KEY);
-    if (!text) return { cleared: [] };
-    const raw = JSON.parse(text) as { cleared?: unknown };
+    if (!text) return { cleared: [], scenarios: [] };
+    const raw = JSON.parse(text) as { cleared?: unknown; scenarios?: unknown };
     const cleared = Array.isArray(raw.cleared) ? raw.cleared.filter(isStageId) : [];
-    return { cleared: STAGE_ORDER.filter((id) => cleared.includes(id)) };
+    const scenarios = Array.isArray(raw.scenarios) ? raw.scenarios.filter((x): x is string => typeof x === 'string') : [];
+    return { cleared: STAGE_ORDER.filter((id) => cleared.includes(id)), scenarios: [...new Set(scenarios)] };
   } catch {
-    return { cleared: [] };
+    return { cleared: [], scenarios: [] };
   }
 }
 

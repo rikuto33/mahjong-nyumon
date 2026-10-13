@@ -7,7 +7,8 @@ describe('次に進む画面', () => {
     expect(nextPart('tiles', 'guided')).toEqual({ stage: 'tiles', part: 'practice' });
     expect(nextPart('tiles', 'practice')).toEqual({ stage: 'shape', part: 'explain' });
     expect(nextPart('intro', 'play')).toEqual({ stage: 'tiles', part: 'explain' });
-    expect(nextPart('flow', 'guided')).toEqual({ stage: 'finale', part: 'explain' });
+    expect(nextPart('flow', 'guided')).toEqual({ stage: 'strategy', part: 'explain' });
+    expect(nextPart('strategy', 'scenarios')).toEqual({ stage: 'finale', part: 'explain' });
     expect(nextPart('finale', 'practice')).toBeNull();
   });
 
