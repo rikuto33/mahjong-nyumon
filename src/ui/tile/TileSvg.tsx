@@ -195,7 +195,7 @@ function Man({ rank, red }: { rank: number; red: boolean }) {
 function Honor({ rank }: { rank: number }) {
   if (rank === 5) {
     // 白：枠だけ
-    return <rect x={13} y={15} width={34} height={50} rx={4} fill="none" stroke={C.blue} strokeWidth={2.5} />;
+    return <rect x={13} y={22} width={34} height={46} rx={4} fill="none" stroke={C.blue} strokeWidth={2.5} />;
   }
   const color = rank === 6 ? C.green : rank === 7 ? C.red : C.ink;
   return (
@@ -221,17 +221,18 @@ function Face({ tile }: { tile: Tile }) {
 }
 
 function HintBadge({ text }: { text: string }) {
-  const w = 5 + text.length * 5.6;
+  // 補助表示：牌の左上に、読みやすい大きさで
+  const w = 7 + text.length * 8.6;
   return (
     <g>
-      <rect x={1.5} y={1.5} width={w} height={12} rx={3} fill="#ffffff" stroke={C.faceEdge} strokeWidth={0.8} />
+      <rect x={1} y={1} width={w} height={18} rx={4} fill="#ffffff" stroke="#9a937f" strokeWidth={0.8} />
       <text
-        x={1.5 + w / 2}
-        y={10.6}
-        fontSize={9.5}
-        fontWeight={700}
+        x={1 + w / 2}
+        y={15}
+        fontSize={15}
+        fontWeight={800}
         textAnchor="middle"
-        fill="#333"
+        fill="#111"
         fontFamily="-apple-system, Helvetica, sans-serif"
       >
         {text}
