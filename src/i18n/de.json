@@ -14,7 +14,7 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "tileHints": "Hilfsanzeige auf den Steinen",
-    "tileHintsDesc": "Zeigt in der Ecke jedes Steins eine kleine Hilfe: die Zahl, den Wind (O, S, W, N) oder die Farbe des Drachen.",
+    "tileHintsDesc": "Zeigt in der Ecke eine kleine Hilfe: bei Manzu die Zahl, bei den Winden O, S, W, N und bei den Drachen die Farbe. Pinzu und Souzu haben keine Hilfe, damit du die Kreise und Stäbe selbst zählen lernst.",
     "on": "Ein",
     "off": "Aus",
     "progress": "Fortschritt",
@@ -127,7 +127,7 @@
       },
       "s3": {
         "title": "Zahlensteine: Pinzu",
-        "body": "Die zweite Farbe heißt Pinzu. Die Anzahl der Kreise ist die Zahl des Steins."
+        "body": "Die zweite Farbe heißt Pinzu. Die Anzahl der Kreise ist die Zahl des Steins.\nBei Pinzu und Souzu gibt es keine Hilfszahl in der Ecke. Zähle die Kreise und Stäbe selbst."
       },
       "s4": {
         "title": "Zahlensteine: Souzu",
@@ -139,7 +139,7 @@
       },
       "s6": {
         "title": "Ehrensteine: die Drachen",
-        "body": "Die anderen drei Ehrensteine sind Drachen (Sangenpai): Weiß (Haku), 發 Grün (Hatsu) und 中 Rot (Chun).\nDer weiße Drache hat kein Schriftzeichen. Hier hat er nur einen blauen Rahmen."
+        "body": "Die anderen drei Ehrensteine sind Drachen (Sangenpai): Weiß (Haku), 發 Grün (Hatsu) und 中 Rot (Chun).\nDer weiße Drache ist ein leerer Stein ohne Zeichen."
       },
       "s7": {
         "title": "Rote Fünfen",

@@ -102,7 +102,8 @@ function Pin({ rank, red }: { rank: number; red: boolean }) {
 }
 
 // --- 索子 ---
-type Stick = [number, number, string];
+/** [x, y, 色, 傾き（度。正で右上がり /）] */
+type Stick = [number, number, string, number?];
 function souLayout(rank: number): { sticks: Stick[]; h: number } {
   const g = C.green;
   const r = C.red;
@@ -123,9 +124,13 @@ function souLayout(rank: number): { sticks: Stick[]; h: number } {
         h: 20,
       };
     case 8:
+      // 雀魂などと同じ M（上）と W（下）の形
       return {
-        sticks: [[12, 22, g], [24, 22, g], [36, 22, g], [48, 22, g], [12, 58, g], [24, 58, g], [36, 58, g], [48, 58, g]],
-        h: 26,
+        sticks: [
+          [11, 22, g], [24, 22, g, -22], [36, 22, g, 22], [49, 22, g],
+          [11, 58, g], [24, 58, g, 22], [36, 58, g, -22], [49, 58, g],
+        ],
+        h: 27,
       };
     case 9:
       return {
@@ -141,10 +146,10 @@ function souLayout(rank: number): { sticks: Stick[]; h: number } {
   }
 }
 
-function SouStick({ x, y, h, color }: { x: number; y: number; h: number; color: string }) {
+function SouStick({ x, y, h, color, tilt = 0 }: { x: number; y: number; h: number; color: string; tilt?: number }) {
   const w = 6.5;
   return (
-    <g>
+    <g transform={tilt ? `rotate(${tilt} ${x} ${y})` : undefined}>
       <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={3} fill={color} />
       <line x1={x - w / 2} x2={x + w / 2} y1={y} y2={y} stroke={C.face} strokeWidth={1.4} />
       <line x1={x} x2={x} y1={y - h / 2 + 2.5} y2={y + h / 2 - 2.5} stroke={C.face} strokeWidth={0.9} opacity={0.6} />
@@ -170,8 +175,8 @@ function Sou({ rank, red }: { rank: number; red: boolean }) {
   const { sticks, h } = souLayout(rank);
   return (
     <g>
-      {sticks.map(([x, y, color], i) => (
-        <SouStick key={i} x={x} y={y} h={h} color={red ? C.red : color} />
+      {sticks.map(([x, y, color, tilt], i) => (
+        <SouStick key={i} x={x} y={y} h={h} color={red ? C.red : color} tilt={tilt} />
       ))}
     </g>
   );
@@ -193,10 +198,7 @@ function Man({ rank, red }: { rank: number; red: boolean }) {
 
 // --- 字牌 ---
 function Honor({ rank }: { rank: number }) {
-  if (rank === 5) {
-    // 白：枠だけ
-    return <rect x={13} y={22} width={34} height={46} rx={4} fill="none" stroke={C.blue} strokeWidth={2.5} />;
-  }
+  if (rank === 5) return null; // 白：何も描かない
   const color = rank === 6 ? C.green : rank === 7 ? C.red : C.ink;
   return (
     <text x={30} y={55} fontSize={40} fontFamily={SERIF} fontWeight={700} textAnchor="middle" fill={color}>
