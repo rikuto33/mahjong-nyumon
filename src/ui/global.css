@@ -348,6 +348,50 @@ button {
   outline-offset: 2px;
 }
 
+/* 台本で捨てる牌：金色の枠と、上の矢印で示す（まだ牌の名前を知らない人向け） */
+.tile.mark-target {
+  position: relative;
+  overflow: visible;
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 14px 4px rgba(201, 162, 74, 0.75);
+}
+
+.tile.mark-target::before {
+  content: '▼';
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: calc(var(--tile-w, 48px) * 0.45);
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  animation: target-arrow 1s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes target-arrow {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile.mark-target::before {
+    animation: none;
+  }
+}
+
+/* 捨てる牌が決まっている時は、それ以外の牌を少し暗くする */
+.my-hand.has-target .tile.tappable:disabled {
+  opacity: 0.55;
+}
+
 .tile-rows {
   display: flex;
   flex-direction: column;

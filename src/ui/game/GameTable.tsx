@@ -22,6 +22,8 @@ type Props = {
   canTap: (target: HandTarget) => boolean;
   onTap: (target: HandTarget) => void;
   marks?: TileCode[];
+  /** 台本で捨てる牌が決まっている時、その牌を目立たせる */
+  targets?: TileCode[];
   actions: ReactNode;
   hint?: ReactNode;
   topLeft?: ReactNode;
@@ -92,7 +94,7 @@ function useTableSounds(hand: HandState) {
   }, [hand]);
 }
 
-export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hint, topLeft, overlay, roles }: Props) {
+export function GameTable({ hand, lifted, canTap, onTap, marks = [], targets = [], actions, hint, topLeft, overlay, roles }: Props) {
   const { t } = useI18n();
   const me = hand.players[0];
   useTableSounds(hand);
@@ -111,7 +113,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
       width="var(--my-tile)"
       selected={lifted === target}
       disabled={!canTap(target)}
-      mark={marks.includes(tile) ? 'tip' : undefined}
+      mark={targets.includes(tile) ? 'target' : marks.includes(tile) ? 'tip' : undefined}
       shine={shine(tile)}
       onTap={() => onTap(target)}
     />
@@ -175,7 +177,7 @@ export function GameTable({ hand, lifted, canTap, onTap, marks = [], actions, hi
         </div>
         <div className="action-bar">{actions}</div>
         <div className="my-hand-row">
-          <div className="my-hand">
+          <div className={targets.length > 0 ? 'my-hand has-target' : 'my-hand'}>
             {me.hand.map((tile, i) => handTile(tile, i))}
             {me.drawn && <span className="drawn-gap">{handTile(me.drawn, 'drawn')}</span>}
           </div>

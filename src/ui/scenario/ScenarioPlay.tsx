@@ -227,6 +227,7 @@ export function ScenarioPlay({ script, prefix, analysis, onFinish, onBack }: Pro
         lifted={lifted}
         canTap={canTap}
         onTap={onTap}
+        targets={myTurn && (step?.kind === 'discard' || step?.kind === 'tsumogiri') ? accepted : []}
         actions={buttons}
         overlay={overlay}
         roles={roles}

@@ -13,7 +13,8 @@ type Props = {
   sideways?: boolean;
   selected?: boolean;
   disabled?: boolean;
-  mark?: 'correct' | 'wrong' | 'tip';
+  /** target：台本で「この牌を捨てる」と決まっている牌（金色の枠と矢印で示す） */
+  mark?: 'correct' | 'wrong' | 'tip' | 'target';
   onTap?: () => void;
   /** 補助表示を強制的に消す（設定より優先） */
   noHint?: boolean;
