@@ -10,11 +10,14 @@ export function ExplainScreen({
   stage,
   onDone,
   onNext,
+  onChoose,
   clearOnFinish,
 }: {
   stage: StageId;
   onDone: () => void;
   onNext: () => void;
+  /** 説明のあとに練習と確認問題の両方がある段階では、どちらに進むか選ばせる */
+  onChoose?: (part: 'guided' | 'practice') => void;
   clearOnFinish?: boolean;
 }) {
   const { t, has } = useI18n();
@@ -48,14 +51,31 @@ export function ExplainScreen({
           </p>
         )}
       </article>
+      {isLast && onChoose && (
+        <div className="next-choice">
+          <p className="prompt">{t('stageMenu.chooseNext')}</p>
+          <div className="button-row">
+            <button className="btn btn-primary" onClick={() => onChoose('guided')}>
+              {t('stageMenu.toGuided')}
+            </button>
+            <button className="btn btn-primary" onClick={() => onChoose('practice')}>
+              {t('stageMenu.toPractice')}
+            </button>
+          </div>
+        </div>
+      )}
       <nav className="slide-nav">
         <button className="btn" disabled={index === 0} onClick={() => setIndex(index - 1)}>
           {t('common.prev')}
         </button>
         <span className="page-indicator">{t('common.page', { n: index + 1, total: slides.length })}</span>
-        <button className="btn btn-primary" onClick={() => (isLast ? finish() : setIndex(index + 1))}>
-          {t('common.next')}
-        </button>
+        {isLast && onChoose ? (
+          <span />
+        ) : (
+          <button className="btn btn-primary" onClick={() => (isLast ? finish() : setIndex(index + 1))}>
+            {t('common.next')}
+          </button>
+        )}
       </nav>
     </main>
   );

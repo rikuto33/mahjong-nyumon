@@ -504,6 +504,18 @@ button {
   margin: 0 0 10px;
 }
 
+.next-choice {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--gold);
+}
+
+.next-choice .prompt {
+  margin: 0 0 10px;
+}
+
 .slide-nav {
   display: flex;
   align-items: center;

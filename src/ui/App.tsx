@@ -19,7 +19,7 @@ import { StageSelectScreen } from './StageSelectScreen';
 import { StageMenuScreen } from './StageMenuScreen';
 import { ExplainScreen } from './ExplainScreen';
 import { ComingSoonScreen } from './ComingSoonScreen';
-import { CLEAR_ON_EXPLAIN, nextPart, STAGE_ORDER } from '../tutorial/stages';
+import { CLEAR_ON_EXPLAIN, nextPart, STAGE_ORDER, STAGE_PARTS } from '../tutorial/stages';
 import { STAGE_SCREENS } from './stageScreens';
 import { YakuDexScreen } from './yaku/YakuDexScreen';
 import { TableScreen } from './table/TableScreen';
@@ -107,6 +107,11 @@ function RouteView({ route, navigate }: { route: Route; navigate: (r: Route) => 
             stage={route.stage}
             onDone={back}
             onNext={forward}
+            onChoose={
+              STAGE_PARTS[route.stage].includes('guided') && STAGE_PARTS[route.stage].includes('practice')
+                ? (part) => navigate({ name: 'part', stage: route.stage, part })
+                : undefined
+            }
             clearOnFinish={CLEAR_ON_EXPLAIN.includes(route.stage)}
           />
         );

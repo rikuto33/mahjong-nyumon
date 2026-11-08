@@ -44,7 +44,7 @@
     "comingSoon": "Dieser Teil ist noch in Arbeit.",
     "page": "{n} / {total}",
     "inShort": "Kurz gesagt:",
-    "startPractice": "Übung starten",
+    "startPractice": "Starten",
     "score": "{score} von {total} richtig.",
     "failed": "Für diese Stufe brauchst du mindestens {need} richtige Antworten. Versuche es noch einmal.",
     "question": "Frage {n} von {total}",
@@ -102,15 +102,18 @@
   "stageMenu": {
     "explain": "Erklärung",
     "explainDesc": "Die Regeln dieser Stufe in kurzen Schritten.",
-    "guided": "Geführtes Beispiel",
-    "guidedDesc": "Ein Beispiel Schritt für Schritt. Du tippst nur, was angezeigt wird.",
-    "practice": "Übung",
-    "practiceDesc": "Probiere es selbst. Wenn du die Übung schaffst, öffnet sich die nächste Stufe.",
+    "guided": "Übung",
+    "guidedDesc": "Übe Schritt für Schritt mit Anleitung. Du tippst nur, was angezeigt wird.",
+    "practice": "Kontrollfragen",
+    "practiceDesc": "Prüfe, ob du alles verstanden hast. Wenn du genug richtig hast, öffnet sich die nächste Stufe.",
     "clearedNote": "Diese Stufe hast du geschafft. Du kannst sie jederzeit wiederholen.",
     "play": "Mitspielen",
     "playDesc": "Spiele ein Spiel am echten Tisch mit. Du tippst nur, was angezeigt wird.",
     "scenarios": "Szenarien",
-    "scenariosDesc": "Vier Spiele am Tisch. Du entscheidest selbst, was du ablegst, und bekommst die Gedanken dazu erklärt."
+    "scenariosDesc": "Vier Spiele am Tisch. Du entscheidest selbst, was du ablegst, und bekommst die Gedanken dazu erklärt.",
+    "chooseNext": "Wie möchtest du weitermachen?",
+    "toGuided": "Zur Übung",
+    "toPractice": "Zu den Kontrollfragen"
   },
   "actions": {
     "pon": "Pon",
@@ -511,11 +514,11 @@
         "prompt": "Tippe auf die rote 5 Manzu.",
         "after": "Richtig. Sie zählt als 5 und bringt zusätzlich Punkte."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "quiz": {
       "intro": "{total} Fragen. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
+      "start": "Starten",
       "findTile": "Tippe auf: {name}",
       "nameTile": "Wie heißt dieser Stein?",
       "correct": "Richtig.",
@@ -580,11 +583,11 @@
         "prompt": "Tippe auf die beiden 9 Manzu und bilde eine Gruppe.",
         "after": "Das ist das Paar (Jantou). Die Hand ist fertig: 4 Gruppen und 1 Paar."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "puzzle": {
       "intro": "Teile jede Hand in 4 Gruppen und 1 Paar auf. Löse {total} Aufgaben, um die Stufe abzuschließen.",
-      "start": "Übung starten",
+      "start": "Starten",
       "instruction": "Tippe Steine an und dann auf „Gruppe bilden“. Ziel: 4 Gruppen und 1 Paar.",
       "makeGroup": "Gruppe bilden",
       "resetGroups": "Alle Gruppen auflösen",
@@ -649,7 +652,7 @@
       "g4": {
         "prompt": "Du hast die 7 Manzu gezogen. Die Hand ist fertig: 2-3-4 und 7-8-9 Manzu, 6-7-8 Pinzu, 3-4-5 Souzu und das Paar Chun. Tippe auf „Tsumo“."
       },
-      "finished": "Gewonnen mit Tsumo. Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Gewonnen mit Tsumo. Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "game": {
       "intro": "Spiele allein, bis deine Hand fertig ist. Wenn du mit Tsumo gewinnst, ist die Stufe geschafft.",
@@ -724,11 +727,11 @@
         "prompt": "Vier Gruppen sind fertig, nur der Westen ist allein. Tippe auf den Westen.",
         "after": "Richtig: Tanki. Ein zweiter Westen macht das Paar."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "quiz": {
       "intro": "{total} Hände. Tippe bei jeder Hand alle Wartesteine an und dann auf „Prüfen“. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
+      "start": "Starten",
       "question": "Hand {n} von {total}",
       "prompt": "Diese Hand ist Tenpai. Welche Steine fehlen? Tippe alle Wartesteine an.",
       "check": "Prüfen",
@@ -776,7 +779,7 @@
         "prompt": "Diese Hand ist geschlossen und Tenpai, hat aber kein Yaku. Ein Mitspieler legt die 9 Souzu ab. Es gibt keinen Ron-Knopf. Tippe auf „Passen“.",
         "after": "Ohne Yaku kein Ron. Mit Riichi hätte die Hand ein Yaku, mit Tsumo auch (Menzen Tsumo)."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "quiz": {
       "intro": "{total} Hände. Ein Mitspieler legt deinen Gewinnstein ab. Entscheide jedes Mal: Wenn du jetzt Ron sagst, hat die Hand ein Yaku? Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
@@ -845,7 +848,7 @@
         "prompt": "Der Spieler links legt die 5 Pinzu ab. Du könntest Chi sagen, aber danach hätte die Hand kein Yaku mehr: Riichi ginge nicht mehr, und Tanyao auch nicht (wegen der 1 Manzu und der Chun). Tippe auf „Passen“.",
         "after": "Gut. Solange die Hand geschlossen bleibt, kannst du später noch Riichi ansagen."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen."
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen."
     },
     "quiz": {
       "intro": "{total} Hände, bei denen du Pon oder Chi gemacht hast. Ein Mitspieler legt deinen Gewinnstein ab. Hat die Hand dann ein Yaku? Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
@@ -908,13 +911,13 @@
         "prompt": "Der Dora-Anzeiger ist Haku. Welcher Stein ist Dora?",
         "after": "Richtig: Nach Haku kommt Hatsu."
       },
-      "finished": "Das Beispiel ist zu Ende. Als Nächstes kannst du die Übung machen.",
+      "finished": "Die Übung ist zu Ende. Als Nächstes kommen die Kontrollfragen.",
       "indicator": "Dora-Anzeiger",
       "ura": "Ura-Dora-Anzeiger"
     },
     "quiz": {
       "intro": "{total} Aufgaben. Finde die Dora und zähle die Dora einer Hand. Für diese Stufe brauchst du mindestens {need} richtige Antworten.",
-      "start": "Übung starten",
+      "start": "Starten",
       "question": "Aufgabe {n} von {total}",
       "pickPrompt": "Welcher Stein ist Dora?",
       "countPrompt": "Wie viele Dora hat diese Hand insgesamt? Zähle Dora, rote Fünfen und Ura-Dora zusammen.",
@@ -991,7 +994,7 @@
       "g3": "Der Spieler rechts gewinnt. Die Honba fallen weg, und er wird Geber: Ost 2.",
       "g4": "Ryuukyoku. Der Geber (rechts) ist Tenpai und bleibt Geber. Es gibt 1 Honba. Wer Noten war, hat gezahlt.",
       "g5": "Wieder Ryuukyoku, aber diesmal ist der Geber Noten. Der nächste Spieler wird Geber: Ost 3. Die Honba steigen trotzdem auf 2.",
-      "finished": "Das Beispiel ist zu Ende.",
+      "finished": "Die Übung ist zu Ende.",
       "dealer": "Geber",
       "you": "Du"
     }
@@ -1055,7 +1058,7 @@
       }
     },
     "guided": {
-      "intro": "In diesem Beispiel sagst du Riichi an und gewinnst danach mit Tsumo.",
+      "intro": "In dieser Übung sagst du Riichi an und gewinnst danach mit Tsumo.",
       "g1": {
         "prompt": "Du hast die 5 Souzu gezogen. Wenn du jetzt den Osten ablegst, wartest du mit 3 und 5 Souzu auf die 4: Du bist Tenpai. Tippe auf „Riichi“ und lege dann den Osten ab.",
         "after": "Du hast Riichi angesagt. Der abgelegte Stein liegt quer im Kawa, damit alle die Ansage sehen. Von jetzt an kannst du deine Hand nicht mehr ändern."
