@@ -8,12 +8,6 @@ export function TitleScreen({ navigate }: { navigate: Navigate }) {
       <h1 className="app-title">{t('app.title')}</h1>
       <p className="app-subtitle">{t('app.subtitle')}</p>
 
-      <section className="message-card" aria-label={t('title.messageHeading')}>
-        <h2>{t('title.messageHeading')}</h2>
-        {/* Rikuto の一言（SPEC §2） */}
-        <p className="message-text">{t('title.message')}</p>
-      </section>
-
       <nav className="menu">
         <button className="btn btn-primary" onClick={() => navigate({ name: 'stage', stage: 'intro' })}>
           {t('title.start')}

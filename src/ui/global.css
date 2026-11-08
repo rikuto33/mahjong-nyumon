@@ -114,29 +114,6 @@ button {
   font-size: 1.1rem;
 }
 
-.message-card {
-  width: min(560px, 100%);
-  padding: 16px 20px;
-  border-radius: 14px;
-  background: var(--card);
-  border: 1px solid rgba(201, 162, 74, 0.5);
-}
-
-.message-card h2 {
-  margin: 0 0 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-
-.message-card p {
-  margin: 0;
-}
-
-.message-text {
-  line-height: 1.6;
-}
-
 .menu {
   display: flex;
   flex-direction: column;
